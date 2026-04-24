@@ -5,16 +5,16 @@ import Image from 'next/image';
 import Script from 'next/script';
 import { CLIENT } from '@/lib/client';
 
-// ── Design tokens ──────────────────────────────────────────────
-const BG         = '#080C14';
-const CARD       = '#141820';
-const CARD_SOFT  = '#1D2430';
-const BORDER     = '#2C323E';
-const GOLD       = '#C9964A';
-const GOLD_L     = '#E8B94A';
-const GOLD_D     = '#9E7C3A';
-const FG         = '#EDE9E1';
-const FG_M       = '#9E9990';
+// ── Design tokens — from CLIENT (palette-aware) ────────────────
+const BG         = CLIENT.colors.bg;
+const CARD       = CLIENT.colors.card;
+const CARD_SOFT  = CLIENT.colors.card_soft;
+const BORDER     = CLIENT.colors.border;
+const GOLD       = CLIENT.colors.accent;
+const GOLD_L     = CLIENT.colors.accent_light;
+const GOLD_D     = CLIENT.colors.accent_dark;
+const FG         = CLIENT.colors.fg;
+const FG_M       = CLIENT.colors.fg_muted;
 const RED_BG     = 'rgba(224,85,85,0.07)';
 const RED_BORDER = 'rgba(224,85,85,0.18)';
 const RED_TEXT   = '#E05555';
