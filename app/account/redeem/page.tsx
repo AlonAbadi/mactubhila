@@ -69,8 +69,8 @@ export default async function RedeemPage() {
       lang="he"
       style={{
         minHeight: "100vh",
-        background: "#080C14",
-        color: "#EDE9E1",
+        background: "#F5FAF7",
+        color: "#1A2E25",
         fontFamily: "Assistant, sans-serif",
         padding: "32px 16px 64px",
       }}
@@ -79,25 +79,25 @@ export default async function RedeemPage() {
 
         {/* Back */}
         <div style={{ marginBottom: 24 }}>
-          <Link href="/account" style={{ fontSize: 13, fontWeight: 700, color: "#9E9990", textDecoration: "none" }}>
+          <Link href="/account" style={{ fontSize: 13, fontWeight: 700, color: "#7A9E8E", textDecoration: "none" }}>
             חזור לחשבון שלי
           </Link>
         </div>
 
         {/* Header */}
         <div style={{ marginBottom: 28 }}>
-          <h1 style={{ fontSize: 22, fontWeight: 800, color: "#EDE9E1", margin: "0 0 6px" }}>
+          <h1 style={{ fontSize: 22, fontWeight: 800, color: "#1A2E25", margin: "0 0 6px" }}>
             מימוש קרדיט
           </h1>
-          <p style={{ fontSize: 14, color: "#9E9990", margin: 0 }}>
+          <p style={{ fontSize: 14, color: "#7A9E8E", margin: 0 }}>
             הקרדיט שצברת ניתן לשימוש לרכישת כל מוצר
           </p>
         </div>
 
         {/* Credit badge */}
         <div style={{
-          background: "rgba(232,185,74,0.08)",
-          border: "1px solid rgba(232,185,74,0.25)",
+          background: "rgba(45,122,95,0.08)",
+          border: "1px solid rgba(45,122,95,0.25)",
           borderRadius: 12,
           padding: "18px 20px",
           display: "flex",
@@ -105,11 +105,11 @@ export default async function RedeemPage() {
           justifyContent: "space-between",
           marginBottom: 28,
         }}>
-          <div style={{ fontSize: 13, color: "#9E9990" }}>קרדיט זמין לשימוש</div>
+          <div style={{ fontSize: 13, color: "#7A9E8E" }}>קרדיט זמין לשימוש</div>
           <div style={{
             fontSize: 26,
             fontWeight: 800,
-            background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
+            background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -130,8 +130,8 @@ export default async function RedeemPage() {
               <div
                 key={product.key}
                 style={{
-                  background: "#141820",
-                  border: `1px solid ${purchased ? "#1D2430" : "#2C323E"}`,
+                  background: "#FFFFFF",
+                  border: `1px solid ${purchased ? "#FFFFFF" : "#C5DDD2"}`,
                   borderRadius: 12,
                   padding: "18px 20px",
                   display: "flex",
@@ -162,8 +162,8 @@ export default async function RedeemPage() {
                         padding: "9px 20px",
                         borderRadius: 8,
                         border: "none",
-                        background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
-                        color: "#080C14",
+                        background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+                        color: "#F5FAF7",
                         fontSize: 14,
                         fontWeight: 800,
                         textDecoration: "none",
@@ -188,7 +188,7 @@ export default async function RedeemPage() {
                         ללא תשלום
                       </span>
                     )}
-                    <span style={{ fontSize: 15, fontWeight: 800, color: "#EDE9E1" }}>
+                    <span style={{ fontSize: 15, fontWeight: 800, color: "#1A2E25" }}>
                       {product.name}
                     </span>
                   </div>
@@ -201,14 +201,14 @@ export default async function RedeemPage() {
                       </span>
                       {/* Credit line */}
                       {credit > 0 && (
-                        <span style={{ fontSize: 12, color: "#C9964A", direction: "ltr" }}>
+                        <span style={{ fontSize: 12, color: "#2D7A5F", direction: "ltr" }}>
                           קרדיט: ₪{Math.min(credit, product.price).toLocaleString("he-IL")}
                         </span>
                       )}
                       {/* To pay */}
                       <span style={{
                         fontSize: 16, fontWeight: 800,
-                        color: free ? "#34A853" : "#EDE9E1",
+                        color: free ? "#34A853" : "#1A2E25",
                         direction: "ltr",
                       }}>
                         {free ? "ללא תשלום" : `לתשלום: ₪${toPay.toLocaleString("he-IL")}`}

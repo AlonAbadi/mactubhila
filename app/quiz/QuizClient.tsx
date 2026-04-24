@@ -552,13 +552,13 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
                         fontSize: "15px",
                         minHeight: "52px",
                         ...(selectedId === opt.id
-                          ? { background: "linear-gradient(135deg,#E8B94A,#C9964A,#9E7C3A)", color: "#1A1206", border: `1px solid ${C.gold}`, transform: "scale(0.99)" }
+                          ? { background: "linear-gradient(135deg,#2D7A5F,#2D7A5F,#1E5642)", color: "#FFFFFF", border: `1px solid ${C.gold}`, transform: "scale(0.99)" }
                           : { background: C.quizCard, border: `1px solid ${C.quizBorder}`, color: C.quizText }),
                       }}
                       onMouseEnter={(e) => {
                         if (selectedId !== opt.id) {
-                          (e.currentTarget as HTMLButtonElement).style.background = "rgba(201,150,74,0.12)";
-                          (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(201,150,74,0.4)";
+                          (e.currentTarget as HTMLButtonElement).style.background = "rgba(45,122,95,0.12)";
+                          (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(45,122,95,0.4)";
                         }
                       }}
                       onMouseLeave={(e) => {
@@ -572,8 +572,8 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
                         className="inline-block w-6 h-6 rounded-full text-xs font-black text-center leading-6 ml-3 flex-shrink-0"
                         style={
                           selectedId === opt.id
-                            ? { background: "rgba(16,21,32,0.25)", color: "#101520" }
-                            : { background: "rgba(201,150,74,0.08)", border: "1px solid rgba(201,150,74,0.20)", color: C.gold }
+                            ? { background: "rgba(16,21,32,0.25)", color: "#E4F0EA" }
+                            : { background: "rgba(45,122,95,0.08)", border: "1px solid rgba(45,122,95,0.20)", color: C.gold }
                         }
                       >
                         {opt.id}
@@ -628,7 +628,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
                         onChange={(e) => setLeadForm((f) => ({ ...f, [id]: e.target.value }))}
                         dir={dir}
                         style={{ background: C.quizCard, border: `1px solid ${C.quizBorder}`, color: C.quizText, borderRadius: "12px", padding: "14px 16px", fontSize: "15px", minHeight: "52px", width: "100%", outline: "none" }}
-                        onFocus={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(201,150,74,0.6)"; }}
+                        onFocus={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(45,122,95,0.6)"; }}
                         onBlur={(e) => { (e.target as HTMLInputElement).style.borderColor = C.quizBorder; }}
                       />
                     </div>
@@ -698,7 +698,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: `linear-gradient(135deg, ${C.gold}, #9E7C3A)`,
+              background: `linear-gradient(135deg, ${C.gold}, #1E5642)`,
               color: "#0a0a0a",
               padding: "8px 16px",
               borderRadius: 100,
@@ -720,7 +720,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
             {narrative.headline.main}{" "}
             <span
               style={{
-                background: `linear-gradient(135deg, ${C.gold}, #9E7C3A)`,
+                background: `linear-gradient(135deg, ${C.gold}, #1E5642)`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -761,7 +761,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
               style={{
                 width: 8,
                 height: 8,
-                background: `linear-gradient(135deg, ${C.gold}, #9E7C3A)`,
+                background: `linear-gradient(135deg, ${C.gold}, #1E5642)`,
                 borderRadius: "50%",
               }}
             />
@@ -875,7 +875,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
             position: "relative",
             height: 280,
             border: "1px solid rgba(201,168,76,0.3)",
-            boxShadow: "0 0 40px rgba(232,185,74,0.08)",
+            boxShadow: "0 0 40px rgba(45,122,95,0.08)",
             ...fadeUp(0.7, resultReady),
           }}
         >
@@ -887,7 +887,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 6,
-                background: "rgba(232,185,74,0.15)",
+                background: "rgba(45,122,95,0.15)",
                 color: C.gold,
                 padding: "4px 10px",
                 borderRadius: 100,
@@ -948,7 +948,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
 
         {/* Soft consent ask */}
         {isLoggedIn && !hasConsent && !consentDismissed && (
-          <div style={{ margin: "12px 16px 0", background: "rgba(232,185,74,0.06)", border: "1px solid rgba(232,185,74,0.2)", borderRadius: 8, padding: 14, ...fadeIn(0.95, resultReady) }}>
+          <div style={{ margin: "12px 16px 0", background: "rgba(45,122,95,0.06)", border: "1px solid rgba(45,122,95,0.2)", borderRadius: 8, padding: 14, ...fadeIn(0.95, resultReady) }}>
             {consentDone ? (
               <p style={{ fontSize: 13, color: C.gold, textAlign: "center" }}>תודה! ניצור איתך קשר בקרוב</p>
             ) : (

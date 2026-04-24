@@ -22,7 +22,7 @@ export function WatchGreeting() {
       style={{
         fontSize: "1.1rem",
         fontWeight: 700,
-        color: "#C9964A",
+        color: "#2D7A5F",
         marginBottom: 4,
       }}
     >
@@ -48,9 +48,9 @@ export function WatchNextStep() {
     return (
       <section
         style={{
-          background: "#141820",
-          borderTop: "1px solid #2C323E",
-          borderBottom: "1px solid #2C323E",
+          background: "#FFFFFF",
+          borderTop: "1px solid #C5DDD2",
+          borderBottom: "1px solid #C5DDD2",
           padding: "40px 24px",
         }}
         dir="rtl"
@@ -62,7 +62,7 @@ export function WatchNextStep() {
               fontSize: "0.75rem",
               fontWeight: 700,
               letterSpacing: "0.1em",
-              color: "#C9964A",
+              color: "#2D7A5F",
               textTransform: "uppercase",
               marginBottom: 16,
               textAlign: "center",
@@ -80,7 +80,7 @@ export function WatchNextStep() {
               overflow: "hidden",
               position: "relative",
               textDecoration: "none",
-              border: "1px solid rgba(201,150,74,0.25)",
+              border: "1px solid rgba(45,122,95,0.25)",
               boxShadow: "0 4px 32px rgba(0,0,0,0.5)",
             }}
           >
@@ -111,8 +111,8 @@ export function WatchNextStep() {
                   position: "absolute",
                   top: 12,
                   right: 12,
-                  background: "linear-gradient(135deg,#E8B94A,#C9964A)",
-                  color: "#101520",
+                  background: "linear-gradient(135deg,#2D7A5F,#2D7A5F)",
+                  color: "#E4F0EA",
                   fontSize: "0.7rem",
                   fontWeight: 800,
                   padding: "4px 10px",
@@ -128,12 +128,12 @@ export function WatchNextStep() {
                   top: 12,
                   left: 12,
                   background: "rgba(16,21,32,0.85)",
-                  color: "#EDE9E1",
+                  color: "#1A2E25",
                   fontSize: "0.8rem",
                   fontWeight: 700,
                   padding: "4px 10px",
                   borderRadius: 9999,
-                  border: "1px solid rgba(201,150,74,0.2)",
+                  border: "1px solid rgba(45,122,95,0.2)",
                 }}
               >
                 ₪197
@@ -143,7 +143,7 @@ export function WatchNextStep() {
             {/* Text body */}
             <div
               style={{
-                background: "linear-gradient(145deg,#1D2430,#111620)",
+                background: "linear-gradient(145deg,#FFFFFF,#D0E8DA)",
                 padding: "20px 24px 24px",
               }}
             >
@@ -151,7 +151,7 @@ export function WatchNextStep() {
                 style={{
                   fontSize: "1.35rem",
                   fontWeight: 800,
-                  color: "#EDE9E1",
+                  color: "#1A2E25",
                   marginBottom: 6,
                 }}
               >
@@ -160,7 +160,7 @@ export function WatchNextStep() {
               <p
                 style={{
                   fontSize: "0.9rem",
-                  color: "#9E9990",
+                  color: "#7A9E8E",
                   marginBottom: 16,
                   lineHeight: 1.6,
                 }}
@@ -190,7 +190,7 @@ export function WatchNextStep() {
                       gap: 8,
                       alignItems: "flex-start",
                       fontSize: "0.85rem",
-                      color: "#9E9990",
+                      color: "#7A9E8E",
                     }}
                   >
                     <span
@@ -198,7 +198,7 @@ export function WatchNextStep() {
                         width: 6,
                         height: 6,
                         borderRadius: "50%",
-                        background: "#C9964A",
+                        background: "#2D7A5F",
                         marginTop: 6,
                         flexShrink: 0,
                       }}
@@ -214,8 +214,8 @@ export function WatchNextStep() {
                   width: "100%",
                   borderRadius: 9999,
                   padding: "14px 0",
-                  background: "linear-gradient(135deg,#E8B94A,#C9964A,#9E7C3A)",
-                  color: "#101520",
+                  background: "linear-gradient(135deg,#2D7A5F,#2D7A5F,#1E5642)",
+                  color: "#E4F0EA",
                   fontWeight: 800,
                   fontSize: "1rem",
                   textAlign: "center",
@@ -234,25 +234,25 @@ export function WatchNextStep() {
   return (
     <section
       style={{
-        background: "#141820",
-        borderTop: "1px solid #2C323E",
-        borderBottom: "1px solid #2C323E",
+        background: "#FFFFFF",
+        borderTop: "1px solid #C5DDD2",
+        borderBottom: "1px solid #C5DDD2",
         padding: "32px 24px",
         textAlign: "center",
       }}
     >
-      <p style={{ color: "#EDE9E1", fontWeight: 700, fontSize: "1.1rem", marginBottom: 8 }}>
+      <p style={{ color: "#1A2E25", fontWeight: 700, fontSize: "1.1rem", marginBottom: 8 }}>
         צפית? הצעד הבא שלך:
       </p>
-      <p style={{ color: "#9E9990", fontSize: "0.9rem", marginBottom: 20 }}>
+      <p style={{ color: "#7A9E8E", fontSize: "0.9rem", marginBottom: 20 }}>
         כשהאות שלך ברור - הלקוחות הנכונים מגיעים מאליהם
       </p>
       <a
         href="/quiz"
         style={{
           display: "inline-block",
-          background: "linear-gradient(135deg,#E8B94A,#C9964A,#9E7C3A)",
-          color: "#1A1206",
+          background: "linear-gradient(135deg,#2D7A5F,#2D7A5F,#1E5642)",
+          color: "#FFFFFF",
           fontWeight: 800,
           fontSize: "1rem",
           borderRadius: 9999,

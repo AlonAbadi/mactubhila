@@ -78,7 +78,7 @@ export function PremiumBookingFlow({ bookedSlots, price, credit, whatsappPhone }
   if (phase === "booking") {
     return (
       <div className="flex flex-col gap-4">
-        <p className="text-sm font-semibold" style={{ color: "#C9964A" }}>
+        <p className="text-sm font-semibold" style={{ color: "#2D7A5F" }}>
           שלב 1 מתוך 2 — בחירת תאריך ליום הצילום
         </p>
         <BookingForm bookedSlots={bookedSlots} onSuccess={handleBooked} />
@@ -93,47 +93,47 @@ export function PremiumBookingFlow({ bookedSlots, price, credit, whatsappPhone }
       {/* Day confirmation */}
       <div
         className="rounded-2xl p-5 flex items-start gap-4"
-        style={{ background: "rgba(201,150,74,0.06)", border: "1px solid rgba(201,150,74,0.2)" }}
+        style={{ background: "rgba(45,122,95,0.06)", border: "1px solid rgba(45,122,95,0.2)" }}
       >
         <div
           className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-          style={{ background: "rgba(201,150,74,0.12)", border: "1px solid rgba(201,150,74,0.3)" }}
+          style={{ background: "rgba(45,122,95,0.12)", border: "1px solid rgba(45,122,95,0.3)" }}
         >
-          <svg className="w-5 h-5" fill="none" stroke="#C9964A" strokeWidth={2.5} viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="none" stroke="#2D7A5F" strokeWidth={2.5} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
         <div className="flex flex-col gap-1">
-          <p className="font-black" style={{ color: "#EDE9E1" }}>יום הצילום נקבע!</p>
-          <p className="text-sm" style={{ color: "#9E9990" }}>{booked?.date} · {booked?.time}</p>
-          <p className="text-xs mt-0.5" style={{ color: "#9E9990" }}>שלב 2 מתוך 2 — השלמת תשלום</p>
+          <p className="font-black" style={{ color: "#1A2E25" }}>יום הצילום נקבע!</p>
+          <p className="text-sm" style={{ color: "#7A9E8E" }}>{booked?.date} · {booked?.time}</p>
+          <p className="text-xs mt-0.5" style={{ color: "#7A9E8E" }}>שלב 2 מתוך 2 — השלמת תשלום</p>
         </div>
       </div>
 
       {/* Payment card */}
       <div
         className="rounded-2xl p-6 flex flex-col gap-4"
-        style={{ background: "linear-gradient(145deg, #1D2430, #111620)", border: "1px solid rgba(201,150,74,0.16)" }}
+        style={{ background: "linear-gradient(145deg, #FFFFFF, #D0E8DA)", border: "1px solid rgba(45,122,95,0.16)" }}
       >
         <div
           className="flex justify-between items-center pb-4"
-          style={{ borderBottom: "1px solid #2C323E" }}
+          style={{ borderBottom: "1px solid #C5DDD2" }}
         >
-          <span style={{ color: "#9E9990" }}>יום צילום פרמיום · 16 סרטונים</span>
+          <span style={{ color: "#7A9E8E" }}>יום צילום פרמיום · 16 סרטונים</span>
           <div className="text-right">
             {credit > 0 && (
-              <p className="text-xs line-through" style={{ color: "#9E9990" }}>
+              <p className="text-xs line-through" style={{ color: "#7A9E8E" }}>
                 ₪{listPrice.toLocaleString("he-IL")}
               </p>
             )}
-            <p className="font-black text-2xl" style={{ color: "#EDE9E1" }}>
+            <p className="font-black text-2xl" style={{ color: "#1A2E25" }}>
               ₪{toPay.toLocaleString("he-IL")}
             </p>
-            <p className="text-xs" style={{ color: "#9E9990" }}>+ מע״מ</p>
+            <p className="text-xs" style={{ color: "#7A9E8E" }}>+ מע״מ</p>
           </div>
         </div>
 
-        <ul className="flex flex-col gap-1.5 text-sm" style={{ color: "#9E9990" }}>
+        <ul className="flex flex-col gap-1.5 text-sm" style={{ color: "#7A9E8E" }}>
           {[
             "אסטרטגיית תוכן לפני הצילום",
             "צוות מקצועי (צלם + במאי + מפיקה)",
@@ -141,7 +141,7 @@ export function PremiumBookingFlow({ bookedSlots, price, credit, whatsappPhone }
             "3 חודשי ליווי לאחר הצילום",
           ].map((item) => (
             <li key={item} className="flex items-center gap-2">
-              <span style={{ color: "#C9964A" }}>✓</span> {item}
+              <span style={{ color: "#2D7A5F" }}>✓</span> {item}
             </li>
           ))}
         </ul>
@@ -156,7 +156,7 @@ export function PremiumBookingFlow({ bookedSlots, price, credit, whatsappPhone }
           {loading ? "מעביר לתשלום..." : `לתשלום ₪${toPay.toLocaleString("he-IL")} ←`}
         </button>
 
-        <p className="text-center text-xs" style={{ color: "#9E9990" }}>
+        <p className="text-center text-xs" style={{ color: "#7A9E8E" }}>
           תשלום מאובטח דרך Cardcom · ניתן לבטל עד 48 שעות לפני יום הצילום
         </p>
       </div>

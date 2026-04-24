@@ -88,7 +88,7 @@ function PhotoPlaceholder({ size = 80 }: { size?: number }) {
   return (
     <div style={{
       width: size, height: size, borderRadius: '50%',
-      border: `2px dashed rgba(201,150,74,0.4)`,
+      border: `2px dashed rgba(45,122,95,0.4)`,
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       color: GOLD, fontSize: size * 0.38, flexShrink: 0, opacity: 0.7,
     }}>👤</div>
@@ -101,7 +101,7 @@ function VSL({ videoId, productName }: { videoId?: string; productName: string }
       <div style={{ maxWidth: 240, margin: '0 auto', position: 'relative' }}>
         <div style={{
           aspectRatio: '9/16', background: CARD, borderRadius: 16,
-          border: `2px dashed rgba(201,150,74,0.3)`,
+          border: `2px dashed rgba(45,122,95,0.3)`,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           position: 'relative',
         }}>
@@ -340,7 +340,7 @@ function MicroCommitment({
                 key={i}
                 onClick={() => setSelected(opt)}
                 style={{
-                  background: selected === opt ? `rgba(201,150,74,0.12)` : CARD,
+                  background: selected === opt ? `rgba(45,122,95,0.12)` : CARD,
                   border: `1px solid ${selected === opt ? GOLD : BORDER}`,
                   borderRadius: 10, padding: '12px 14px', color: FG, fontSize: 14,
                   cursor: 'pointer', textAlign: 'center',
@@ -418,7 +418,7 @@ function PriceCard({
     <div style={{
       background: CARD, borderRadius: 18,
       border: `1px solid ${GOLD}`, padding: '30px 26px', textAlign: 'center',
-      boxShadow: `0 0 60px rgba(201,150,74,0.1)`,
+      boxShadow: `0 0 60px rgba(45,122,95,0.1)`,
     }}>
       <div style={{
         fontSize: 68, fontWeight: 900, lineHeight: 1, direction: 'ltr', marginBottom: 6,
@@ -479,7 +479,7 @@ function PriceCard({
       </div>
 
       {creditNote && (
-        <p style={{ textAlign: 'center', fontSize: 12, color: `rgba(201,150,74,0.75)`, marginTop: 14, lineHeight: 1.5 }}>
+        <p style={{ textAlign: 'center', fontSize: 12, color: `rgba(45,122,95,0.75)`, marginTop: 14, lineHeight: 1.5 }}>
           {creditNote}
         </p>
       )}

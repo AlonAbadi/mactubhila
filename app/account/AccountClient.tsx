@@ -71,7 +71,7 @@ const PRODUCT_LABELS: Record<string, string> = {
 
 const HIVE_TIER_MAP: Record<string, { label: string; color: string }> = {
   discounted_29: { label: "Starter", color: "#378ADD" },
-  basic_97:      { label: "Pro",     color: "#E8B94A" },
+  basic_97:      { label: "Pro",     color: "#2D7A5F" },
   elite:         { label: "Elite",   color: "#7F77DD" },
 };
 
@@ -130,7 +130,7 @@ const RECOMMENDED = [
 const S = {
   page: {
     minHeight: "100vh",
-    background: "#080C14",
+    background: "#F5FAF7",
     padding: "32px 16px 64px",
     fontFamily: "Assistant, sans-serif",
     direction: "rtl" as const,
@@ -143,8 +143,8 @@ const S = {
     display: "flex",
     gap: 4,
     marginBottom: 24,
-    background: "#141820",
-    border: "1px solid #2C323E",
+    background: "#FFFFFF",
+    border: "1px solid #C5DDD2",
     borderRadius: 10,
     padding: 4,
   },
@@ -153,8 +153,8 @@ const S = {
     padding: "9px 0",
     borderRadius: 8,
     border: "none",
-    background: active ? "linear-gradient(135deg, #E8B94A, #9E7C3A)" : "transparent",
-    color: active ? "#080C14" : "#9E9990",
+    background: active ? "linear-gradient(135deg, #2D7A5F, #1E5642)" : "transparent",
+    color: active ? "#F5FAF7" : "#7A9E8E",
     fontSize: 14,
     fontWeight: active ? 800 : 600,
     cursor: "pointer",
@@ -162,8 +162,8 @@ const S = {
     transition: "all 0.15s",
   }),
   card: {
-    background: "#141820",
-    border: "1px solid #2C323E",
+    background: "#FFFFFF",
+    border: "1px solid #C5DDD2",
     borderRadius: 12,
     padding: "24px",
     marginBottom: 16,
@@ -172,29 +172,29 @@ const S = {
     width: 56,
     height: 56,
     borderRadius: "50%",
-    background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
+    background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     fontSize: 22,
     fontWeight: 800,
-    color: "#080C14",
+    color: "#F5FAF7",
     flexShrink: 0,
   } as React.CSSProperties,
   name: {
     fontSize: 18,
     fontWeight: 800,
-    color: "#EDE9E1",
+    color: "#1A2E25",
     margin: 0,
   },
   email: {
     fontSize: 13,
-    color: "#9E9990",
+    color: "#7A9E8E",
     margin: "2px 0 0",
   },
   creditBox: {
-    background: "rgba(232,185,74,0.08)",
-    border: "1px solid rgba(232,185,74,0.25)",
+    background: "rgba(45,122,95,0.08)",
+    border: "1px solid rgba(45,122,95,0.25)",
     borderRadius: 10,
     padding: "16px 20px",
     display: "flex",
@@ -204,26 +204,26 @@ const S = {
   creditAmount: {
     fontSize: 28,
     fontWeight: 800,
-    background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
+    background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
   },
   creditLabel: {
     fontSize: 13,
-    color: "#9E9990",
+    color: "#7A9E8E",
     marginTop: 2,
   },
   sectionTitle: {
     fontSize: 15,
     fontWeight: 800,
-    color: "#EDE9E1",
+    color: "#1A2E25",
     marginBottom: 16,
     marginTop: 0,
   },
   contentItem: {
     background: "#0D1219",
-    border: "1px solid #2C323E",
+    border: "1px solid #C5DDD2",
     borderRadius: 8,
     padding: "14px 16px",
     display: "flex",
@@ -234,11 +234,11 @@ const S = {
   contentLabel: {
     fontSize: 14,
     fontWeight: 700,
-    color: "#EDE9E1",
+    color: "#1A2E25",
   },
   progressWrap: {
     height: 4,
-    background: "#2C323E",
+    background: "#C5DDD2",
     borderRadius: 2,
     marginTop: 6,
     width: 160,
@@ -246,15 +246,15 @@ const S = {
   progressBar: {
     height: 4,
     borderRadius: 2,
-    background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
+    background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
     width: "100%",
   },
   enterBtn: {
     padding: "8px 18px",
     borderRadius: 7,
     border: "none",
-    background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
-    color: "#080C14",
+    background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+    color: "#F5FAF7",
     fontSize: 13,
     fontWeight: 800,
     cursor: "pointer",
@@ -269,17 +269,17 @@ const S = {
     fontSize: 14,
   },
   th: {
-    color: "#9E9990",
+    color: "#7A9E8E",
     fontWeight: 600,
     fontSize: 12,
     padding: "0 0 12px",
     textAlign: "right" as const,
-    borderBottom: "1px solid #2C323E",
+    borderBottom: "1px solid #C5DDD2",
   },
   td: {
     padding: "14px 0",
-    color: "#EDE9E1",
-    borderBottom: "1px solid #1D2430",
+    color: "#1A2E25",
+    borderBottom: "1px solid #FFFFFF",
     verticalAlign: "middle" as const,
   },
   badge: (status: string): React.CSSProperties => ({
@@ -290,11 +290,11 @@ const S = {
     fontWeight: 700,
     background:
       status === "completed" ? "rgba(52,168,83,0.15)" :
-      status === "pending"   ? "rgba(232,185,74,0.15)" :
+      status === "pending"   ? "rgba(45,122,95,0.15)" :
       "rgba(224,85,85,0.15)",
     color:
       status === "completed" ? "#34A853" :
-      status === "pending"   ? "#E8B94A" :
+      status === "pending"   ? "#2D7A5F" :
       "#E05555",
   }),
   badgeLabel: (status: string) =>
@@ -305,17 +305,17 @@ const S = {
   label: {
     display: "block",
     fontSize: 13,
-    color: "#9E9990",
+    color: "#7A9E8E",
     marginBottom: 6,
     fontWeight: 600,
   },
   input: {
     width: "100%",
     background: "#0D1219",
-    border: "1px solid #2C323E",
+    border: "1px solid #C5DDD2",
     borderRadius: 8,
     padding: "10px 12px",
-    color: "#EDE9E1",
+    color: "#1A2E25",
     fontSize: 14,
     fontFamily: "Assistant, sans-serif",
     outline: "none",
@@ -325,10 +325,10 @@ const S = {
   inputReadOnly: {
     width: "100%",
     background: "#0A0F18",
-    border: "1px solid #1D2430",
+    border: "1px solid #FFFFFF",
     borderRadius: 8,
     padding: "10px 12px",
-    color: "#9E9990",
+    color: "#7A9E8E",
     fontSize: 14,
     fontFamily: "Assistant, sans-serif",
     outline: "none",
@@ -339,8 +339,8 @@ const S = {
     padding: "11px 28px",
     borderRadius: 8,
     border: "none",
-    background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
-    color: "#080C14",
+    background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+    color: "#F5FAF7",
     fontSize: 14,
     fontWeight: 800,
     cursor: "pointer",
@@ -364,15 +364,15 @@ const S = {
     gap: 6,
     padding: "6px 12px",
     borderRadius: 20,
-    background: "#1D2430",
-    border: "1px solid #2C323E",
+    background: "#FFFFFF",
+    border: "1px solid #C5DDD2",
     fontSize: 13,
-    color: "#9E9990",
+    color: "#7A9E8E",
     fontWeight: 600,
   } as React.CSSProperties,
   infoMsg: {
     fontSize: 12,
-    color: "#9E9990",
+    color: "#7A9E8E",
     marginTop: 4,
   },
   successMsg: {
@@ -454,8 +454,8 @@ function PendingPaymentCallout({ pendingPurchases, userId }: { pendingPurchases:
 
   return (
     <div style={{
-      background: "rgba(232,185,74,0.08)",
-      border: "1px solid rgba(232,185,74,0.4)",
+      background: "rgba(45,122,95,0.08)",
+      border: "1px solid rgba(45,122,95,0.4)",
       borderRadius: 12,
       padding: 20,
       marginBottom: 16,
@@ -464,20 +464,20 @@ function PendingPaymentCallout({ pendingPurchases, userId }: { pendingPurchases:
       <div style={{ display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 16 }}>
         <span style={{
           width: 32, height: 32, borderRadius: "50%", flexShrink: 0,
-          background: "rgba(232,185,74,0.15)", border: "1px solid rgba(232,185,74,0.4)",
+          background: "rgba(45,122,95,0.15)", border: "1px solid rgba(45,122,95,0.4)",
           display: "flex", alignItems: "center", justifyContent: "center",
         }}>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <circle cx="7" cy="7" r="6" stroke="#E8B94A" strokeWidth="1.5"/>
-            <path d="M7 4v3.5" stroke="#E8B94A" strokeWidth="1.5" strokeLinecap="round"/>
-            <circle cx="7" cy="10" r="0.75" fill="#E8B94A"/>
+            <circle cx="7" cy="7" r="6" stroke="#2D7A5F" strokeWidth="1.5"/>
+            <path d="M7 4v3.5" stroke="#2D7A5F" strokeWidth="1.5" strokeLinecap="round"/>
+            <circle cx="7" cy="10" r="0.75" fill="#2D7A5F"/>
           </svg>
         </span>
         <div>
-          <div style={{ fontSize: 14, fontWeight: 800, color: "#EDE9E1", marginBottom: 4 }}>
+          <div style={{ fontSize: 14, fontWeight: 800, color: "#1A2E25", marginBottom: 4 }}>
             יש לך רכישה שממתינה לתשלום
           </div>
-          <div style={{ fontSize: 13, color: "#9E9990", lineHeight: 1.5 }}>
+          <div style={{ fontSize: 13, color: "#7A9E8E", lineHeight: 1.5 }}>
             התחלת לרכוש את {productName} אבל לא השלמת את התשלום. ההזמנה ממתינה לך.
           </div>
         </div>
@@ -486,17 +486,17 @@ function PendingPaymentCallout({ pendingPurchases, userId }: { pendingPurchases:
       {/* Middle row: amount + date */}
       <div style={{
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        paddingTop: 14, borderTop: "1px solid rgba(232,185,74,0.2)", marginBottom: 16,
+        paddingTop: 14, borderTop: "1px solid rgba(45,122,95,0.2)", marginBottom: 16,
       }}>
         <div>
-          <div style={{ fontSize: 11, color: "#9E9990", marginBottom: 3 }}>סכום לתשלום</div>
-          <div style={{ fontSize: 22, fontWeight: 800, color: "#E8B94A" }}>
+          <div style={{ fontSize: 11, color: "#7A9E8E", marginBottom: 3 }}>סכום לתשלום</div>
+          <div style={{ fontSize: 22, fontWeight: 800, color: "#2D7A5F" }}>
             ₪{latest.amount.toLocaleString("he-IL")}
           </div>
         </div>
         <div style={{ textAlign: "left" }}>
-          <div style={{ fontSize: 11, color: "#9E9990", marginBottom: 3 }}>נפתח</div>
-          <div style={{ fontSize: 13, color: "#EDE9E1" }}>{formatDate(latest.created_at)}</div>
+          <div style={{ fontSize: 11, color: "#7A9E8E", marginBottom: 3 }}>נפתח</div>
+          <div style={{ fontSize: 13, color: "#1A2E25" }}>{formatDate(latest.created_at)}</div>
         </div>
       </div>
 
@@ -508,8 +508,8 @@ function PendingPaymentCallout({ pendingPurchases, userId }: { pendingPurchases:
           style={{
             flex: 1, textAlign: "center",
             padding: "11px 0", borderRadius: 8, border: "none",
-            background: resumeLoading ? "rgba(232,185,74,0.4)" : "linear-gradient(135deg,#E8B94A,#9E7C3A)",
-            color: "#080C14", fontSize: 14, fontWeight: 800,
+            background: resumeLoading ? "rgba(45,122,95,0.4)" : "linear-gradient(135deg,#2D7A5F,#1E5642)",
+            color: "#F5FAF7", fontSize: 14, fontWeight: 800,
             fontFamily: "Assistant, sans-serif", cursor: resumeLoading ? "not-allowed" : "pointer",
             opacity: cancelLoading ? 0.5 : 1,
           }}
@@ -521,8 +521,8 @@ function PendingPaymentCallout({ pendingPurchases, userId }: { pendingPurchases:
           disabled={cancelLoading || resumeLoading}
           style={{
             padding: "11px 20px", borderRadius: 8,
-            border: "1px solid #2C323E", background: "transparent",
-            color: "#9E9990", fontSize: 14, fontWeight: 700,
+            border: "1px solid #C5DDD2", background: "transparent",
+            color: "#7A9E8E", fontSize: 14, fontWeight: 700,
             fontFamily: "Assistant, sans-serif",
             cursor: cancelLoading ? "not-allowed" : "pointer",
             opacity: resumeLoading ? 0.5 : 1,
@@ -534,7 +534,7 @@ function PendingPaymentCallout({ pendingPurchases, userId }: { pendingPurchases:
 
       {/* Extra pending items note */}
       {extra > 0 && (
-        <div style={{ marginTop: 12, fontSize: 12, color: "#9E9990", textAlign: "center" }}>
+        <div style={{ marginTop: 12, fontSize: 12, color: "#7A9E8E", textAlign: "center" }}>
           ויש עוד {extra} פעולות פתוחות
         </div>
       )}
@@ -563,16 +563,16 @@ function QuizRecommendationCard({ quizResult }: { quizResult: QuizResult }) {
       {/* Header row */}
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
         <p style={{ ...S.sectionTitle, marginBottom: 0 }}>
-          <span style={{ background: "linear-gradient(135deg,#E8B94A,#9E7C3A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+          <span style={{ background: "linear-gradient(135deg,#2D7A5F,#1E5642)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
             ההמלצה האישית שלך
           </span>
         </p>
         {match_percent != null && (
           <span style={{
             fontSize: 13, fontWeight: 700,
-            background: "rgba(232,185,74,0.12)",
-            color: "#E8B94A",
-            border: "1px solid rgba(232,185,74,0.3)",
+            background: "rgba(45,122,95,0.12)",
+            color: "#2D7A5F",
+            border: "1px solid rgba(45,122,95,0.3)",
             borderRadius: 999,
             padding: "4px 12px",
           }}>
@@ -582,7 +582,7 @@ function QuizRecommendationCard({ quizResult }: { quizResult: QuizResult }) {
       </div>
 
       {/* Subtitle - date */}
-      <p style={{ fontSize: 12, color: "#9E9990", marginTop: -8, marginBottom: 16 }}>
+      <p style={{ fontSize: 12, color: "#7A9E8E", marginTop: -8, marginBottom: 16 }}>
         לפי הקוויז שעשית - {formatHebDate(created_at)}
       </p>
 
@@ -596,15 +596,15 @@ function QuizRecommendationCard({ quizResult }: { quizResult: QuizResult }) {
           />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(13,18,25,0.92) 0%, rgba(13,18,25,0.3) 50%, transparent 100%)" }} />
           <div style={{ position: "absolute", bottom: 0, right: 0, left: 0, padding: "12px 14px" }}>
-            <div style={{ fontSize: 18, fontWeight: 800, color: "#EDE9E1", lineHeight: 1.2, marginBottom: 4 }}>{name}</div>
-            {meta && <div style={{ fontSize: 12, color: "#9E9990" }}>{meta}</div>}
+            <div style={{ fontSize: 18, fontWeight: 800, color: "#1A2E25", lineHeight: 1.2, marginBottom: 4 }}>{name}</div>
+            {meta && <div style={{ fontSize: 12, color: "#7A9E8E" }}>{meta}</div>}
           </div>
         </div>
       )}
 
       {/* Description */}
       {desc && (
-        <p style={{ fontSize: 14, color: "#9E9990", lineHeight: 1.6, marginBottom: 14, marginTop: 0 }}>{desc}</p>
+        <p style={{ fontSize: 14, color: "#7A9E8E", lineHeight: 1.6, marginBottom: 14, marginTop: 0 }}>{desc}</p>
       )}
 
       {/* Personalized reasons */}
@@ -614,14 +614,14 @@ function QuizRecommendationCard({ quizResult }: { quizResult: QuizResult }) {
             <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
               <span style={{
                 width: 18, height: 18, borderRadius: "50%", flexShrink: 0,
-                background: "rgba(232,185,74,0.12)", border: "1px solid rgba(232,185,74,0.3)",
+                background: "rgba(45,122,95,0.12)", border: "1px solid rgba(45,122,95,0.3)",
                 display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1,
               }}>
                 <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
-                  <path d="M1 3.5L3.5 6L8 1" stroke="#E8B94A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M1 3.5L3.5 6L8 1" stroke="#2D7A5F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </span>
-              <span style={{ fontSize: 13, color: "#9E9990", lineHeight: 1.6 }}>{reason}</span>
+              <span style={{ fontSize: 13, color: "#7A9E8E", lineHeight: 1.6 }}>{reason}</span>
             </div>
           ))}
         </div>
@@ -633,8 +633,8 @@ function QuizRecommendationCard({ quizResult }: { quizResult: QuizResult }) {
           href={href}
           style={{
             padding: "11px 24px", borderRadius: 8, border: "none",
-            background: "linear-gradient(135deg,#E8B94A,#9E7C3A)",
-            color: "#080C14", fontSize: 14, fontWeight: 800,
+            background: "linear-gradient(135deg,#2D7A5F,#1E5642)",
+            color: "#F5FAF7", fontSize: 14, fontWeight: 800,
             cursor: "pointer", fontFamily: "Assistant, sans-serif",
             textDecoration: "none", display: "inline-block",
           }}
@@ -643,7 +643,7 @@ function QuizRecommendationCard({ quizResult }: { quizResult: QuizResult }) {
         </Link>
         <Link
           href="/quiz"
-          style={{ fontSize: 12, color: "#9E9990", textDecoration: "none" }}
+          style={{ fontSize: 12, color: "#7A9E8E", textDecoration: "none" }}
         >
           עשה את הקוויז שוב
         </Link>
@@ -657,15 +657,15 @@ function QuizCTACard() {
   return (
     <div style={S.card}>
       <p style={{ ...S.sectionTitle, marginBottom: 8 }}>עוד לא עשית את הקוויז שלנו</p>
-      <p style={{ fontSize: 13, color: "#9E9990", lineHeight: 1.6, marginTop: 0, marginBottom: 20 }}>
+      <p style={{ fontSize: 13, color: "#7A9E8E", lineHeight: 1.6, marginTop: 0, marginBottom: 20 }}>
         3 דקות שיעזרו לנו להבין מה הכי מתאים לך - בלי התחייבות
       </p>
       <Link
         href="/quiz"
         style={{
           padding: "11px 24px", borderRadius: 8, border: "none",
-          background: "linear-gradient(135deg,#E8B94A,#9E7C3A)",
-          color: "#080C14", fontSize: 14, fontWeight: 800,
+          background: "linear-gradient(135deg,#2D7A5F,#1E5642)",
+          color: "#F5FAF7", fontSize: 14, fontWeight: 800,
           cursor: "pointer", fontFamily: "Assistant, sans-serif",
           textDecoration: "none", display: "inline-block",
         }}
@@ -882,11 +882,11 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
               if (upsell.length === 0) return null;
               return (
                 <>
-                  <p style={{ fontSize: 12, color: "#9E9990", margin: "12px 0 8px" }}>המשך המסלול:</p>
+                  <p style={{ fontSize: 12, color: "#7A9E8E", margin: "12px 0 8px" }}>המשך המסלול:</p>
                   {upsell.map((r) => (
                     <div key={r.href} style={{ ...S.contentItem, justifyContent: "space-between" }}>
                       <span style={S.contentLabel}>{r.label}</span>
-                      <Link href={r.href} style={{ ...S.enterBtn, background: "transparent", border: "1px solid #2C323E", color: "#E8B94A" }}>
+                      <Link href={r.href} style={{ ...S.enterBtn, background: "transparent", border: "1px solid #C5DDD2", color: "#2D7A5F" }}>
                         פרטים
                       </Link>
                     </div>
@@ -897,13 +897,13 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
           </>
         ) : !isHiveActive ? (
           <>
-            <p style={{ fontSize: 13, color: "#9E9990", marginTop: 0, marginBottom: 16 }}>
+            <p style={{ fontSize: 13, color: "#7A9E8E", marginTop: 0, marginBottom: 16 }}>
               עדיין אין לך גישה לתוכן. בחר מסלול:
             </p>
             {RECOMMENDED.map((r) => (
               <div key={r.href} style={{ ...S.contentItem, justifyContent: "space-between" }}>
                 <span style={S.contentLabel}>{r.label}</span>
-                <Link href={r.href} style={{ ...S.enterBtn, background: "transparent", border: "1px solid #2C323E", color: "#E8B94A" }}>
+                <Link href={r.href} style={{ ...S.enterBtn, background: "transparent", border: "1px solid #C5DDD2", color: "#2D7A5F" }}>
                   פרטים
                 </Link>
               </div>
@@ -935,7 +935,7 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
                 <span style={{ ...S.contentLabel }}>הכוורת</span>
               </div>
               {userData?.hive_next_billing_date && (
-                <div style={{ fontSize: 12, color: "#9E9990", textAlign: "right" }}>
+                <div style={{ fontSize: 12, color: "#7A9E8E", textAlign: "right" }}>
                   חידוש: {formatDate(userData.hive_next_billing_date)}
                 </div>
               )}
@@ -951,27 +951,27 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
   const PurchasesTab = (
     <div style={S.card}>
       <p style={{ ...S.sectionTitle, marginBottom: 4 }}>הרכישות שלי</p>
-      <p style={{ fontSize: 12, color: "#9E9990", marginTop: 0, marginBottom: 20 }}>המוצרים שרכשת בהצלחה</p>
+      <p style={{ fontSize: 12, color: "#7A9E8E", marginTop: 0, marginBottom: 20 }}>המוצרים שרכשת בהצלחה</p>
 
       {completedPurchases.length === 0 ? (
         /* ── Empty state ── */
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "24px 0 8px", textAlign: "center" }}>
           <div style={{
             width: 64, height: 64, borderRadius: "50%", marginBottom: 16,
-            background: "rgba(232,185,74,0.08)", border: "1px solid rgba(232,185,74,0.2)",
+            background: "rgba(45,122,95,0.08)", border: "1px solid rgba(45,122,95,0.2)",
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M5 7h18l-2 12H7L5 7z" stroke="#E8B94A" strokeWidth="1.5" strokeLinejoin="round"/>
-              <path d="M2 4h3.5l.5 3" stroke="#E8B94A" strokeWidth="1.5" strokeLinecap="round"/>
-              <circle cx="10" cy="23" r="1.5" fill="#E8B94A"/>
-              <circle cx="18" cy="23" r="1.5" fill="#E8B94A"/>
+              <path d="M5 7h18l-2 12H7L5 7z" stroke="#2D7A5F" strokeWidth="1.5" strokeLinejoin="round"/>
+              <path d="M2 4h3.5l.5 3" stroke="#2D7A5F" strokeWidth="1.5" strokeLinecap="round"/>
+              <circle cx="10" cy="23" r="1.5" fill="#2D7A5F"/>
+              <circle cx="18" cy="23" r="1.5" fill="#2D7A5F"/>
             </svg>
           </div>
-          <p style={{ fontSize: 15, fontWeight: 800, color: "#EDE9E1", margin: "0 0 8px" }}>
+          <p style={{ fontSize: 15, fontWeight: 800, color: "#1A2E25", margin: "0 0 8px" }}>
             עדיין לא רכשת כלום
           </p>
-          <p style={{ fontSize: 13, color: "#9E9990", lineHeight: 1.6, maxWidth: 280, margin: "0 0 24px" }}>
+          <p style={{ fontSize: 13, color: "#7A9E8E", lineHeight: 1.6, maxWidth: 280, margin: "0 0 24px" }}>
             כשתרכשי מסלול - אתגר, סדנה, קורס או הכוורת - הוא יופיע כאן ותקבלי גישה לתוכן.
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 10, width: "100%", maxWidth: 280 }}>
@@ -980,8 +980,8 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
               style={{
                 display: "block", textAlign: "center", textDecoration: "none",
                 padding: "11px 0", borderRadius: 8,
-                background: "linear-gradient(135deg,#E8B94A,#9E7C3A)",
-                color: "#080C14", fontSize: 14, fontWeight: 800,
+                background: "linear-gradient(135deg,#2D7A5F,#1E5642)",
+                color: "#F5FAF7", fontSize: 14, fontWeight: 800,
                 fontFamily: "Assistant, sans-serif",
               }}
             >
@@ -992,8 +992,8 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
               style={{
                 display: "block", textAlign: "center", textDecoration: "none",
                 padding: "11px 0", borderRadius: 8,
-                border: "1px solid #2C323E", background: "transparent",
-                color: "#E8B94A", fontSize: 14, fontWeight: 700,
+                border: "1px solid #C5DDD2", background: "transparent",
+                color: "#2D7A5F", fontSize: 14, fontWeight: 700,
                 fontFamily: "Assistant, sans-serif",
               }}
             >
@@ -1010,8 +1010,8 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
               <div
                 key={p.id}
                 style={{
-                  background: "rgba(232,185,74,0.04)",
-                  border: "1px solid rgba(232,185,74,0.15)",
+                  background: "rgba(45,122,95,0.04)",
+                  border: "1px solid rgba(45,122,95,0.15)",
                   borderRadius: 8,
                   padding: 14,
                   display: "flex",
@@ -1022,10 +1022,10 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
               >
                 {/* Info - right side in RTL */}
                 <div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: "#EDE9E1", marginBottom: 4 }}>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: "#1A2E25", marginBottom: 4 }}>
                     {PRODUCT_LABELS[p.product] ?? p.product}
                   </div>
-                  <div style={{ fontSize: 12, color: "#9E9990" }}>
+                  <div style={{ fontSize: 12, color: "#7A9E8E" }}>
                     {formatDate(p.created_at)} · ₪{p.amount.toLocaleString("he-IL")}
                   </div>
                   {p.invoice_link && (
@@ -1033,7 +1033,7 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
                       href={p.invoice_link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ fontSize: 12, color: "#C9964A", textDecoration: "underline" }}
+                      style={{ fontSize: 12, color: "#2D7A5F", textDecoration: "underline" }}
                     >
                       חשבונית מס קבלה
                     </a>
@@ -1047,8 +1047,8 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
                     style={{
                       flexShrink: 0, textDecoration: "none",
                       padding: "7px 14px", borderRadius: 7,
-                      background: "linear-gradient(135deg,#E8B94A,#9E7C3A)",
-                      color: "#080C14", fontSize: 13, fontWeight: 800,
+                      background: "linear-gradient(135deg,#2D7A5F,#1E5642)",
+                      color: "#F5FAF7", fontSize: 13, fontWeight: 800,
                       fontFamily: "Assistant, sans-serif", whiteSpace: "nowrap",
                     }}
                   >
@@ -1059,7 +1059,7 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
                     flexShrink: 0,
                     padding: "5px 12px", borderRadius: 20,
                     background: "rgba(158,153,144,0.1)", border: "1px solid rgba(158,153,144,0.2)",
-                    color: "#9E9990", fontSize: 12, fontWeight: 600,
+                    color: "#7A9E8E", fontSize: 12, fontWeight: 600,
                     whiteSpace: "nowrap",
                   }}>
                     {getCompletedBadge(p.product)}
@@ -1070,9 +1070,9 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
           })}
 
           {credit > 0 && (
-            <div style={{ marginTop: 8, paddingTop: 16, borderTop: "1px solid #2C323E", fontSize: 13 }}>
-              <span style={{ color: "#9E9990" }}>סה"כ קרדיט זמין: </span>
-              <span style={{ fontWeight: 800, color: "#E8B94A" }}>₪{credit.toLocaleString("he-IL")}</span>
+            <div style={{ marginTop: 8, paddingTop: 16, borderTop: "1px solid #C5DDD2", fontSize: 13 }}>
+              <span style={{ color: "#7A9E8E" }}>סה"כ קרדיט זמין: </span>
+              <span style={{ fontWeight: 800, color: "#2D7A5F" }}>₪{credit.toLocaleString("he-IL")}</span>
             </div>
           )}
         </div>
@@ -1093,8 +1093,8 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
               value={profName}
               onChange={(e) => setProfName(e.target.value)}
               style={S.input}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(45,122,95,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
           </div>
           <div>
@@ -1123,10 +1123,10 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
       <div style={S.card}>
         {/* Section header */}
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
-          <span style={{ fontSize: 14, color: "#9E9990", letterSpacing: "0.05em", fontWeight: 600, whiteSpace: "nowrap" }}>
+          <span style={{ fontSize: 14, color: "#7A9E8E", letterSpacing: "0.05em", fontWeight: 600, whiteSpace: "nowrap" }}>
             העדפות תקשורת
           </span>
-          <div style={{ flex: 1, height: 1, background: "rgba(201,150,74,0.2)" }} />
+          <div style={{ flex: 1, height: 1, background: "rgba(45,122,95,0.2)" }} />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
@@ -1143,8 +1143,8 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
               placeholder="0501234567"
               dir="ltr"
               style={S.input}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(45,122,95,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
             {commPhoneErr && (
               <p style={{ fontSize: 12, color: "#E05555", marginTop: 4 }}>{commPhoneErr}</p>
@@ -1166,8 +1166,8 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
                 style={{
                   width: 44, height: 24, borderRadius: 12, flexShrink: 0, marginTop: 1,
                   background: profMarketingConsent
-                    ? "linear-gradient(135deg, #E8B94A, #9E7C3A)"
-                    : "#2C323E",
+                    ? "linear-gradient(135deg, #2D7A5F, #1E5642)"
+                    : "#C5DDD2",
                   position: "relative",
                   cursor: "pointer",
                   transition: "background 0.2s",
@@ -1186,10 +1186,10 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
               </div>
               {/* Label */}
               <div>
-                <div style={{ fontSize: 14, color: "#EDE9E1", fontWeight: 600, lineHeight: 1.4 }}>
+                <div style={{ fontSize: 14, color: "#1A2E25", fontWeight: 600, lineHeight: 1.4 }}>
                   קבלת עדכונים שיווקיים
                 </div>
-                <div style={{ fontSize: 12, color: "#9E9990", marginTop: 4, lineHeight: 1.5 }}>
+                <div style={{ fontSize: 12, color: "#7A9E8E", marginTop: 4, lineHeight: 1.5 }}>
                   מבצעים, תכנים חדשים, וטיפים שיווקיים. ניתן לבטל בכל עת.
                 </div>
               </div>
@@ -1233,7 +1233,7 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
               </svg>
               Google
             </span>
-            <span style={{ fontSize: 13, color: "#9E9990" }}>הכניסה מנוהלת דרך Google</span>
+            <span style={{ fontSize: 13, color: "#7A9E8E" }}>הכניסה מנוהלת דרך Google</span>
           </div>
         ) : (
           <div>
@@ -1244,7 +1244,7 @@ export default function AccountClient({ authUser, userData, completedPurchases, 
             ) : (
               <button
                 onClick={handleSendPasswordReset}
-                style={{ background: "none", border: "1px solid #2C323E", borderRadius: 8, padding: "9px 18px", color: "#EDE9E1", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "Assistant, sans-serif" }}
+                style={{ background: "none", border: "1px solid #C5DDD2", borderRadius: 8, padding: "9px 18px", color: "#1A2E25", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "Assistant, sans-serif" }}
               >
                 שנה סיסמה
               </button>
