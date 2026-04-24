@@ -63,7 +63,7 @@ export function MobileNav({ userInitial = null }: MobileNavProps) {
         style={{
           position: "fixed", top: 0, left: 0, right: 0,
           zIndex: 50,
-          display: "flex", alignItems: "center", justifyContent: "space-between",
+          display: "flex", alignItems: "center",
           padding: "0 16px", height: 64,
           background: NAV_BG, borderBottom: `1px solid ${BDR}`,
         }}
@@ -79,7 +79,7 @@ export function MobileNav({ userInitial = null }: MobileNavProps) {
         </button>
 
         {/* Auth capsule */}
-        <div style={{ marginRight: 8, flexShrink: 0 }}>
+        <div style={{ marginLeft: 8, flexShrink: 0 }}>
           {userInitial ? (
             <button
               onClick={() => startTransition(() => router.push("/account"))}
@@ -111,12 +111,12 @@ export function MobileNav({ userInitial = null }: MobileNavProps) {
           )}
         </div>
 
-        {/* Brand name */}
-        <Link href="/" style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 6, textDecoration: "none" }}>
-          <Image src="/logo.png" alt="מכתוב" width={60} height={30} style={{ objectFit: "contain", display: "block" }} priority />
-          <span style={{ fontSize: 14, fontWeight: 700, color: FG, fontFamily: "var(--font-assistant), Assistant, sans-serif" }}>
+        {/* Brand name — right-aligned, logo rightmost then name */}
+        <Link href="/" style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 6, textDecoration: "none" }}>
+          <span style={{ fontSize: 13, fontWeight: 700, color: FG, fontFamily: "var(--font-assistant), Assistant, sans-serif", whiteSpace: "nowrap" }}>
             הילה יגאל איזון
           </span>
+          <Image src="/logo.png" alt="מכתוב" width={56} height={28} style={{ objectFit: "contain", display: "block" }} priority />
         </Link>
       </nav>
 
