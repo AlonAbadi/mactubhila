@@ -17,7 +17,7 @@ const NAV_LINKS = [
   ...(CLIENT.modules.workshop   ? [{ label: "סדנה",         href: "/workshop" }]  : []),
 ];
 
-const ACC   = CLIENT.colors.accent_light;
+const ACC   = CLIENT.colors.accent;
 const FG    = CLIENT.colors.fg;
 const BG    = CLIENT.colors.bg_dark;
 const BDR   = CLIENT.colors.border;
