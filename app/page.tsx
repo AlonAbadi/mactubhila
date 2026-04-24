@@ -217,19 +217,14 @@ export default async function LandingPage() {
                   boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
                 }}
               >
-                <div
-                  aria-hidden
-                  style={{
-                    width: 96, height: 96, borderRadius: "50%", flexShrink: 0,
-                    background: `linear-gradient(135deg, ${ACC}, ${ACC_D})`,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 40, fontWeight: 900, color: "#FFFFFF",
-                    fontFamily: "var(--font-assistant), Assistant, sans-serif",
-                    border: `3px solid ${ACC}4d`,
-                    boxShadow: `0 8px 24px ${ACC}33`,
-                  }}
-                >
-                  ה
+                <div style={{ width: 96, height: 96, borderRadius: "50%", flexShrink: 0, overflow: "hidden", border: `3px solid ${ACC}4d`, boxShadow: `0 8px 24px ${ACC}33` }}>
+                  <Image
+                    src={CLIENT.about.image}
+                    alt="הילה יגאל-איזון"
+                    width={96}
+                    height={96}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+                  />
                 </div>
                 <div style={{ textAlign: "right", direction: "rtl", flex: 1 }}>
                   <p style={{ fontSize: "0.78rem", fontWeight: 700, color: ACC, marginBottom: 5, letterSpacing: "0.07em" }}>
