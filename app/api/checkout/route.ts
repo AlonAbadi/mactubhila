@@ -13,11 +13,12 @@ import { PRODUCT_MAP } from "@/lib/products";
 import { CLIENT } from "@/lib/client";
 
 const INVOICE_DESCRIPTIONS: Record<string, string> = {
-  challenge_197:  `אתגר 7 הימים - ${CLIENT.name}`,
-  workshop_1080:  `סדנה יום אחד - ${CLIENT.name}`,
-  course_1800:    `קורס דיגיטלי - ${CLIENT.name}`,
-  strategy_4000:  `פגישת אסטרטגיה - ${CLIENT.name}`,
-  premium_14000:  `יום צילום פרמיום - ${CLIENT.name}`,
+  cards_149:      `קלפי מכתוב דיגיטליים - ${CLIENT.name}`,
+  course_1800:    `קורס מכתוב הדיגיטלי - ${CLIENT.name}`,
+  workshop_1080:  `קורס דיגיטלי + ליווי נרטיבי - ${CLIENT.name}`,
+  strategy_4000:  `קורס מכתוב המלא – פרדס חנה - ${CLIENT.name}`,
+  challenge_197:  `אתגר הכתיבה - ${CLIENT.name}`,
+  premium_14000:  `חבילה מלאה - ${CLIENT.name}`,
   test_1:         `מוצר טסט - ${CLIENT.name}`,
 };
 
@@ -37,10 +38,11 @@ const NAMES: Record<string, string> = {
 
 const BodySchema = z.object({
   product: z.enum([
-    "challenge_197",
-    "workshop_1080",
+    "cards_149",
     "course_1800",
+    "workshop_1080",
     "strategy_4000",
+    "challenge_197",
     "premium_14000",
     "test_1",
   ]),
@@ -86,7 +88,8 @@ export async function POST(req: NextRequest) {
     .from("purchases")
     .update({ status: "failed" })
     .eq("user_id", user_id)
-    .eq("product", product as "challenge_197" | "workshop_1080" | "course_1800" | "strategy_4000" | "premium_14000")
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    .eq("product", product as any)
     .eq("status", "pending");
 
   const amount = listPrice;
@@ -96,7 +99,8 @@ export async function POST(req: NextRequest) {
     .from("purchases")
     .insert({
       user_id,
-      product: product as "challenge_197" | "workshop_1080" | "course_1800" | "strategy_4000" | "premium_14000",
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      product: product as any,
       amount,
       currency: "ILS",
       status: "pending",
@@ -131,6 +135,8 @@ export async function POST(req: NextRequest) {
     // Redirect URLs (NEVER rely on these alone — webhook is the source of truth)
     SuccessRedirectUrl: product === "challenge_197"
       ? `${appUrl}/challenge/thank-you`
+      : product === "cards_149"
+      ? `${appUrl}/cards/success`
       : `${appUrl}/${product.split("_")[0]}/success`,
     ErrorRedirectUrl: `${appUrl}/checkout-error`,
 

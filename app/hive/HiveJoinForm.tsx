@@ -233,7 +233,7 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
             </div>
             <div>
               <h2 className="text-xl font-black mb-2" style={{ color: "#EDE9E1" }}>
-                המחיר המיוחד הזה שמור ללקוחות הדר
+                המחיר המיוחד הזה שמור ללקוחות הילה
               </h2>
               <p className="text-sm leading-relaxed" style={{ color: "#9E9990" }}>
                 רוצה להתחיל את המסע ולקבל את ההטבה? בוא נכיר.

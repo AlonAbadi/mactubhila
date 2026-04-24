@@ -37,7 +37,7 @@ export function StrategyBookFlow({ bookedSlots, price, credit, whatsappPhone }: 
 
       if (res.status === 503) {
         const msg = encodeURIComponent(
-          `היי הדר! קבעתי פגישת אסטרטגיה ל-${booked.date} ב-${booked.time} ורוצה לסיים את התשלום`
+          `היי הילה! קבעתי פגישת אסטרטגיה ל-${booked.date} ב-${booked.time} ורוצה לסיים את התשלום`
         );
         window.open(`https://wa.me/${whatsappPhone}?text=${msg}`, "_blank");
         return;

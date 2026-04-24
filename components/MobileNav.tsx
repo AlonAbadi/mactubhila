@@ -9,14 +9,16 @@ import { CLIENT } from "@/lib/client";
 
 // ── Nav items — edit per client ──────────────────────────────────
 const NAV_ITEMS = [
-  { label: "אודות",         href: "/about" },
-  { label: "הדרכה חינמית", href: "/training" },
-  ...(CLIENT.modules.quiz       ? [{ label: "אבחון",  href: "/quiz" }]      : []),
-  ...(CLIENT.modules.challenge  ? [{ label: "אתגר",   href: "/challenge" }] : []),
-  ...(CLIENT.modules.hive       ? [{ label: "קהילה",  href: "/hive" }]      : []),
-  ...(CLIENT.modules.course     ? [{ label: "קורס",   href: "/course" }]    : []),
-  ...(CLIENT.modules.workshop   ? [{ label: "סדנה",   href: "/workshop" }]  : []),
-  { label: "האזור האישי",   href: "/account" },
+  { label: "אודות",           href: "/about" },
+  { label: "שיעור מתנה",     href: "/training" },
+  { label: "קלפי מכתוב",     href: "/cards" },
+  ...(CLIENT.modules.course     ? [{ label: "קורס דיגיטלי",   href: "/course" }]      : []),
+  ...(CLIENT.modules.workshop   ? [{ label: "קורס + ליווי",   href: "/workshop" }]    : []),
+  ...(CLIENT.modules.strategy   ? [{ label: "קורס פרונטלי",   href: "/strategy" }]   : []),
+  ...(CLIENT.modules.partnership? [{ label: "ליווי 1:1",      href: "/partnership" }] : []),
+  { label: "מלגות",           href: "/scholarships" },
+  { label: "לארגונים",        href: "/for-organizations" },
+  { label: "האזור האישי",     href: "/account" },
 ];
 
 const ACC     = CLIENT.colors.accent_light;

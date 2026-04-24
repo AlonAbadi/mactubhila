@@ -28,11 +28,12 @@ export function formatHebrew(d: string): string {
 }
 
 export const PRODUCT_MAP = {
-  challenge_197:  { name: "צ׳אלנג׳ 7 הימים",   price: CLIENT.products.challenge.price  },
-  workshop_1080:  { name: "סדנה יום אחד",        price: CLIENT.products.workshop.price   },
-  course_1800:    { name: "קורס דיגיטלי",         price: CLIENT.products.course.price     },
-  strategy_4000:  { name: "פגישת אסטרטגיה",      price: CLIENT.products.strategy.price   },
-  premium_14000:  { name: "יום צילום פרמיום",    price: CLIENT.products.premium.price    },
+  cards_149:      { name: "קלפי מכתוב דיגיטליים",          price: CLIENT.products.cards.price      },
+  course_1800:    { name: "קורס מכתוב הדיגיטלי",            price: CLIENT.products.course.price     },
+  workshop_1080:  { name: "קורס דיגיטלי + ליווי נרטיבי",   price: CLIENT.products.workshop.price   },
+  strategy_4000:  { name: "קורס מכתוב המלא – פרדס חנה",    price: CLIENT.products.strategy.price   },
+  challenge_197:  { name: "אתגר הכתיבה של מכתוב",          price: CLIENT.products.challenge.price  },
+  premium_14000:  { name: "חבילה מלאה",                     price: CLIENT.products.premium.price    },
 } as const;
 
 export type ProductKey = keyof typeof PRODUCT_MAP;

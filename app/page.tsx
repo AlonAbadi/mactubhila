@@ -87,7 +87,7 @@ export default async function LandingPage() {
                 <p style={{ color: MUT, fontSize: "clamp(0.9rem, 2vw, 1rem)", lineHeight: 1.72, marginBottom: 16 }}>
                   {content.description}
                 </p>
-                <a href="/quiz" data-home-hero-cta="" style={{
+                <a href="/training" data-home-hero-cta="" style={{
                   display: "block", textAlign: "center",
                   background: `linear-gradient(135deg, ${ACC}, ${ACC_D})`,
                   color: "#FFFFFF", fontWeight: 800, fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
@@ -167,7 +167,7 @@ export default async function LandingPage() {
                 }}>
                   {content.description}
                 </p>
-                <a href="/quiz" data-home-hero-cta="" style={{
+                <a href="/training" data-home-hero-cta="" style={{
                   display: "inline-block",
                   background: `linear-gradient(135deg, ${ACC}, ${ACC_D})`,
                   color: "#FFFFFF", fontWeight: 800, fontSize: "1.05rem",
@@ -253,7 +253,101 @@ export default async function LandingPage() {
           </section>
 
           {/* ══════════════════════════════════════════════════════
-              4. PRODUCTS
+              4. START HERE — 4 paths
+          ══════════════════════════════════════════════════════ */}
+          <section className="px-6 py-16 md:py-24" style={{ background: BG_DARK }}>
+            <div className="max-w-5xl mx-auto flex flex-col gap-10">
+              <div className="text-center flex flex-col gap-2">
+                <h2 className="text-2xl md:text-4xl font-black" style={{ color: FG }}>
+                  מאיפה מתחילים?
+                </h2>
+                <p className="text-sm md:text-base" style={{ color: MUT }}>
+                  בחרי את הנקודה שמתאימה לך עכשיו
+                </p>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {[
+                  {
+                    tag: "חינם",
+                    tagBg: `${ACC}22`,
+                    title: "חדשה לגמרי למכתוב",
+                    desc: "שיעור מתנה של 20 דקות – טעימה ראשונה מהשיטה, בלי התחייבות.",
+                    cta: "לשיעור המתנה ←",
+                    href: "/training",
+                    highlight: false,
+                  },
+                  {
+                    tag: "₪149",
+                    tagBg: `${ACC}22`,
+                    title: "רוצה כלים בידיים",
+                    desc: "קלפי מכתוב דיגיטליים – 30 קלפים + מדריך מוקלט. גישה מיידית.",
+                    cta: "לקלפי מכתוב ←",
+                    href: "/cards",
+                    highlight: false,
+                  },
+                  {
+                    tag: "₪575",
+                    tagBg: `${ACC}33`,
+                    title: "מוכנה להעמיק",
+                    desc: "קורס דיגיטלי – 6 מפגשים מוקלטים עם כלי השיטה המלאים. בקצב שלך.",
+                    cta: "לקורס הדיגיטלי ←",
+                    href: "/course",
+                    highlight: true,
+                  },
+                  {
+                    tag: "ליווי אישי",
+                    tagBg: `${ACC}22`,
+                    title: "רוצה ליווי צמוד",
+                    desc: "קורס עם ליווי אישי של הילה (₪1,100) או ליווי 1:1 בלבד (₪1,900).",
+                    cta: "לפרטים ←",
+                    href: "/workshop",
+                    highlight: false,
+                  },
+                ].map((card) => (
+                  <a
+                    key={card.href}
+                    href={card.href}
+                    style={{
+                      display: "block",
+                      background: card.highlight ? `linear-gradient(135deg, ${ACC}14, ${ACC}08)` : BG,
+                      border: `1px solid ${card.highlight ? ACC + "55" : BDR}`,
+                      borderRadius: 20,
+                      padding: "24px",
+                      textDecoration: "none",
+                      transition: "transform 0.2s, box-shadow 0.2s",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
+                      (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 32px ${ACC}22`;
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.transform = "";
+                      (e.currentTarget as HTMLElement).style.boxShadow = "";
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+                      <span style={{
+                        fontSize: "0.75rem", fontWeight: 700, color: ACC,
+                        background: card.tagBg, borderRadius: 999, padding: "3px 12px",
+                      }}>
+                        {card.tag}
+                      </span>
+                    </div>
+                    <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: FG, marginBottom: 8 }}>
+                      {card.title}
+                    </h3>
+                    <p style={{ fontSize: "0.875rem", color: MUT, lineHeight: 1.65, marginBottom: 14 }}>
+                      {card.desc}
+                    </p>
+                    <span style={{ fontSize: "0.875rem", fontWeight: 700, color: ACC }}>{card.cta}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ══════════════════════════════════════════════════════
+              5. PRODUCTS (full ladder)
           ══════════════════════════════════════════════════════ */}
           <ProductsSection />
 
@@ -320,7 +414,65 @@ export default async function LandingPage() {
         </main>
 
         {/* ══════════════════════════════════════════════════════
-            6. FOOTER
+            6. SPECIAL AUDIENCE BANNERS
+        ══════════════════════════════════════════════════════ */}
+        <section className="px-6 py-12" style={{ background: BG_DARK }}>
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5">
+            <a
+              href="/scholarships"
+              style={{
+                display: "block",
+                background: BG,
+                border: `1px solid ${BDR}`,
+                borderRadius: 20,
+                padding: "28px 28px",
+                textDecoration: "none",
+                borderRight: `4px solid ${ACC}`,
+              }}
+            >
+              <p style={{ fontSize: "0.78rem", fontWeight: 700, color: ACC, letterSpacing: "0.1em", marginBottom: 8 }}>
+                נפגעי 7.10 · נשות מילואים · גיבורי נובה
+              </p>
+              <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: FG, marginBottom: 10 }}>
+                יש מסלול מלגות בשבילך
+              </h3>
+              <p style={{ fontSize: "0.875rem", color: MUT, lineHeight: 1.65, marginBottom: 14 }}>
+                שיטת מכתוב נולדה מעבודה עם נפגעי טראומה. אם את/ה עובר/ת תקופה קשה – יש כאן מקום גם בשבילך, בלי מחסום כלכלי.
+              </p>
+              <span style={{ fontSize: "0.875rem", fontWeight: 700, color: ACC }}>
+                למסלול המלגות ←
+              </span>
+            </a>
+            <a
+              href="/for-organizations"
+              style={{
+                display: "block",
+                background: BG,
+                border: `1px solid ${BDR}`,
+                borderRadius: 20,
+                padding: "28px 28px",
+                textDecoration: "none",
+                borderRight: `4px solid ${ACC}`,
+              }}
+            >
+              <p style={{ fontSize: "0.78rem", fontWeight: 700, color: ACC, letterSpacing: "0.1em", marginBottom: 8 }}>
+                חברות · עמותות · קיבוצים · מוסדות חינוך
+              </p>
+              <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: FG, marginBottom: 10 }}>
+                מכתוב לארגון שלך
+              </h3>
+              <p style={{ fontSize: "0.875rem", color: MUT, lineHeight: 1.65, marginBottom: 14 }}>
+                סדנאות מותאמות אישית לבניית חוסן, תרבות ותקשורת. ניסיון עם Microsoft, עמותת עלם, ילדים בסיכוי ועוד.
+              </p>
+              <span style={{ fontSize: "0.875rem", fontWeight: 700, color: ACC }}>
+                לקבלת הצעה ←
+              </span>
+            </a>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════
+            7. FOOTER
         ══════════════════════════════════════════════════════ */}
         <footer className="px-6 py-12" style={{ background: BG, paddingBottom: "100px" }}>
           <div className="max-w-5xl mx-auto flex flex-col gap-8">
@@ -337,15 +489,17 @@ export default async function LandingPage() {
 
             <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
               {[
-                { label: "בית",           href: "/" },
-                { label: "אודות",         href: "/about" },
-                { label: "הדרכה",         href: "/training" },
-                ...(CLIENT.modules.quiz       ? [{ label: "אבחון",   href: "/quiz" }]      : []),
-                ...(CLIENT.modules.challenge  ? [{ label: "אתגר",    href: "/challenge" }] : []),
-                ...(CLIENT.modules.hive       ? [{ label: "קהילה",   href: "/hive" }]      : []),
-                ...(CLIENT.modules.course     ? [{ label: "קורס",    href: "/course" }]    : []),
-                ...(CLIENT.modules.workshop   ? [{ label: "סדנה",    href: "/workshop" }]  : []),
-                { label: "אזור אישי",     href: "/my" },
+                { label: "בית",             href: "/" },
+                { label: "אודות",           href: "/about" },
+                { label: "שיעור מתנה",     href: "/training" },
+                { label: "קלפים",           href: "/cards" },
+                ...(CLIENT.modules.course     ? [{ label: "קורס דיגיטלי",  href: "/course" }]      : []),
+                ...(CLIENT.modules.workshop   ? [{ label: "קורס + ליווי",  href: "/workshop" }]    : []),
+                ...(CLIENT.modules.strategy   ? [{ label: "קורס פרונטלי", href: "/strategy" }]    : []),
+                ...(CLIENT.modules.partnership? [{ label: "ליווי 1:1",     href: "/partnership" }] : []),
+                { label: "מלגות",           href: "/scholarships" },
+                { label: "לארגונים",        href: "/for-organizations" },
+                { label: "אזור אישי",       href: "/my" },
               ].map((link) => (
                 <a key={link.href} href={link.href} className="hover:opacity-80 transition" style={{ color: ACC }}>
                   {link.label}

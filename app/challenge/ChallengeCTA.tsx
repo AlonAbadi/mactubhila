@@ -182,15 +182,15 @@ export function ChallengeCTA({ price, whatsappPhone, credit = 0 }: ChallengeCTAP
   function fallbackWhatsapp() {
     if (whatsappPhone) {
       const msg = credit > 0
-        ? encodeURIComponent(`היי הדר! יש לי זיכוי של ₪${credit} ואני רוצה להצטרף לצ׳אלנג׳ 7 הימים. מה הצעד הבא?`)
-        : encodeURIComponent(`היי הדר! אני רוצה להצטרף לצ׳אלנג׳ 7 הימים ב-₪${price}. מה הצעד הבא?`);
+        ? encodeURIComponent(`היי הילה! יש לי זיכוי של ₪${credit} ואני רוצה להצטרף לצ׳אלנג׳ 7 הימים. מה הצעד הבא?`)
+        : encodeURIComponent(`היי הילה! אני רוצה להצטרף לצ׳אלנג׳ 7 הימים ב-₪${price}. מה הצעד הבא?`);
       window.open(`https://wa.me/${whatsappPhone}?text=${msg}`, "_blank");
     }
     setPhase("idle");
   }
 
   const waHref = whatsappPhone
-    ? `https://wa.me/${whatsappPhone}?text=${encodeURIComponent("היי הדר! יש לי שאלה לגבי הצ׳אלנג׳ 7 הימים")}`
+    ? `https://wa.me/${whatsappPhone}?text=${encodeURIComponent("היי הילה! יש לי שאלה לגבי הצ׳אלנג׳ 7 הימים")}`
     : null;
 
   if (phase === "phone") {

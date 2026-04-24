@@ -9,12 +9,14 @@ import { CLIENT } from "@/lib/client";
 // Add / remove items here. No hardcoded client content.
 const NAV_LINKS = [
   { label: "אודות",         href: "/about" },
-  { label: "הדרכה חינמית", href: "/training" },
-  ...(CLIENT.modules.quiz       ? [{ label: "אבחון",        href: "/quiz" }]      : []),
-  ...(CLIENT.modules.challenge  ? [{ label: "אתגר",         href: "/challenge" }] : []),
-  ...(CLIENT.modules.hive       ? [{ label: "קהילה",        href: "/hive" }]      : []),
-  ...(CLIENT.modules.course     ? [{ label: "קורס",         href: "/course" }]    : []),
-  ...(CLIENT.modules.workshop   ? [{ label: "סדנה",         href: "/workshop" }]  : []),
+  { label: "שיעור מתנה",   href: "/training" },
+  { label: "קלפים",         href: "/cards" },
+  ...(CLIENT.modules.course     ? [{ label: "קורס דיגיטלי",   href: "/course" }]      : []),
+  ...(CLIENT.modules.workshop   ? [{ label: "קורס + ליווי",   href: "/workshop" }]    : []),
+  ...(CLIENT.modules.strategy   ? [{ label: "קורס פרונטלי",   href: "/strategy" }]   : []),
+  ...(CLIENT.modules.partnership? [{ label: "ליווי 1:1",      href: "/partnership" }] : []),
+  { label: "מלגות",         href: "/scholarships" },
+  { label: "לארגונים",      href: "/for-organizations" },
 ];
 
 const ACC   = CLIENT.colors.accent;

@@ -1,21 +1,18 @@
 export const GROUP1 = [
   { label: "אודות",  href: "/about" },
-  { label: "הצוות", href: "/team" },
 ];
 
 export const GROUP2 = [
-  { label: "הדרכה חינמית",     href: "/training" },
-  { label: "קוויז - איפה אתה?", href: "/quiz" },
+  { label: "שיעור מתנה (חינם)", href: "/training" },
 ];
 
 export const GROUP3 = [
-  { label: "אתגר 7 ימים",      price: "₪197",    href: "/challenge" },
-  { label: "סדנה יום אחד",     price: "₪1,080",  href: "/workshop" },
-  { label: "קורס דיגיטלי",     price: "₪1,800",  href: "/course" },
-  { label: "פגישת אסטרטגיה",   price: "₪4,000",  href: "/strategy" },
-  { label: "יום צילום פרמיום", price: "₪14,000", href: "/premium" },
-  { label: "שותפות",           price: "₪10k+",   href: "/partnership" },
+  { label: "קלפי מכתוב דיגיטליים", price: "₪149",    href: "/cards" },
+  { label: "קורס דיגיטלי",         price: "₪575",    href: "/course" },
+  { label: "קורס דיגיטלי + ליווי", price: "₪1,100",  href: "/workshop" },
+  { label: "ליווי נרטיבי אישי",    price: "₪1,900",  href: "/partnership" },
+  { label: "קורס מכתוב המלא",      price: "₪4,100",  href: "/strategy" },
 ];
 
-export const GROUP4 = [{ label: "הכוורת 🐝",        href: "/hive" }];
+export const GROUP4 = [{ label: "מלגות ומסלולים חברתיים", href: "/scholarships" }];
 export const GROUP5 = [{ label: "האזור האישי שלי", href: "/my" }];

@@ -6,16 +6,16 @@ import { CLIENT } from "@/lib/client";
 type Tier = "basic_97" | "discounted_29";
 
 const FEATURES_STANDARD = [
-  "מפגש זום חודשי עם הדר",
+  "מפגש זום חודשי עם הילה",
   "תוכן בלעדי",
   "קבוצת WhatsApp פעילה",
 ];
 
 const FEATURES_DISCOUNTED = [
-  "מפגש זום חודשי עם הדר",
+  "מפגש זום חודשי עם הילה",
   "תוכן בלעדי",
   "קבוצת WhatsApp פעילה",
-  "עדיפות בזום עם הדר",
+  "עדיפות בזום עם הילה",
 ];
 
 export function HivePricingSection() {
@@ -134,7 +134,7 @@ export function HivePricingSection() {
                 הצטרף עם ההטבה שלך ←
               </button>
               <p className="text-xs text-center" style={{ color: "rgba(158,153,144,0.6)" }}>
-                זמין למי שעבר לפחות מוצר אחד של הדר
+                זמין למי שעבר לפחות מוצר אחד של הילה
               </p>
             </div>
           </div>
@@ -327,7 +327,7 @@ function HiveJoinFormModal({ tier, onClose }: { tier: Tier; onClose: () => void 
             </div>
             <div>
               <h2 className="text-xl font-black mb-2" style={{ color: "#EDE9E1" }}>
-                המחיר המיוחד הזה שמור ללקוחות הדר
+                המחיר המיוחד הזה שמור ללקוחות הילה
               </h2>
               <p className="text-sm leading-relaxed" style={{ color: "#9E9990" }}>
                 רוצה להתחיל? בוא נכיר.

@@ -137,7 +137,7 @@ export default async function MembersPage({
           <p className="font-bold text-white">יש שאלה? תקוע?</p>
           <p className="text-gray-400 text-sm">כתוב לי ישירות בוואצאפ - אני עונה תוך שעה בימי עסקים.</p>
           <a
-            href={`https://wa.me/${process.env.WHATSAPP_PHONE ?? "972501234567"}?text=${encodeURIComponent("היי הדר, אני בצ׳אלנג׳ ויש לי שאלה:")}`}
+            href={`https://wa.me/${process.env.WHATSAPP_PHONE ?? "972501234567"}?text=${encodeURIComponent("היי הילה, יש לי שאלה:")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 text-green-400 hover:text-green-300 font-bold transition text-sm"

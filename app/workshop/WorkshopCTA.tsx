@@ -174,15 +174,15 @@ export function WorkshopCTA({ price, whatsappPhone, credit = 0 }: { price: strin
   function fallbackWhatsapp() {
     if (whatsappPhone) {
       const msg = credit > 0
-        ? encodeURIComponent(`היי הדר! יש לי זיכוי של ₪${credit} ואני רוצה להצטרף לסדנה. מה הצעד הבא?`)
-        : encodeURIComponent(`היי הדר! אני רוצה להצטרף לסדנה יום אחד ב-₪${price}. מה הצעד הבא?`);
+        ? encodeURIComponent(`היי הילה! יש לי זיכוי של ₪${credit} ואני רוצה להצטרף לסדנה. מה הצעד הבא?`)
+        : encodeURIComponent(`היי הילה! אני רוצה להצטרף לסדנה יום אחד ב-₪${price}. מה הצעד הבא?`);
       window.open(`https://wa.me/${whatsappPhone}?text=${msg}`, "_blank");
     }
     setPhase("idle");
   }
 
   const waHref = whatsappPhone
-    ? `https://wa.me/${whatsappPhone}?text=${encodeURIComponent("היי הדר! יש לי שאלה לגבי הסדנה יום אחד")}`
+    ? `https://wa.me/${whatsappPhone}?text=${encodeURIComponent("היי הילה! יש לי שאלה לגבי הסדנה יום אחד")}`
     : null;
 
   const BTN_STYLE: React.CSSProperties = {

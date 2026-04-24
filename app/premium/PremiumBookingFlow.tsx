@@ -55,7 +55,7 @@ export function PremiumBookingFlow({ bookedSlots, price, credit, whatsappPhone }
 
       if (res.status === 503) {
         const msg = encodeURIComponent(
-          `היי הדר! קבעתי יום צילום פרמיום ל-${booked.date} ב-${booked.time} ורוצה לסיים את התשלום (₪${listPrice.toLocaleString("he-IL")})`
+          `היי הילה! קבעתי ל-${booked.date} ב-${booked.time} ורוצה לסיים את התשלום (₪${listPrice.toLocaleString("he-IL")})`
         );
         window.open(`https://wa.me/${whatsappPhone}?text=${msg}`, "_blank");
         return;

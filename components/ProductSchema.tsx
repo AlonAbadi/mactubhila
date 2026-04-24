@@ -15,7 +15,7 @@ const INSTRUCTOR = {
 };
 
 type ProductSchemaProps = {
-  type:        "Course" | "Service";
+  type:        "Course" | "Service" | "Product";
   name:        string;
   description: string;
   url:         string;
