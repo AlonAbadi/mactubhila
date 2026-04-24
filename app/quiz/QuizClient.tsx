@@ -13,6 +13,7 @@ import {
   BULLET_RULES,
   getPersonalizedReasons,
 } from "@/lib/quiz-config";
+import { CLIENT } from "@/lib/client";
 
 // ── Types ────────────────────────────────────────────────────────
 
@@ -150,20 +151,20 @@ function fadeIn(delayS: number, visible: boolean): React.CSSProperties {
 // ── Colors ────────────────────────────────────────────────────────
 
 const C = {
-  bg:        "#0a0a0a",
-  card:      "#161616",
-  textPrim:  "#e8e4dc",
-  textSec:   "rgba(255,255,255,0.5)",
-  textMuted: "rgba(255,255,255,0.35)",
-  gold:      "#c9a84c",
-  border:    "rgba(255,255,255,0.06)",
-  inputBg:   "#1a1a1a",
-  inputBorder: "#2a2a2a",
-  quizBg:    "#101520",
-  quizCard:  "#191F2B",
-  quizBorder: "#2C323E",
-  quizText:  "#EDE9E1",
-  quizMuted: "#9E9990",
+  bg:        CLIENT.colors.bg,
+  card:      CLIENT.colors.card,
+  textPrim:  CLIENT.colors.fg,
+  textSec:   CLIENT.colors.fg_muted,
+  textMuted: CLIENT.colors.fg_muted,
+  gold:      CLIENT.colors.accent,
+  border:    CLIENT.colors.border,
+  inputBg:   CLIENT.colors.card_soft,
+  inputBorder: CLIENT.colors.border,
+  quizBg:    CLIENT.colors.bg,
+  quizCard:  CLIENT.colors.card,
+  quizBorder: CLIENT.colors.border,
+  quizText:  CLIENT.colors.fg,
+  quizMuted: CLIENT.colors.fg_muted,
 };
 
 // ── Types ─────────────────────────────────────────────────────────

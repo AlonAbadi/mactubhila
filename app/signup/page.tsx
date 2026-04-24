@@ -4,12 +4,22 @@ import { useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { createBrowserClient } from "@/lib/supabase/browser";
+import { CLIENT } from "@/lib/client";
+
+const ACC = CLIENT.colors.accent;
+const ACC_D = CLIENT.colors.accent_dark;
+const BG  = CLIENT.colors.bg;
+const BDR = CLIENT.colors.border;
+const FG  = CLIENT.colors.fg;
+const MUT = CLIENT.colors.fg_muted;
+const CARD = CLIENT.colors.card;
+const SOFT = CLIENT.colors.card_soft;
 
 // ── Styles ────────────────────────────────────────────────────
 const S = {
   page: {
     minHeight: "100vh",
-    background: "#080C14",
+    background: BG,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -17,33 +27,31 @@ const S = {
     fontFamily: "Assistant, sans-serif",
   } as React.CSSProperties,
   card: {
-    background: "#141820",
-    border: "1px solid #2C323E",
+    background: CARD,
+    border: `1px solid ${BDR}`,
     borderRadius: 12,
     padding: "36px 32px",
     width: "100%",
     maxWidth: 400,
     direction: "rtl" as const,
+    boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
   } as React.CSSProperties,
   logo: { textAlign: "center" as const, marginBottom: 24 },
   logoText: {
     fontSize: 22,
     fontWeight: 800,
-    background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
+    color: ACC,
   },
   title: {
     fontSize: 22,
     fontWeight: 800,
-    color: "#EDE9E1",
+    color: FG,
     textAlign: "center" as const,
     marginBottom: 6,
   },
   subtitle: {
     fontSize: 14,
-    color: "#9E9990",
+    color: MUT,
     textAlign: "center" as const,
     marginBottom: 28,
   },
@@ -51,7 +59,7 @@ const S = {
     width: "100%",
     padding: "11px 16px",
     borderRadius: 8,
-    border: "1px solid #2C323E",
+    border: `1px solid ${BDR}`,
     background: "#fff",
     color: "#1A1A1A",
     fontSize: 14,
@@ -70,22 +78,22 @@ const S = {
     gap: 12,
     margin: "20px 0",
   },
-  dividerLine: { flex: 1, height: 1, background: "#2C323E" },
-  dividerText: { fontSize: 12, color: "#9E9990" },
+  dividerLine: { flex: 1, height: 1, background: BDR },
+  dividerText: { fontSize: 12, color: MUT },
   label: {
     display: "block",
     fontSize: 13,
-    color: "#9E9990",
+    color: MUT,
     marginBottom: 6,
     fontWeight: 600,
   },
   input: {
     width: "100%",
-    background: "#0D1219",
-    border: "1px solid #2C323E",
+    background: SOFT,
+    border: `1px solid ${BDR}`,
     borderRadius: 8,
     padding: "10px 12px",
-    color: "#EDE9E1",
+    color: FG,
     fontSize: 14,
     fontFamily: "Assistant, sans-serif",
     outline: "none",
@@ -97,8 +105,8 @@ const S = {
     padding: "12px",
     borderRadius: 8,
     border: "none",
-    background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
-    color: "#080C14",
+    background: `linear-gradient(135deg, ${ACC}, ${ACC_D})`,
+    color: "#fff",
     fontSize: 15,
     fontWeight: 800,
     cursor: "pointer",
@@ -117,11 +125,11 @@ const S = {
     lineHeight: 1.5,
   },
   infoBox: {
-    background: "rgba(232,185,74,0.08)",
-    border: "1px solid rgba(232,185,74,0.25)",
+    background: `${ACC}10`,
+    border: `1px solid ${ACC}44`,
     borderRadius: 8,
     padding: "10px 14px",
-    color: "#E8B94A",
+    color: ACC,
     fontSize: 13,
     marginBottom: 16,
     lineHeight: 1.5,
@@ -131,7 +139,7 @@ const S = {
     textAlign: "center" as const,
     marginTop: 20,
     fontSize: 13,
-    color: "#9E9990",
+    color: MUT,
   },
   strengthBar: {
     height: 4,

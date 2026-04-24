@@ -2,6 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { FEATURED_REVIEWS, AGGREGATE } from '@/data/reviews';
+import { CLIENT } from '@/lib/client';
+
+const ACC = CLIENT.colors.accent;
+const BDR = CLIENT.colors.border;
+const BG_D = CLIENT.colors.bg_dark;
+const FG  = CLIENT.colors.fg;
+const MUT = CLIENT.colors.fg_muted;
 
 function GoogleG() {
   return (
@@ -37,9 +44,9 @@ export default function SocialProofStrip() {
     <section
       className="w-full"
       style={{
-        background: '#141820',
-        borderTop: '1px solid rgba(201,150,74,0.18)',
-        borderBottom: '1px solid rgba(201,150,74,0.18)',
+        background: BG_D,
+        borderTop: `1px solid ${BDR}`,
+        borderBottom: `1px solid ${BDR}`,
       }}
     >
       <div className="max-w-5xl mx-auto px-6 md:px-8 py-5 md:py-6">
@@ -50,15 +57,15 @@ export default function SocialProofStrip() {
           <div className="flex items-center gap-3 shrink-0 md:order-3 order-1">
             <GoogleG />
             <div className="flex items-center gap-1.5">
-              <span className="text-[#E8B94A] text-base leading-none tracking-wider">★★★★★</span>
-              <span className="text-[#EDE9E1] font-bold text-base">{AGGREGATE.rating.toFixed(1)}</span>
+              <span style={{ color: ACC }} className="text-base leading-none tracking-wider">★★★★★</span>
+              <span style={{ color: FG }} className="font-bold text-base">{AGGREGATE.rating.toFixed(1)}</span>
             </div>
           </div>
 
           {/* Divider — desktop only */}
           <div
             className="hidden md:block shrink-0 md:order-2 self-stretch"
-            style={{ width: '1px', background: '#2C323E', minHeight: '48px' }}
+            style={{ width: '1px', background: BDR, minHeight: '48px' }}
           />
 
           {/* RIGHT — Rotating quote */}
@@ -70,11 +77,11 @@ export default function SocialProofStrip() {
               aria-label="ביקורת הבאה"
               className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-lg transition-colors"
               style={{
-                border: '1px solid #2C323E',
-                color: '#9E9990',
+                border: `1px solid ${BDR}`,
+                color: MUT,
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#C9964A')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#9E9990')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = ACC)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = MUT)}
             >
               &#8249;
             </button>
@@ -82,7 +89,8 @@ export default function SocialProofStrip() {
             {/* Quote body */}
             <div className="flex-1 min-w-0" dir="rtl" style={{ textAlign: 'right' }}>
               <p
-                className="text-[#EDE9E1] text-sm leading-relaxed"
+                style={{ color: FG }}
+                className="text-sm leading-relaxed"
                 style={{
                   display: '-webkit-box',
                   WebkitLineClamp: 3,
@@ -98,13 +106,13 @@ export default function SocialProofStrip() {
                 <div
                   className="w-7 h-7 rounded-full shrink-0 flex items-center justify-center text-xs font-bold"
                   style={{
-                    background: 'linear-gradient(135deg, #E8B94A, #9E7C3A)',
-                    color: '#0D1018',
+                    background: `linear-gradient(135deg, ${ACC}, ${CLIENT.colors.accent_dark})`,
+                    color: '#fff',
                   }}
                 >
                   {review.initial}
                 </div>
-                <span className="text-[#EDE9E1] text-sm font-medium truncate">{review.name}</span>
+                <span style={{ color: FG }} className="text-sm font-medium truncate">{review.name}</span>
               </div>
             </div>
 
@@ -114,11 +122,11 @@ export default function SocialProofStrip() {
               aria-label="ביקורת קודמת"
               className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-lg transition-colors"
               style={{
-                border: '1px solid #2C323E',
-                color: '#9E9990',
+                border: `1px solid ${BDR}`,
+                color: MUT,
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#C9964A')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#9E9990')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = ACC)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = MUT)}
             >
               &#8250;
             </button>

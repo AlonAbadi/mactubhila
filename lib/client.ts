@@ -221,7 +221,7 @@ export const CLIENT = {
     quiz:            true,
     hive:            true,
     challenge:       true,
-    course:          false,
+    course:          true,
     workshop:        false,
     strategy:        false,
     premium:         false,

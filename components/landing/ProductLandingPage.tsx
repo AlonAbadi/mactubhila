@@ -617,7 +617,7 @@ export default function ProductLandingPage({
                 paddingTop: '177.78%',
                 borderRadius: 16,
                 overflow: 'hidden',
-                background: '#141820',
+                background: 'var(--bg-dark)',
               }}>
                 <iframe
                   id="vimeo-vsl"
