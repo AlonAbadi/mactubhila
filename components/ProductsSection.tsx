@@ -126,14 +126,14 @@ export function ProductsSection({ excludeTraining = false }: { excludeTraining?:
                   <img src={step.image} loading="lazy" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 15%" }} />
                   <div style={{ position: "absolute", inset: 0, background: overlay }} />
                   {step.tag && (
-                    <div style={{ position: "absolute", top: 10, right: 10, fontSize: 9, fontWeight: 700, color: isGold ? "#1A1206" : ACC, background: isGold ? `linear-gradient(135deg,${ACC_L},${ACC})` : `${ACC}26`, border: isGold ? "none" : `1px solid ${ACC}4d`, borderRadius: 4, padding: "2px 8px", zIndex: 2 }}>{step.tag}</div>
+                    <div style={{ position: "absolute", top: 10, right: 10, fontSize: 9, fontWeight: 700, color: isGold ? "#FFFFFF" : ACC, background: isGold ? `linear-gradient(135deg,${ACC_L},${ACC})` : `${ACC}26`, border: isGold ? "none" : `1px solid ${ACC}4d`, borderRadius: 4, padding: "2px 8px", zIndex: 2 }}>{step.tag}</div>
                   )}
                   <div style={{ position: "absolute", left: 8, top: 8, fontSize: "5rem", fontWeight: 800, color: "rgba(255,255,255,0.22)", lineHeight: 1, userSelect: "none" }}>{i + 1}</div>
                   <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "14px 20px 20px", zIndex: 2, textAlign: "right" }}>
                     <div style={priceStyle}>{step.price}</div>
                     <div style={nameStyle}>{step.name}</div>
                     <p style={descStyle}>{step.desc}</p>
-                    <span style={isGold ? { display: "inline-block", padding: "10px 24px", borderRadius: 9999, fontSize: 14, fontWeight: 700, background: `linear-gradient(135deg,${ACC_L},${ACC},${ACC_D})`, color: "#1A1206", border: "none" } : ctaStyle}>{step.cta}</span>
+                    <span style={isGold ? { display: "inline-block", padding: "10px 24px", borderRadius: 9999, fontSize: 14, fontWeight: 700, background: `linear-gradient(135deg,${ACC_L},${ACC},${ACC_D})`, color: "#FFFFFF", border: "none" } : ctaStyle}>{step.cta}</span>
                   </div>
                 </a>
               );
@@ -141,7 +141,7 @@ export function ProductsSection({ excludeTraining = false }: { excludeTraining?:
                 <div key={step.href}>
                   <div className="nf-row">
                     {isRight ? <div className="nf-empty" /> : card}
-                    <div className={`nf-node${isGold ? " nf-node-gold" : ""}`} style={isGold ? { background: `linear-gradient(135deg,${ACC_L},${ACC},${ACC_D})`, color: "#1A1206", border: "none" } : { borderColor: `${ACC}59`, background: CARD, color: ACC }}>{i + 1}</div>
+                    <div className={`nf-node${isGold ? " nf-node-gold" : ""}`} style={isGold ? { background: `linear-gradient(135deg,${ACC_L},${ACC},${ACC_D})`, color: "#FFFFFF", border: "none" } : { borderColor: `${ACC}59`, background: CARD, color: ACC }}>{i + 1}</div>
                     {isRight ? card : <div className="nf-empty" />}
                   </div>
                   {!isLast && (
@@ -191,7 +191,7 @@ export function ProductsSection({ excludeTraining = false }: { excludeTraining?:
               <a href="/hive" className="nf-card" style={{ position: "relative", height: "420px", overflow: "hidden", display: "block" }}>
                 <img src={CLIENT.products.hive.image || "/og-image.jpg"} loading="lazy" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "40% 10%" }} />
                 <div style={{ position: "absolute", inset: 0, background: overlay }} />
-                <div style={{ position: "absolute", top: 10, right: 10, fontSize: 9, fontWeight: 700, color: "#1A1206", background: `linear-gradient(135deg,${ACC_L},${ACC})`, borderRadius: 4, padding: "2px 8px", zIndex: 2 }}>פופולרי</div>
+                <div style={{ position: "absolute", top: 10, right: 10, fontSize: 9, fontWeight: 700, color: "#FFFFFF", background: `linear-gradient(135deg,${ACC_L},${ACC})`, borderRadius: 4, padding: "2px 8px", zIndex: 2 }}>פופולרי</div>
                 <div style={{ position: "absolute", bottom: 80, right: 16, fontSize: "2.4rem", zIndex: 2 }}>🐝</div>
                 <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "14px 20px 20px", zIndex: 2, display: "flex", alignItems: "center", gap: 16, textAlign: "right" }}>
                   <div style={{ flex: 1 }}>
@@ -201,7 +201,7 @@ export function ProductsSection({ excludeTraining = false }: { excludeTraining?:
                   <div style={{ flexShrink: 0, textAlign: "center" }}>
                     <div style={{ fontSize: 19, fontWeight: 800, color: ACC, lineHeight: 1 }}>₪{CLIENT.products.hive.price_basic}</div>
                     <div style={{ fontSize: 12, color: `${FG}80`, marginBottom: 10 }}>לחודש</div>
-                    <span style={{ display: "inline-block", background: `linear-gradient(135deg,${ACC_L},${ACC},${ACC_D})`, color: "#1A1206", fontWeight: 700, borderRadius: 9999, padding: "10px 24px", fontSize: 14 }}>הצטרף ←</span>
+                    <span style={{ display: "inline-block", background: `linear-gradient(135deg,${ACC_L},${ACC},${ACC_D})`, color: "#FFFFFF", fontWeight: 700, borderRadius: 9999, padding: "10px 24px", fontSize: 14 }}>הצטרף ←</span>
                   </div>
                 </div>
               </a>
@@ -226,7 +226,7 @@ export function ProductsSection({ excludeTraining = false }: { excludeTraining?:
           width: 56px;
           height: 56px;
           border-radius: 50%;
-          border: 1px solid rgba(201,150,74,0.35);
+          border: 1px solid ${BDR};
           display: flex;
           align-items: center;
           justify-content: center;
