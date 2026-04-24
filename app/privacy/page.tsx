@@ -1,35 +1,40 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { CLIENT } from "@/lib/client";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: `מדיניות פרטיות | ${CLIENT.name}`,
+  description: `מדיניות הפרטיות של ${CLIENT.legal_name} – כיצד אנחנו אוספים, משתמשים ומגנים על המידע האישי שלך.`,
 };
+
+const BG   = CLIENT.colors.bg;
+const BG_D = CLIENT.colors.bg_dark;
+const FG   = CLIENT.colors.fg;
+const MUT  = CLIENT.colors.fg_muted;
+const ACC  = CLIENT.colors.accent;
+const BDR  = CLIENT.colors.border;
+const CARD = CLIENT.colors.card;
 
 export default function PrivacyPage() {
   return (
-    <div
-      dir="rtl"
-      className="font-assistant min-h-screen"
-      style={{ background: "#080C14", color: "#9E9990" }}
-    >
-      <main style={{ maxWidth: 720, margin: "0 auto", padding: "40px 24px" }}>
+    <div dir="rtl" className="font-assistant min-h-screen" style={{ background: BG, color: FG }}>
+      <main style={{ maxWidth: 720, margin: "0 auto", padding: "40px 24px 80px" }}>
+
         <div style={{ marginBottom: 32 }}>
-          <h1 style={{ fontSize: 28, fontWeight: 800, color: "#EDE9E1", marginBottom: 8 }}>
-            מדיניות פרטיות
-          </h1>
-          <p style={{ fontSize: 14, color: "#9E9990" }}>עדכון אחרון: אפריל 2026</p>
+          <h1 style={{ fontSize: 28, fontWeight: 800, color: FG, marginBottom: 8 }}>מדיניות פרטיות</h1>
+          <p style={{ fontSize: 14, color: MUT }}>עדכון אחרון: אפריל 2026</p>
         </div>
 
         <Section title="1. כללי">
           <p>
-            {CLIENT.legal_name}, המפעילה את האתר {CLIENT.domain} (&quot;החברה&quot;, &quot;אנחנו&quot;, &quot;אנו&quot;), מחויבת להגן על פרטיותך. מדיניות זו מסבירה אילו מידע אנחנו אוספים, כיצד אנחנו משתמשים בו, עם מי אנחנו משתפים אותו, ומהן זכויותיך לגביו. השימוש באתר ובשירותים מהווה הסכמה למדיניות פרטיות זו.
+            {CLIENT.legal_name}, המפעילה את שיטת מכתוב (&quot;החברה&quot;, &quot;אנחנו&quot;), מחויבת להגן על פרטיותך. מדיניות זו מסבירה אילו מידע אנחנו אוספים, כיצד אנחנו משתמשים בו, עם מי אנחנו משתפים אותו, ומהן זכויותיך לגביו. השימוש באתר ובשירותים מהווה הסכמה למדיניות פרטיות זו.
           </p>
         </Section>
 
         <Section title="2. מידע שאנחנו אוספים">
           <SubTitle>2.1 מידע שאתה מספק לנו:</SubTitle>
           <ul style={{ paddingRight: 20, display: "flex", flexDirection: "column", gap: 8, marginTop: 8 }}>
-            <li><B>פרטי הרשמה:</B> שם מלא, כתובת אימייל, מספר טלפון</li>
+            <li><B>פרטי הרשמה:</B> שם מלא, כתובת אימייל, מספר טלפון (אופציונלי)</li>
             <li><B>פרטי חשבון:</B> סיסמה מוצפנת (אם נרשמת עם אימייל וסיסמה)</li>
             <li><B>פרטי תשלום:</B> מעובדים ישירות על ידי ספק התשלומים Cardcom ואינם נשמרים אצלנו</li>
             <li><B>תגובות וסקרים:</B> תשובות לשאלונים ולשאלות שהגשת</li>
@@ -43,7 +48,7 @@ export default function PrivacyPage() {
           </ul>
           <SubTitle style={{ marginTop: 16 }}>2.3 מידע שנאסף דרך Google Sign-In:</SubTitle>
           <p style={{ marginTop: 8 }}>
-            אם בחרת להתחבר לאתר דרך Google, אנחנו מקבלים מ-Google את הפרטים הבאים: שם מלא, כתובת אימייל, תמונת פרופיל (אם קיימת). איננו מקבלים גישה לסיסמת ה-Google שלך, לאנשי הקשר שלך, או לכל מידע אחר מחשבון ה-Google שלך שלא צוין לעיל.
+            אם בחרת להתחבר לאתר דרך Google, אנחנו מקבלים מ-Google: שם מלא, כתובת אימייל, תמונת פרופיל (אם קיימת). איננו מקבלים גישה לסיסמת ה-Google שלך, לאנשי הקשר שלך, או לכל מידע אחר.
           </p>
         </Section>
 
@@ -51,11 +56,10 @@ export default function PrivacyPage() {
           <p>אנחנו משתמשים במידע שנאסף כדי:</p>
           <ul style={{ paddingRight: 20, display: "flex", flexDirection: "column", gap: 8, marginTop: 8 }}>
             <li>לאמת את זהותך ולנהל את חשבונך</li>
-            <li>לספק גישה לתכנים שרכשת (קורס, אתגר, סדנה, כוורת)</li>
+            <li>לספק גישה לתכנים שרכשת (קלפים, קורס, ליווי, קורס פרונטלי)</li>
             <li>לשלוח לך את ההדרכה ותכנים שביקשת</li>
-            <li>לשלוח עדכונים ותכנים שיווקיים (ניתן לבטל בכל עת)</li>
+            <li>לשלוח עדכונים ותכנים שיווקיים – <em>רק אם נתת הסכמה מפורשת</em> (ניתן לבטל בכל עת)</li>
             <li>לעבד תשלומים ולנהל רכישות</li>
-            <li>לחשב ולנהל את מערכת הקרדיט שלך</li>
             <li>לשפר את השירותים שלנו</li>
             <li>לעמוד בדרישות חוקיות</li>
           </ul>
@@ -63,22 +67,13 @@ export default function PrivacyPage() {
 
         <Section title="4. שיתוף מידע עם צדדים שלישיים">
           <p>אנחנו לא מוכרים ולא משכירים את פרטיך לצדדים שלישיים. אנחנו משתפים מידע רק עם ספקי השירות הבאים:</p>
-          <div
-            style={{
-              background: "#141820",
-              border: "1px solid #2C323E",
-              borderRadius: 8,
-              padding: 8,
-              marginTop: 12,
-              overflowX: "auto",
-            }}
-          >
+          <div style={{ background: BG_D, border: `1px solid ${BDR}`, borderRadius: 8, padding: 8, marginTop: 12, overflowX: "auto" }}>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14 }}>
               <thead>
                 <tr>
-                  <th style={{ textAlign: "right", padding: "8px 12px", color: "#EDE9E1", fontWeight: 700, borderBottom: "1px solid #2C323E" }}>ספק</th>
-                  <th style={{ textAlign: "right", padding: "8px 12px", color: "#EDE9E1", fontWeight: 700, borderBottom: "1px solid #2C323E" }}>תפקיד</th>
-                  <th style={{ textAlign: "right", padding: "8px 12px", color: "#EDE9E1", fontWeight: 700, borderBottom: "1px solid #2C323E" }}>מיקום</th>
+                  <th style={{ textAlign: "right", padding: "8px 12px", color: FG, fontWeight: 700, borderBottom: `1px solid ${BDR}` }}>ספק</th>
+                  <th style={{ textAlign: "right", padding: "8px 12px", color: FG, fontWeight: 700, borderBottom: `1px solid ${BDR}` }}>תפקיד</th>
+                  <th style={{ textAlign: "right", padding: "8px 12px", color: FG, fontWeight: 700, borderBottom: `1px solid ${BDR}` }}>מיקום</th>
                 </tr>
               </thead>
               <tbody>
@@ -90,9 +85,9 @@ export default function PrivacyPage() {
                   ["Vercel", "אחסון ופריסת האתר", 'ארה"מ'],
                 ].map(([name, role, location]) => (
                   <tr key={name}>
-                    <td style={{ padding: "8px 12px", color: "#EDE9E1" }}>{name}</td>
-                    <td style={{ padding: "8px 12px" }}>{role}</td>
-                    <td style={{ padding: "8px 12px" }}>{location}</td>
+                    <td style={{ padding: "8px 12px", color: FG, fontWeight: 600 }}>{name}</td>
+                    <td style={{ padding: "8px 12px", color: MUT }}>{role}</td>
+                    <td style={{ padding: "8px 12px", color: MUT }}>{location}</td>
                   </tr>
                 ))}
               </tbody>
@@ -111,7 +106,7 @@ export default function PrivacyPage() {
 
         <Section title="6. אבטחת מידע">
           <p>
-            אנחנו נוקטים באמצעי אבטחה סבירים להגנה על המידע שלך: הצפנת SSL לכל התקשורת עם האתר, סיסמאות מוצפנות ולא נגישות גם לנו, גישה מוגבלת לנתונים לצוות מורשה בלבד, ניטור שוטף לאיתור פרצות אבטחה. עם זאת, אין אפשרות להבטיח אבטחה מוחלטת בסביבה מקוונת.
+            אנחנו נוקטים באמצעי אבטחה סבירים להגנה על המידע שלך: הצפנת SSL לכל התקשורת עם האתר, סיסמאות מוצפנות ולא נגישות גם לנו, גישה מוגבלת לנתונים לצוות מורשה בלבד. עם זאת, אין אפשרות להבטיח אבטחה מוחלטת בסביבה מקוונת.
           </p>
         </Section>
 
@@ -138,9 +133,7 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="9. ילדים">
-          <p>
-            השירותים שלנו מיועדים לבני 18 ומעלה. אנחנו לא אוספים ביודעין מידע מילדים מתחת לגיל 18.
-          </p>
+          <p>השירותים שלנו מיועדים לבני 18 ומעלה. אנחנו לא אוספים ביודעין מידע מילדים מתחת לגיל 18.</p>
         </Section>
 
         <Section title="10. שינויים במדיניות">
@@ -151,17 +144,20 @@ export default function PrivacyPage() {
 
         <Section title="11. יצירת קשר">
           <p>{CLIENT.legal_name} | ח.פ. {CLIENT.company_id}</p>
-          {/* TODO: add physical address to CLIENT config if needed */}
           <p>אימייל: {CLIENT.email.from_email}</p>
-          <p>אתר: {CLIENT.domain}</p>
+          <p>
+            <a href={`https://wa.me/${CLIENT.whatsapp}`} style={{ color: ACC }}>WhatsApp</a>
+          </p>
         </Section>
 
-        <div style={{ marginTop: 48, paddingTop: 24, borderTop: "1px solid #2C323E", textAlign: "center", fontSize: 13 }}>
-          <Link href="/" style={{ color: "#E8B94A", textDecoration: "none" }}>חזרה לדף הבית</Link>
-          {" | "}
-          <Link href="/terms" style={{ color: "#E8B94A", textDecoration: "none" }}>תנאי שימוש</Link>
-          {" | "}
-          <Link href="/accessibility" style={{ color: "#E8B94A", textDecoration: "none" }}>הצהרת נגישות</Link>
+        <div style={{ marginTop: 48, paddingTop: 24, borderTop: `1px solid ${BDR}`, textAlign: "center", fontSize: 13, color: MUT }}>
+          <Link href="/" style={{ color: ACC, textDecoration: "none" }}>חזרה לדף הבית</Link>
+          {" · "}
+          <Link href="/terms" style={{ color: ACC, textDecoration: "none" }}>תנאי שימוש</Link>
+          {" · "}
+          <Link href="/accessibility" style={{ color: ACC, textDecoration: "none" }}>הצהרת נגישות</Link>
+          {" · "}
+          <Link href="/unsubscribe" style={{ color: ACC, textDecoration: "none" }}>הסרה מרשימת דיוור</Link>
         </div>
       </main>
     </div>
@@ -169,10 +165,11 @@ export default function PrivacyPage() {
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  const BDR_C = CLIENT.colors.border;
   return (
-    <section style={{ marginTop: 40 }}>
-      <h2 style={{ fontSize: 18, fontWeight: 700, color: "#EDE9E1", marginBottom: 12 }}>{title}</h2>
-      <div style={{ fontSize: 15, lineHeight: 1.8, display: "flex", flexDirection: "column", gap: 8 }}>
+    <section style={{ marginTop: 40, paddingBottom: 32, borderBottom: `1px solid ${BDR_C}` }}>
+      <h2 style={{ fontSize: 18, fontWeight: 700, color: CLIENT.colors.fg, marginBottom: 12 }}>{title}</h2>
+      <div style={{ fontSize: 15, lineHeight: 1.8, display: "flex", flexDirection: "column", gap: 8, color: CLIENT.colors.fg_muted }}>
         {children}
       </div>
     </section>
@@ -180,11 +177,9 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 }
 
 function SubTitle({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return (
-    <p style={{ fontWeight: 700, color: "#EDE9E1", ...style }}>{children}</p>
-  );
+  return <p style={{ fontWeight: 700, color: CLIENT.colors.fg, ...style }}>{children}</p>;
 }
 
 function B({ children }: { children: React.ReactNode }) {
-  return <strong style={{ color: "#EDE9E1" }}>{children}</strong>;
+  return <strong style={{ color: CLIENT.colors.fg }}>{children}</strong>;
 }

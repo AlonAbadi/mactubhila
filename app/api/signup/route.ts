@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
         {
           email,
           name,
-          phone,
+          phone: phone || null,
           ab_variant: ab_variant ?? null,
           utm_source: utm_source ?? null,
           utm_campaign: utm_campaign ?? null,

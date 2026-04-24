@@ -18,7 +18,7 @@ export const SignupSchema = z.object({
     .min(2, "שם חייב להכיל לפחות 2 תווים")
     .max(80, "שם ארוך מדי"),
   email: z.string().email("כתובת אימייל לא תקינה"),
-  phone: israeliPhone,
+  phone: z.union([z.literal(""), israeliPhone]).optional(),
   ab_variant: z.enum(["A", "B"]).optional(),
   utm_source: z.string().max(100).optional(),
   utm_campaign: z.string().max(100).optional(),

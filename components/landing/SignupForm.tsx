@@ -5,6 +5,13 @@ import { useRouter } from "next/navigation";
 import { trackLead } from "@/lib/analytics";
 import { ConsentCheckbox } from "@/components/landing/ConsentCheckbox";
 import { getSessionUser, saveUserDetails } from "@/lib/quiz-session";
+import { CLIENT } from "@/lib/client";
+
+const ACC  = CLIENT.colors.accent;
+const ACC_D = CLIENT.colors.accent_dark;
+const FG   = CLIENT.colors.fg;
+const MUT  = CLIENT.colors.fg_muted;
+const BDR  = CLIENT.colors.border;
 
 interface FormState {
   name: string;
@@ -29,21 +36,18 @@ function getCookie(name: string): string | undefined {
 
 interface SignupFormProps {
   ctaLabel: string;
-  dark?: boolean;
 }
 
-export function SignupForm({ ctaLabel, dark = false }: SignupFormProps) {
+export function SignupForm({ ctaLabel }: SignupFormProps) {
   const router = useRouter();
   const [form, setForm] = useState<FormState>({ name: "", email: "", phone: "" });
   const [errors, setErrors] = useState<FieldError>({});
   const [loading, setLoading] = useState(false);
   const [consent, setConsent] = useState(false);
-  const [consentError, setConsentError] = useState(false);
   const [utmData, setUtmData] = useState<Record<string, string>>({});
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    // If user is already known (quiz or prior signup), skip this form
     const user = getSessionUser();
     if (user) {
       router.replace("/training/watch");
@@ -66,9 +70,12 @@ export function SignupForm({ ctaLabel, dark = false }: SignupFormProps) {
       errs.name = "שם חייב להכיל לפחות 2 תווים";
     if (!form.email.includes("@") || !form.email.includes("."))
       errs.email = "כתובת אימייל לא תקינה";
-    const phone = form.phone.replace(/[\s-]/g, "");
-    if (!/^05\d{8}$/.test(phone) && !/^\+9725\d{8}$/.test(phone))
-      errs.phone = "מספר טלפון לא תקין (לדוגמה: 0501234567 או +972501234567)";
+    // Phone is optional — validate format only if provided
+    if (form.phone.trim()) {
+      const phone = form.phone.replace(/[\s-]/g, "");
+      if (!/^05\d{8}$/.test(phone) && !/^\+9725\d{8}$/.test(phone))
+        errs.phone = "מספר טלפון לא תקין (לדוגמה: 0501234567)";
+    }
     setErrors(errs);
     return Object.keys(errs).length === 0;
   }
@@ -76,7 +83,6 @@ export function SignupForm({ ctaLabel, dark = false }: SignupFormProps) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!validate()) return;
-    if (!consent) { setConsentError(true); return; }
     setLoading(true);
     setErrors({});
     try {
@@ -86,7 +92,7 @@ export function SignupForm({ ctaLabel, dark = false }: SignupFormProps) {
         body: JSON.stringify({
           name: form.name.trim(),
           email: form.email.trim().toLowerCase(),
-          phone: form.phone.replace(/[\s-]/g, ""),
+          phone: form.phone.replace(/[\s-]/g, "") || undefined,
           ab_variant: getCookie("ab_variant"),
           anonymous_id: getCookie("anon_id"),
           marketing_consent: consent,
@@ -111,97 +117,102 @@ export function SignupForm({ ctaLabel, dark = false }: SignupFormProps) {
 
   if (checking) return null;
 
-  const labelCls = "text-sm font-medium";
-  const inputBase = "w-full rounded-xl border px-4 py-3 text-base outline-none transition";
-  const inputOk   = "focus:ring-2";
-  const inputErr  = "border-red-500/60 bg-red-500/10";
+  const inputStyle = (hasError: boolean): React.CSSProperties => hasError
+    ? { background: "#FFF5F5", border: "1px solid #F87171", color: FG, borderRadius: 12, padding: "14px 16px", width: "100%", fontSize: 15, outline: "none", boxSizing: "border-box" }
+    : { background: "#FFFFFF", border: `1px solid ${BDR}`, color: FG, borderRadius: 12, padding: "14px 16px", width: "100%", fontSize: 15, outline: "none", boxSizing: "border-box", transition: "border-color 150ms" };
+
+  function handleFocus(e: React.FocusEvent<HTMLInputElement>, hasError: boolean) {
+    if (!hasError) {
+      e.target.style.borderColor = ACC;
+      e.target.style.borderWidth = "2px";
+    }
+  }
+  function handleBlur(e: React.FocusEvent<HTMLInputElement>, hasError: boolean) {
+    if (!hasError) {
+      e.target.style.borderColor = BDR;
+      e.target.style.borderWidth = "1px";
+    }
+  }
 
   return (
-    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4" dir="rtl">
+    <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: 16 }} dir="rtl">
       {errors.general && (
-        <div className="rounded-xl border border-red-500/40 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+        <div style={{ borderRadius: 12, border: "1px solid #F87171", background: "#FFF5F5", padding: "12px 16px", fontSize: 14, color: "#DC2626" }}>
           {errors.general}
         </div>
       )}
 
       {/* Name */}
-      <div className="flex flex-col gap-1">
-        <label htmlFor="sf-name" className={labelCls} style={{ color: "#9E9990" }}>שם מלא</label>
+      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <label htmlFor="sf-name" style={{ fontSize: 14, fontWeight: 600, color: FG }}>שם מלא</label>
         <input
           id="sf-name" type="text" autoComplete="name" placeholder="ישראל ישראלי"
           value={form.name}
           onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-          className={`${inputBase} ${errors.name ? inputErr : inputOk}`}
-          style={
-            errors.name
-              ? {}
-              : { background: "#1D2430", border: "1px solid #2C323E", color: "#EDE9E1" }
-          }
-          onFocus={(e) => { if (!errors.name) (e.target as HTMLInputElement).style.borderColor = "rgba(201,150,74,0.6)"; }}
-          onBlur={(e) => { if (!errors.name) (e.target as HTMLInputElement).style.borderColor = "#2C323E"; }}
+          style={inputStyle(!!errors.name)}
+          onFocus={(e) => handleFocus(e, !!errors.name)}
+          onBlur={(e) => handleBlur(e, !!errors.name)}
         />
-        {errors.name && <p className="text-xs text-red-400">{errors.name}</p>}
+        {errors.name && <p style={{ fontSize: 12, color: "#DC2626", margin: 0 }}>{errors.name}</p>}
       </div>
 
       {/* Email */}
-      <div className="flex flex-col gap-1">
-        <label htmlFor="sf-email" className={labelCls} style={{ color: "#9E9990" }}>כתובת אימייל</label>
+      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <label htmlFor="sf-email" style={{ fontSize: 14, fontWeight: 600, color: FG }}>כתובת אימייל</label>
         <input
           id="sf-email" type="email" autoComplete="email" placeholder="israel@example.com" dir="ltr"
           value={form.email}
           onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-          className={`${inputBase} text-left ${errors.email ? inputErr : inputOk}`}
-          style={
-            errors.email
-              ? {}
-              : { background: "#1D2430", border: "1px solid #2C323E", color: "#EDE9E1" }
-          }
-          onFocus={(e) => { if (!errors.email) (e.target as HTMLInputElement).style.borderColor = "rgba(201,150,74,0.6)"; }}
-          onBlur={(e) => { if (!errors.email) (e.target as HTMLInputElement).style.borderColor = "#2C323E"; }}
+          style={{ ...inputStyle(!!errors.email), textAlign: "left" }}
+          onFocus={(e) => handleFocus(e, !!errors.email)}
+          onBlur={(e) => handleBlur(e, !!errors.email)}
         />
-        {errors.email && <p className="text-xs text-red-400">{errors.email}</p>}
+        {errors.email && <p style={{ fontSize: 12, color: "#DC2626", margin: 0 }}>{errors.email}</p>}
       </div>
 
-      {/* Phone */}
-      <div className="flex flex-col gap-1">
-        <label htmlFor="sf-phone" className={labelCls} style={{ color: "#9E9990" }}>טלפון נייד</label>
+      {/* Phone — optional */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+        <label htmlFor="sf-phone" style={{ fontSize: 14, fontWeight: 600, color: FG }}>טלפון נייד</label>
+        <p style={{ fontSize: 13, color: MUT, margin: 0 }}>לפולו-אפ אישי בווטסאפ (לא חובה לקבלת השיעור)</p>
         <input
           id="sf-phone" type="tel" autoComplete="tel" placeholder="0501234567" dir="ltr"
           value={form.phone}
           onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-          className={`${inputBase} text-left ${errors.phone ? inputErr : inputOk}`}
-          style={
-            errors.phone
-              ? {}
-              : { background: "#1D2430", border: "1px solid #2C323E", color: "#EDE9E1" }
-          }
-          onFocus={(e) => { if (!errors.phone) (e.target as HTMLInputElement).style.borderColor = "rgba(201,150,74,0.6)"; }}
-          onBlur={(e) => { if (!errors.phone) (e.target as HTMLInputElement).style.borderColor = "#2C323E"; }}
+          style={{ ...inputStyle(!!errors.phone), textAlign: "left" }}
+          onFocus={(e) => handleFocus(e, !!errors.phone)}
+          onBlur={(e) => handleBlur(e, !!errors.phone)}
         />
-        {errors.phone && <p className="text-xs text-red-400">{errors.phone}</p>}
+        {errors.phone && <p style={{ fontSize: 12, color: "#DC2626", margin: 0 }}>{errors.phone}</p>}
       </div>
 
       <ConsentCheckbox
         checked={consent}
-        onChange={(v) => { setConsent(v); if (v) setConsentError(false); }}
-        error={consentError}
-        dark={dark}
+        onChange={setConsent}
       />
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-xl py-4 text-lg font-black shadow-lg transition active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed hover:opacity-90"
-        style={{ background: "linear-gradient(135deg, #C9964A, #9E7C3A)", color: "#101520" }}
+        style={{
+          width: "100%", borderRadius: 9999, padding: "16px 32px",
+          background: `linear-gradient(135deg, ${ACC}, ${ACC_D})`,
+          color: "#FFFFFF", fontWeight: 800, fontSize: 17,
+          border: "none", cursor: loading ? "not-allowed" : "pointer",
+          opacity: loading ? 0.65 : 1,
+          transition: "transform 150ms, box-shadow 150ms",
+          boxShadow: loading ? "none" : `0 6px 20px ${ACC}44`,
+        }}
+        onMouseEnter={(e) => { if (!loading) { (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-2px)"; (e.currentTarget as HTMLButtonElement).style.boxShadow = `0 10px 28px ${ACC}55`; } }}
+        onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLButtonElement).style.boxShadow = `0 6px 20px ${ACC}44`; }}
       >
         {loading ? (
-          <span className="flex items-center justify-center gap-2">
-            <span className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin" />
+          <span style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
+            <span style={{ width: 20, height: 20, border: "2px solid rgba(255,255,255,0.4)", borderTopColor: "#fff", borderRadius: "50%", animation: "spin 0.7s linear infinite", display: "inline-block" }} />
             שולח...
           </span>
         ) : ctaLabel}
       </button>
-
+      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </form>
   );
 }
