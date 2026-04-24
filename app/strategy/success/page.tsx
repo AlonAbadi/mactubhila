@@ -1,0 +1,21 @@
+import { CLIENT } from "@/lib/client";
+import { SuccessPage } from "@/components/SuccessPage";
+
+export const metadata = {
+  title: `ברוך הבא! | ${CLIENT.name}`,
+  robots: { index: false, follow: false },
+};
+
+export default function StrategySuccessPage() {
+  return (
+    <SuccessPage
+      productName="פגישת אסטרטגיה"
+      emoji="🎯"
+      confirmationTitle="התשלום התקבל!"
+      confirmationDesc="קיבלנו את הרכישה שלך. אישור עם קישור ל-Zoom ישלח לאימייל תוך 24 שעות."
+      nextStepLabel="חזור לדף הבית"
+      nextStepHref="/"
+      nextStepDesc="ממתינים לפגישה!"
+    />
+  );
+}
