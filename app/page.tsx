@@ -59,8 +59,8 @@ export default async function LandingPage() {
           ══════════════════════════════════════════════════════ */}
           <section style={{ overflow: "hidden", background: BG }}>
 
-            {/* ── MOBILE: full-bleed overlay ── */}
-            <div className="md:hidden" style={{ position: "relative", height: "93svh" }}>
+            {/* ── MOBILE ── */}
+            <div className="md:hidden" style={{ position: "relative", height: "93svh", background: `linear-gradient(160deg, ${ACC_L} 0%, ${BG} 45%, ${BG_DARK} 100%)` }}>
               <Image
                 src={CLIENT.hero.image}
                 alt={CLIENT.hero.image_alt}
@@ -89,8 +89,8 @@ export default async function LandingPage() {
                 </p>
                 <a href="/quiz" data-home-hero-cta="" style={{
                   display: "block", textAlign: "center",
-                  background: `linear-gradient(135deg, ${ACC_L}, ${ACC}, ${ACC_D})`,
-                  color: BG_DARK, fontWeight: 800, fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
+                  background: `linear-gradient(135deg, ${ACC}, ${ACC_D})`,
+                  color: "#FFFFFF", fontWeight: 800, fontSize: "clamp(0.95rem, 2vw, 1.05rem)",
                   borderRadius: 9999, padding: "14px", marginBottom: 14, textDecoration: "none",
                   width: "100%",
                 }}>
@@ -99,8 +99,9 @@ export default async function LandingPage() {
               </div>
             </div>
 
-            {/* ── DESKTOP: full-bleed overlay ── */}
-            <div className="hidden md:block" style={{ position: "relative", minHeight: "100vh" }}>
+            {/* ── DESKTOP ── */}
+            <div className="hidden md:block" style={{ position: "relative", minHeight: "100vh", background: `linear-gradient(160deg, ${ACC_L} 0%, ${BG} 45%, ${BG_DARK} 100%)` }}>
+              {/* Portrait — visible when /hero.jpg is a real photo */}
               <div style={{
                 position: "absolute",
                 top: 0,
@@ -127,9 +128,25 @@ export default async function LandingPage() {
                   }}
                 />
               </div>
+              {/* Decorative letter shown while no portrait photo exists */}
+              <div aria-hidden style={{
+                position: "absolute",
+                top: "50%",
+                left: "3%",
+                transform: "translateY(-50%)",
+                fontSize: "clamp(180px, 22vw, 300px)",
+                fontWeight: 900,
+                color: `${ACC}12`,
+                fontFamily: "var(--font-assistant), Assistant, sans-serif",
+                lineHeight: 1,
+                userSelect: "none",
+                pointerEvents: "none",
+              }}>
+                מ
+              </div>
               <div style={{
                 position: "absolute", inset: 0,
-                background: `linear-gradient(to bottom, ${BG}66 0%, transparent 30%)`,
+                background: `linear-gradient(to bottom, ${BG}44 0%, transparent 30%)`,
               }} />
               <div style={{
                 position: "absolute", top: "50%", right: 0,
@@ -152,11 +169,11 @@ export default async function LandingPage() {
                 </p>
                 <a href="/quiz" data-home-hero-cta="" style={{
                   display: "inline-block",
-                  background: `linear-gradient(135deg, ${ACC_L}, ${ACC}, ${ACC_D})`,
-                  color: BG_DARK, fontWeight: 800, fontSize: "1.05rem",
+                  background: `linear-gradient(135deg, ${ACC}, ${ACC_D})`,
+                  color: "#FFFFFF", fontWeight: 800, fontSize: "1.05rem",
                   borderRadius: 9999, padding: "16px 52px",
                   textDecoration: "none", marginBottom: 22,
-                  boxShadow: `inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -2px 6px rgba(0,0,0,0.25), 0 10px 28px rgba(0,0,0,0.35)`,
+                  boxShadow: `0 10px 28px ${ACC}55`,
                 }}>
                   {content.cta}
                 </a>
@@ -173,7 +190,7 @@ export default async function LandingPage() {
           <SocialProofStrip />
 
           {/* ══════════════════════════════════════════════════════
-              3. PHILOSOPHY
+              3. PHILOSOPHY / BIO
           ══════════════════════════════════════════════════════ */}
           <section
             className="px-6 py-20 md:py-28"
@@ -187,6 +204,44 @@ export default async function LandingPage() {
                 <p className="text-base font-semibold" style={{ color: ACC }}>
                   {CLIENT.about.tagline}
                 </p>
+              </div>
+
+              {/* Bio card — Hila's name, avatar, credentials */}
+              <div
+                className="flex flex-col md:flex-row items-center gap-7 md:gap-10"
+                style={{
+                  background: CARD,
+                  borderRadius: 24,
+                  padding: "28px 32px",
+                  border: `1px solid ${BDR}`,
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+                }}
+              >
+                <div
+                  aria-hidden
+                  style={{
+                    width: 96, height: 96, borderRadius: "50%", flexShrink: 0,
+                    background: `linear-gradient(135deg, ${ACC}, ${ACC_D})`,
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    fontSize: 40, fontWeight: 900, color: "#FFFFFF",
+                    fontFamily: "var(--font-assistant), Assistant, sans-serif",
+                    border: `3px solid ${ACC}4d`,
+                    boxShadow: `0 8px 24px ${ACC}33`,
+                  }}
+                >
+                  ה
+                </div>
+                <div style={{ textAlign: "right", direction: "rtl", flex: 1 }}>
+                  <p style={{ fontSize: "0.78rem", fontWeight: 700, color: ACC, marginBottom: 5, letterSpacing: "0.07em" }}>
+                    יוצרת שיטת מכתוב
+                  </p>
+                  <h3 style={{ fontSize: "1.45rem", fontWeight: 800, color: FG, lineHeight: 1.2, margin: "0 0 8px 0" }}>
+                    הילה יגאל-איזון
+                  </h3>
+                  <p style={{ fontSize: "0.875rem", color: MUT, lineHeight: 1.65, margin: 0 }}>
+                    מומחית בליווי כתיבה להתפתחות אישית ועיבוד טראומות · 25 שנות ניסיון · תואר שני בייעוץ ארגוני · פסיכולוגיה חיובית · טיפול נרטיבי
+                  </p>
+                </div>
               </div>
 
               <PhilosophySection />
@@ -219,7 +274,6 @@ export default async function LandingPage() {
                 </h2>
               </div>
 
-              {/* TODO: add real testimonials to the TESTIMONIALS array above */}
               {TESTIMONIALS.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {TESTIMONIALS.map((t) => (
@@ -229,13 +283,13 @@ export default async function LandingPage() {
                       style={{
                         background: CARD,
                         border: `1px solid ${ACC}26`,
-                        boxShadow: "0 4px 32px rgba(0,0,0,0.4)",
+                        boxShadow: "0 4px 32px rgba(0,0,0,0.08)",
                       }}
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex gap-0.5">
                           {Array.from({ length: 5 }).map((_, i) => (
-                            <svg key={i} className="w-4 h-4" fill={ACC_L} viewBox="0 0 20 20">
+                            <svg key={i} className="w-4 h-4" fill={ACC} viewBox="0 0 20 20">
                               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
                           ))}
