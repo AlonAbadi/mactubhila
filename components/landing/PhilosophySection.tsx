@@ -5,11 +5,17 @@ import { Compass, Flame, TrendingUp } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { CLIENT } from "@/lib/client";
 
+const ACC = CLIENT.colors.accent;
+const BDR = CLIENT.colors.border;
+const FG  = CLIENT.colors.fg;
+const MUT = CLIENT.colors.fg_muted;
+const CRD = CLIENT.colors.card;
+
 const ICONS: LucideIcon[] = [Compass, Flame, TrendingUp];
 
 const PRINCIPLES = CLIENT.pages.about.principles.map((p, i) => ({
   icon:  ICONS[i] ?? Compass,
-  title: p.q.replace(/^["״]|["״]$/g, ""),
+  title: p.q.replace(/^["“״]|["”״]$/g, ""),
   body:  p.body,
 }));
 
@@ -19,9 +25,9 @@ function Card({ p, snap }: { p: typeof PRINCIPLES[number]; snap?: boolean }) {
     <div
       className="card-hover"
       style={{
-        background: "linear-gradient(145deg, #1D2430, #111620)",
-        border: "1px solid rgba(201,150,74,0.16)",
-        boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
+        background: CRD,
+        border: `1px solid ${BDR}`,
+        boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
         borderRadius: 20,
         ...(snap ? { scrollSnapAlign: "start", width: "65vw", minWidth: "65vw", height: "65vw", flexShrink: 0, overflow: "hidden" } : {}),
       }}
@@ -35,26 +41,23 @@ function Card({ p, snap }: { p: typeof PRINCIPLES[number]; snap?: boolean }) {
         height: snap ? "100%" : undefined,
         boxSizing: "border-box",
       }}>
-        {/* Icon */}
         <div style={{
           width: 38, height: 38,
-          background: "rgba(201,150,74,0.12)",
-          border: "1px solid rgba(201,150,74,0.22)",
+          background: `${ACC}14`,
+          border: `1px solid ${ACC}33`,
           borderRadius: 10,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           alignSelf: "flex-start",
         }}>
-          <Icon size={18} color="#E8B94A" strokeWidth={2} />
+          <Icon size={18} color={ACC} strokeWidth={2} />
         </div>
-
-        {/* Text */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <h3 style={{ fontSize: "1rem", fontWeight: 700, color: "#EDE9E1", textAlign: "right", margin: 0 }}>
+          <h3 style={{ fontSize: "1rem", fontWeight: 700, color: FG, textAlign: "right", margin: 0 }}>
             {p.title}
           </h3>
-          <p style={{ fontSize: "0.85rem", color: "#9E9990", lineHeight: 1.6, textAlign: "right", margin: 0 }}>
+          <p style={{ fontSize: "0.85rem", color: MUT, lineHeight: 1.6, textAlign: "right", margin: 0 }}>
             {p.body}
           </p>
         </div>
@@ -111,7 +114,7 @@ export function PhilosophySection() {
           <div
             key={i}
             style={{
-              background: active === i ? "#C9964A" : "#2C323E",
+              background: active === i ? ACC : BDR,
               width: active === i ? 24 : 8,
               height: 7,
               borderRadius: 9999,
