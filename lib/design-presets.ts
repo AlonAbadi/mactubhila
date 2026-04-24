@@ -128,9 +128,7 @@ export const PRESETS: Record<DesignPreset, PresetTokens> = {
 /** Returns a CSS string of :root variable overrides for the given preset. */
 export function getPresetCSS(
   preset: DesignPreset,
-  overrides?: Partial<Pick<PresetTokens,
-    "accent" | "accent_light" | "accent_dark" | "btn_text"
-  >>
+  overrides?: Partial<PresetTokens>
 ): string {
   const t = { ...PRESETS[preset], ...overrides };
 

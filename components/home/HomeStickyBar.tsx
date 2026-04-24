@@ -49,9 +49,9 @@ export default function HomeStickyBar({
         left: 0,
         right: 0,
         zIndex: 40,
-        background: "rgba(13,16,24,0.97)",
+        background: "rgba(228,240,234,0.97)",
         backdropFilter: "blur(12px)",
-        borderTop: "1px solid #2C323E",
+        borderTop: "1px solid #C5DDD2",
         padding: "12px 16px",
         display: "flex",
         alignItems: "center",
@@ -59,23 +59,23 @@ export default function HomeStickyBar({
         gap: 12,
         transform: visible ? "translateY(0)" : "translateY(100%)",
         transition: "transform 0.3s ease",
-        boxShadow: "0 -4px 16px rgba(0,0,0,0.4)",
+        boxShadow: "0 -2px 12px rgba(45,122,95,0.15)",
         fontFamily: "var(--font-assistant), Assistant, sans-serif",
         direction: "rtl",
       }}
     >
-      <div style={{ color: "#EDE9E1", fontSize: 14, fontWeight: 600, lineHeight: 1.3, flex: 1 }}>
+      <div style={{ color: "#1A2E25", fontSize: 14, fontWeight: 600, lineHeight: 1.3, flex: 1 }}>
         רוצה לטעום את השיטה?
         <br />
-        <span style={{ color: "#9E9990", fontWeight: 400, fontSize: 12 }}>
+        <span style={{ color: "#7A9E8E", fontWeight: 400, fontSize: 12 }}>
           שיעור מתנה של 20 דקות – בלי התחייבות
         </span>
       </div>
       <a
         href="/training"
         style={{
-          background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
-          color: "#080C14",
+          background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+          color: "#F5FAF7",
           fontSize: 13,
           fontWeight: 800,
           padding: "10px 20px",

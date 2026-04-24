@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect, useTransition } from "react";
 import { Menu, X } from "lucide-react";
@@ -111,9 +112,10 @@ export function MobileNav({ userInitial = null }: MobileNavProps) {
         </div>
 
         {/* Brand name */}
-        <Link href="/" style={{ flex: 1, textAlign: "center", textDecoration: "none" }}>
-          <span style={{ fontSize: 17, fontWeight: 700, color: FG, fontFamily: "var(--font-assistant), Assistant, sans-serif" }}>
-            {CLIENT.name}
+        <Link href="/" style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: 6, textDecoration: "none" }}>
+          <Image src="/logo.png" alt="מכתוב" width={60} height={30} style={{ objectFit: "contain", display: "block" }} priority />
+          <span style={{ fontSize: 14, fontWeight: 700, color: FG, fontFamily: "var(--font-assistant), Assistant, sans-serif" }}>
+            הילה יגאל איזון
           </span>
         </Link>
       </nav>
