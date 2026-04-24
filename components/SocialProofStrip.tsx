@@ -89,9 +89,9 @@ export default function SocialProofStrip() {
             {/* Quote body */}
             <div className="flex-1 min-w-0" dir="rtl" style={{ textAlign: 'right' }}>
               <p
-                style={{ color: FG }}
                 className="text-sm leading-relaxed"
                 style={{
+                  color: FG,
                   display: '-webkit-box',
                   WebkitLineClamp: 3,
                   WebkitBoxOrient: 'vertical',
