@@ -8,9 +8,12 @@ const SOFT = CLIENT.colors.card_soft;
 const FG   = CLIENT.colors.fg;
 const MUT  = CLIENT.colors.fg_muted;
 
+type TeamMember = { name: string; role: string; bio: string; image: string; initial: string; is_founder: boolean };
+const allMembers = CLIENT.team as unknown as TeamMember[];
+
 export function TeamSection() {
-  const founder = CLIENT.team.filter((m) => m.is_founder);
-  const rest    = CLIENT.team.filter((m) => !m.is_founder);
+  const founder = allMembers.filter((m) => m.is_founder);
+  const rest    = allMembers.filter((m) => !m.is_founder);
 
   return (
     <section dir="rtl" style={{ padding: "64px 20px" }}>
