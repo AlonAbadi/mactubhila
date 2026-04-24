@@ -114,12 +114,13 @@ export default async function StrategyPage() {
         headline={<><em>{CLIENT.products.strategy.title}</em></>}
         heroSub={CLIENT.products.strategy.description}
         stats={[
-          { val: "10",   label: "מפגשים" },
-          { val: price,  label: "₪" },
-          { val: "100%", label: "ערבות" },
+          { val: "10",    label: "מפגשים פרונטליים" },
+          { val: "8–10",  label: "משתתפות בקבוצה" },
+          { val: "ליווי", label: "נרטיבי אישי לכל משתתפת" },
+          { val: "100%",  label: "דיווחו על שינוי חיובי" },
         ]}
 
-        problemItems={pg.pain_points.map(t => ({ icon: "🔸", text: t }))}
+        problemItems={pg.pain_points.map(t => ({ icon: "✓", text: t }))}
         agitationText={pg.agitation}
 
         solutionTitle={pg.solution_title}

@@ -141,12 +141,13 @@ export default function CardsPage() {
         headline={<><em>{CLIENT.products.cards.title}</em></>}
         heroSub={CLIENT.products.cards.description}
         stats={[
-          { val: "30",          label: "קלפים" },
-          { val: String(price), label: "₪" },
-          { val: "מיידי",       label: "גישה" },
+          { val: "30",    label: "קלפים" },
+          { val: "5",     label: "תרגילים מודרכים" },
+          { val: "45",    label: "דקות מדריך מוקלט" },
+          { val: "מיידי", label: "גישה דיגיטלית" },
         ]}
 
-        problemItems={pg.pain_points.map(t => ({ icon: "🔸", text: t }))}
+        problemItems={pg.pain_points.map(t => ({ icon: "✓", text: t }))}
         agitationText={pg.agitation}
 
         solutionTitle={pg.solution_title}

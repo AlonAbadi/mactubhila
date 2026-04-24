@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import ProductLandingPage from "@/components/landing/ProductLandingPage";
 import { SignupForm } from "@/components/landing/SignupForm";
-import { TrainingViewCounter } from "@/app/training/watch/TrainingViewCounter";
 import { getTrainingViewCount } from "@/lib/training-views";
 import { CLIENT } from "@/lib/client";
 
@@ -26,12 +25,13 @@ export default async function TrainingPage() {
       headline={<><em>{CLIENT.products.training.title}</em></>}
       heroSub={CLIENT.products.training.description}
       stats={[
-        { val: "20", label: "דקות" },
-        { val: "0",  label: "עלות" },
-        { val: <TrainingViewCounter initialCount={viewCount} />, label: "צפו" },
+        { val: "20",     label: "דקות" },
+        { val: "3",      label: "כלים מעשיים" },
+        { val: "1",      label: "תרגיל מיידי" },
+        { val: "חינם",   label: "ללא התחייבות" },
       ]}
 
-      problemItems={pg.pain_points.map(t => ({ icon: "🔸", text: t }))}
+      problemItems={pg.pain_points.map(t => ({ icon: "✓", text: t }))}
       agitationText={pg.agitation}
 
       solutionTitle={pg.solution_title}

@@ -42,12 +42,13 @@ export default function PartnershipPage() {
         headline={<><em>{CLIENT.products.partnership.title}</em></>}
         heroSub={CLIENT.products.partnership.description}
         stats={[
-          { val: String(price),                          label: "₪" },
-          { val: CLIENT.social_proof.stat1.number,       label: CLIENT.social_proof.stat1.label },
-          { val: CLIENT.social_proof.stat2.number,       label: CLIENT.social_proof.stat2.label },
+          { val: "6",         label: "מפגשים אישיים" },
+          { val: "ערך +₪2,624", label: "במחיר ₪1,900" },
+          { val: "התאמה",    label: "אישית לקצב שלך" },
+          { val: "מרחב",     label: "בטוח ורגיש" },
         ]}
 
-        problemItems={pg.pain_points.map(t => ({ icon: "🔸", text: t }))}
+        problemItems={pg.pain_points.map(t => ({ icon: "✓", text: t }))}
         agitationText={pg.agitation}
 
         solutionTitle={pg.solution_title}

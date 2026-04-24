@@ -50,12 +50,13 @@ export default async function WorkshopPage({ searchParams }: { searchParams: Pro
         headline={<><em>{CLIENT.products.workshop.title}</em></>}
         heroSub={CLIENT.products.workshop.description}
         stats={[
-          { val: "1",   label: "יום" },
-          { val: price, label: "₪" },
-          { val: CLIENT.social_proof.stat1.number, label: CLIENT.social_proof.stat1.label },
+          { val: "6",       label: "שיעורים מוקלטים" },
+          { val: "6",       label: "שבועות ליווי" },
+          { val: "2",       label: "מפגשי 1:1 עם הילה" },
+          { val: "ערך +₪1,500", label: "במחיר ₪1,100" },
         ]}
 
-        problemItems={pg.pain_points.map(t => ({ icon: "🔸", text: t }))}
+        problemItems={pg.pain_points.map(t => ({ icon: "✓", text: t }))}
         agitationText={pg.agitation}
 
         solutionTitle={pg.solution_title}

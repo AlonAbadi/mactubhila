@@ -677,8 +677,8 @@ export default function ProductLandingPage({
         <>
           <div className="lp-divider" />
           <div className="lp-section">
-            <div className="lp-eyebrow">הבעיה</div>
-            <h2 className="lp-section-title">למה רוב הניסיונות לא עובדים</h2>
+            <div className="lp-eyebrow">למה מכתוב</div>
+            <h2 className="lp-section-title">למה להיכנס למסע הזה</h2>
             <div className="problem-list">
               {problemItems.map((item, i) => (
                 <div key={i} className="problem-item">
@@ -688,9 +688,9 @@ export default function ProductLandingPage({
               ))}
             </div>
             {agitationText && (
-              <div className="lp-agitation">
-                <div className="lp-agitation-title">שים לב</div>
-                <div className="lp-agitation-text">{agitationText}</div>
+              <div style={{ borderRight: `3px solid ${GOLD}`, padding: '16px 20px', background: `rgba(45,122,95,0.04)`, borderRadius: '0 12px 12px 0', marginTop: 20 }}>
+                <div style={{ fontSize: 15, color: FG, lineHeight: 1.75, fontStyle: 'italic' }}>{agitationText}</div>
+                <div style={{ fontSize: 13, color: GOLD, fontWeight: 700, marginTop: 8 }}>— הילה</div>
               </div>
             )}
           </div>
@@ -735,10 +735,10 @@ export default function ProductLandingPage({
           <div className="lp-divider" />
           <div className="lp-section">
             <div className="nfe-box">
-              <div className="nfe-box-title">זה לא בשביל כולם.</div>
+              <div className="nfe-box-title">האם זה מתאים לי?</div>
               <div className="nfe-grid">
                 <div>
-                  <div className="nfe-col-title red">לא מתאים אם</div>
+                  <div className="nfe-col-title red">עדיף לחכות אם</div>
                   {notForItems.map((item, i) => (
                     <div key={i} className="nfe-item"><span>✗</span><span>{item}</span></div>
                   ))}
