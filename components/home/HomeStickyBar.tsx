@@ -65,14 +65,14 @@ export default function HomeStickyBar({
       }}
     >
       <div style={{ color: "#EDE9E1", fontSize: 14, fontWeight: 600, lineHeight: 1.3, flex: 1 }}>
-        לא בטוח/ה איפה להתחיל?
+        רוצה לטעום את השיטה?
         <br />
         <span style={{ color: "#9E9990", fontWeight: 400, fontSize: 12 }}>
-          קוויז קצר - ונדע בדיוק מה מתאים לך
+          שיעור מתנה של 20 דקות – בלי התחייבות
         </span>
       </div>
       <a
-        href="/quiz"
+        href="/training"
         style={{
           background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
           color: "#080C14",

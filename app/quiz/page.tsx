@@ -7,8 +7,8 @@ import { QuizClient } from "./QuizClient";
 import type { Database } from "@/lib/supabase/types";
 
 export const metadata: Metadata = {
-  title: `גלה את הצעד הנכון עבורך | ${CLIENT.name}`,
-  description: "6 שאלות. 2 דקות. תשובה מדויקת על הצעד הנכון לשיווק העסק שלך.",
+  title: `מאיפה מתחילים? | ${CLIENT.name}`,
+  description: "6 שאלות קצרות ותדעי בדיוק איזה מסלול מכתוב מתאים לך עכשיו – חינמי, קורס דיגיטלי, קורס פרונטלי או ליווי אישי.",
   alternates: { canonical: "/quiz" },
 };
 

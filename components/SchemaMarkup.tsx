@@ -10,15 +10,16 @@ const website = {
   "inLanguage": "he",
 };
 
+const founder = CLIENT.team.find((m) => m.is_founder);
+
 const person = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": CLIENT.name,
+  "name": CLIENT.legal_name,
   "url": APP_URL,
-  "jobTitle": CLIENT.about.tagline,
+  "jobTitle": founder?.role ?? "יוצרת שיטת מכתוב",
   "description": CLIENT.about.body,
-  // TODO: add client-specific knowsAbout topics
-  "knowsAbout": [] as string[],
+  "knowsAbout": ["כתיבה טיפולית", "טיפול נרטיבי", "פסיכולוגיה חיובית", "עיבוד טראומה"] as string[],
   "worksFor": {
     "@type": "Organization",
     "name": CLIENT.legal_name,

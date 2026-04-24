@@ -9,7 +9,7 @@ import { CLIENT } from "@/lib/client";
 export const metadata: Metadata = {
   title: `${CLIENT.products.strategy.title} | ${CLIENT.name}`,
   description: CLIENT.products.strategy.description,
-  alternates: { canonical: "/strategy" },
+  alternates: { canonical: "/in-person" },
 };
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? `https://${CLIENT.domain}`;
@@ -36,14 +36,14 @@ export default async function StrategyPage() {
         type="Service"
         name={CLIENT.products.strategy.title}
         description={CLIENT.products.strategy.description}
-        url={`${APP_URL}/strategy`}
+        url={`${APP_URL}/in-person`}
         price={CLIENT.products.strategy.price}
         imageUrl={`${APP_URL}${CLIENT.products.strategy.image}`}
       />
       <FAQSchema items={faqItems} />
       <BreadcrumbSchema crumbs={[
         { name: "דף הבית", url: APP_URL },
-        { name: CLIENT.products.strategy.title, url: `${APP_URL}/strategy` },
+        { name: CLIENT.products.strategy.title, url: `${APP_URL}/in-person` },
       ]} />
 
       {/* ── Next course date banner ── */}

@@ -38,7 +38,7 @@ export default async function BookingPage({
           <Link href="/" className="font-black text-xl" style={{ color: "#EDE9E1" }}>
             {CLIENT.name}
           </Link>
-          <Link href="/strategy" className="text-sm transition" style={{ color: "#9E9990" }}>
+          <Link href="/in-person" className="text-sm transition" style={{ color: "#9E9990" }}>
             ← חזור לעמוד הפגישה
           </Link>
         </div>

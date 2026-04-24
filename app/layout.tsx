@@ -25,7 +25,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
-const OG_IMAGE = `https://${CLIENT.domain}${CLIENT.meta.og_image}`;
+const OG_IMAGE = `${APP_URL}${CLIENT.meta.og_image}`;
 
 const TITLE       = CLIENT.meta.title;
 const DESCRIPTION = CLIENT.meta.description;

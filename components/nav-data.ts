@@ -9,9 +9,9 @@ export const GROUP2 = [
 export const GROUP3 = [
   { label: "קלפי מכתוב דיגיטליים", price: "₪149",    href: "/cards" },
   { label: "קורס דיגיטלי",         price: "₪575",    href: "/course" },
-  { label: "קורס דיגיטלי + ליווי", price: "₪1,100",  href: "/workshop" },
-  { label: "ליווי נרטיבי אישי",    price: "₪1,900",  href: "/partnership" },
-  { label: "קורס מכתוב המלא",      price: "₪4,100",  href: "/strategy" },
+  { label: "קורס דיגיטלי + ליווי", price: "₪1,100",  href: "/course-plus" },
+  { label: "ליווי נרטיבי אישי",    price: "₪1,900",  href: "/one-on-one" },
+  { label: "קורס מכתוב המלא",      price: "₪4,100",  href: "/in-person" },
 ];
 
 export const GROUP4 = [{ label: "מלגות ומסלולים חברתיים", href: "/scholarships" }];

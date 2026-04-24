@@ -41,7 +41,7 @@ export function ProductsSection({ excludeTraining = false }: { excludeTraining?:
   }
   if (CLIENT.modules.workshop) {
     steps.push({
-      href: "/workshop",
+      href: "/course-plus",
       price: `₪${PRODUCT_MAP.workshop_1080.price.toLocaleString("he-IL")}`,
       name: CLIENT.products.workshop.title,
       desc: CLIENT.products.workshop.description,
@@ -61,7 +61,7 @@ export function ProductsSection({ excludeTraining = false }: { excludeTraining?:
   }
   if (CLIENT.modules.strategy) {
     steps.push({
-      href: "/strategy",
+      href: "/in-person",
       price: `₪${PRODUCT_MAP.strategy_4000.price.toLocaleString("he-IL")}`,
       name: CLIENT.products.strategy.title,
       desc: CLIENT.products.strategy.description,
@@ -83,7 +83,7 @@ export function ProductsSection({ excludeTraining = false }: { excludeTraining?:
   }
   if (CLIENT.modules.partnership) {
     premiumSteps.push({
-      href: "/partnership",
+      href: "/one-on-one",
       price: "בהתאמה אישית",
       name: CLIENT.products.partnership.title,
       desc: CLIENT.products.partnership.description,

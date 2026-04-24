@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { BookingForm, type BookingSuccessData } from "@/app/strategy/book/BookingForm";
+import { BookingForm, type BookingSuccessData } from "@/app/in-person/book/BookingForm";
 import { ConsentCheckbox } from "@/components/landing/ConsentCheckbox";
 import { CLIENT } from "@/lib/client";
 import { getSessionUser } from "@/lib/quiz-session";

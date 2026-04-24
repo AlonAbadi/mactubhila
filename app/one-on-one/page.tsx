@@ -8,7 +8,7 @@ import { CLIENT } from "@/lib/client";
 export const metadata: Metadata = {
   title: `${CLIENT.products.partnership.title} | ${CLIENT.name}`,
   description: CLIENT.products.partnership.description,
-  alternates: { canonical: "/partnership" },
+  alternates: { canonical: "/one-on-one" },
 };
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? `https://${CLIENT.domain}`;
@@ -25,14 +25,14 @@ export default function PartnershipPage() {
         type="Service"
         name={CLIENT.products.partnership.title}
         description={CLIENT.products.partnership.description}
-        url={`${APP_URL}/partnership`}
+        url={`${APP_URL}/one-on-one`}
         price={price}
         imageUrl={`${APP_URL}${CLIENT.products.partnership.image}`}
       />
       <FAQSchema items={faqItems} />
       <BreadcrumbSchema crumbs={[
         { name: "דף הבית", url: APP_URL },
-        { name: CLIENT.products.partnership.title, url: `${APP_URL}/partnership` },
+        { name: CLIENT.products.partnership.title, url: `${APP_URL}/one-on-one` },
       ]} />
       <ProductLandingPage
         productName={CLIENT.products.partnership.title}

@@ -494,7 +494,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
 
   const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_PHONE
     ? `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_PHONE}`
-    : "/strategy";
+    : "/in-person";
 
   // ── Questions + lead gate wrapper (dark quiz theme) ───────────────
   if (step < 7) {

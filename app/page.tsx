@@ -7,7 +7,6 @@ import { CLIENT } from "@/lib/client";
 import { PageTracker } from "@/components/landing/PageTracker";
 import { PhilosophySection } from "@/components/landing/PhilosophySection";
 import { StatsSection } from "@/components/landing/StatsSection";
-import { ProductsSection } from "@/components/ProductsSection";
 import HomeStickyBar from "@/components/home/HomeStickyBar";
 import SocialProofStrip from "@/components/SocialProofStrip";
 
@@ -300,7 +299,7 @@ export default async function LandingPage() {
                     title: "רוצה ליווי צמוד",
                     desc: "קורס עם ליווי אישי של הילה (₪1,100) או ליווי 1:1 בלבד (₪1,900).",
                     cta: "לפרטים ←",
-                    href: "/workshop",
+                    href: "/course-plus",
                     highlight: false,
                   },
                 ].map((card) => (
@@ -338,11 +337,6 @@ export default async function LandingPage() {
               </div>
             </div>
           </section>
-
-          {/* ══════════════════════════════════════════════════════
-              5. PRODUCTS (full ladder)
-          ══════════════════════════════════════════════════════ */}
-          <ProductsSection />
 
           {/* ══════════════════════════════════════════════════════
               5. SOCIAL PROOF
@@ -487,9 +481,9 @@ export default async function LandingPage() {
                 { label: "שיעור מתנה",     href: "/training" },
                 { label: "קלפים",           href: "/cards" },
                 ...(CLIENT.modules.course     ? [{ label: "קורס דיגיטלי",  href: "/course" }]      : []),
-                ...(CLIENT.modules.workshop   ? [{ label: "קורס + ליווי",  href: "/workshop" }]    : []),
-                ...(CLIENT.modules.strategy   ? [{ label: "קורס פרונטלי", href: "/strategy" }]    : []),
-                ...(CLIENT.modules.partnership? [{ label: "ליווי 1:1",     href: "/partnership" }] : []),
+                ...(CLIENT.modules.workshop   ? [{ label: "קורס + ליווי",  href: "/course-plus" }]    : []),
+                ...(CLIENT.modules.strategy   ? [{ label: "קורס פרונטלי", href: "/in-person" }]    : []),
+                ...(CLIENT.modules.partnership? [{ label: "ליווי 1:1",     href: "/one-on-one" }] : []),
                 { label: "מלגות",           href: "/scholarships" },
                 { label: "לארגונים",        href: "/for-organizations" },
                 { label: "אזור אישי",       href: "/my" },

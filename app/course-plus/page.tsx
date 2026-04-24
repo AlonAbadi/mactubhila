@@ -13,7 +13,7 @@ import { CLIENT } from "@/lib/client";
 export const metadata: Metadata = {
   title: `${CLIENT.products.workshop.title} | ${CLIENT.name}`,
   description: CLIENT.products.workshop.description,
-  alternates: { canonical: "/workshop" },
+  alternates: { canonical: "/course-plus" },
 };
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? `https://${CLIENT.domain}`;
@@ -32,14 +32,14 @@ export default async function WorkshopPage({ searchParams }: { searchParams: Pro
         type="Course"
         name={CLIENT.products.workshop.title}
         description={CLIENT.products.workshop.description}
-        url={`${APP_URL}/workshop`}
+        url={`${APP_URL}/course-plus`}
         price={CLIENT.products.workshop.price}
         imageUrl={`${APP_URL}${CLIENT.products.workshop.image}`}
       />
       <FAQSchema items={faqItems} />
       <BreadcrumbSchema crumbs={[
         { name: "דף הבית", url: APP_URL },
-        { name: CLIENT.products.workshop.title, url: `${APP_URL}/workshop` },
+        { name: CLIENT.products.workshop.title, url: `${APP_URL}/course-plus` },
       ]} />
       <AbandonCheckoutPopup product="workshop" />
       <ProductLandingPage

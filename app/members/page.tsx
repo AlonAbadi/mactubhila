@@ -123,7 +123,7 @@ export default async function MembersPage({
                 <p className="font-bold text-white text-sm">וורקשופ מתקדם ב-₪1,080</p>
               </div>
               <Link
-                href="/workshop"
+                href="/course-plus"
                 className="flex-shrink-0 text-xs bg-blue-600 hover:bg-blue-700 text-white font-bold px-3 py-1.5 rounded-lg transition"
               >
                 פרטים →

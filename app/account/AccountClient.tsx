@@ -112,16 +112,16 @@ const QUIZ_PRODUCT_NAMES: Record<string, string> = {
 const QUIZ_PRODUCT_HREF: Record<string, string> = {
   free_training: "/training",
   challenge:     "/challenge",
-  workshop:      "/workshop",
+  workshop:      "/course-plus",
   course:        "/course",
-  strategy:      "/strategy",
+  strategy:      "/in-person",
   premium:       "/premium",
-  partnership:   "/partnership",
+  partnership:   "/one-on-one",
 };
 
 const RECOMMENDED = [
   { label: "אתגר 7 ימים - ₪197",    href: "/challenge", product: "challenge_197"  },
-  { label: "סדנה יום אחד - ₪1,080", href: "/workshop",  product: "workshop_1080"  },
+  { label: "סדנה יום אחד - ₪1,080", href: "/course-plus",  product: "workshop_1080"  },
   { label: "קורס דיגיטלי - ₪1,800", href: "/course",    product: "course_1800"    },
   { label: "הכוורת - ₪97 לחודש",    href: "/hive",      product: null             },
 ];

@@ -12,9 +12,9 @@ const NAV_LINKS = [
   { label: "שיעור מתנה",   href: "/training" },
   { label: "קלפים",         href: "/cards" },
   ...(CLIENT.modules.course     ? [{ label: "קורס דיגיטלי",   href: "/course" }]      : []),
-  ...(CLIENT.modules.workshop   ? [{ label: "קורס + ליווי",   href: "/workshop" }]    : []),
-  ...(CLIENT.modules.strategy   ? [{ label: "קורס פרונטלי",   href: "/strategy" }]   : []),
-  ...(CLIENT.modules.partnership? [{ label: "ליווי 1:1",      href: "/partnership" }] : []),
+  ...(CLIENT.modules.workshop   ? [{ label: "קורס + ליווי",   href: "/course-plus" }]    : []),
+  ...(CLIENT.modules.strategy   ? [{ label: "קורס פרונטלי",   href: "/in-person" }]   : []),
+  ...(CLIENT.modules.partnership? [{ label: "ליווי 1:1",      href: "/one-on-one" }] : []),
   { label: "מלגות",         href: "/scholarships" },
   { label: "לארגונים",      href: "/for-organizations" },
 ];

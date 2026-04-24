@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BookingForm, type BookingSuccessData } from "@/app/strategy/book/BookingForm";
+import { BookingForm, type BookingSuccessData } from "@/app/in-person/book/BookingForm";
 import { trackInitiateCheckout } from "@/lib/analytics";
 
 function getCookie(name: string): string | undefined {

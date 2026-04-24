@@ -27,11 +27,11 @@ export default function NotFound() {
             חזרה לדף הבית ←
           </Link>
           <Link
-            href="/challenge"
+            href="/training"
             className="rounded-xl px-6 py-3 font-bold text-white border transition hover:border-white/40"
             style={{ borderColor: "rgba(255,255,255,0.15)" }}
           >
-            לצ׳אלנג׳ 7 הימים
+            שיעור מתנה חינם
           </Link>
         </div>
       </div>

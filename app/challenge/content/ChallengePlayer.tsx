@@ -410,7 +410,7 @@ export default function ChallengePlayer({
       <div style={{ fontSize: 13, color: "#9E9990", marginBottom: 16 }}>
         הצעד הבא — סדנה יום אחד לבניית המסר שמוכר
       </div>
-      <Link href="/workshop" style={{
+      <Link href="/course-plus" style={{
         display: "inline-block", padding: "10px 24px", borderRadius: 8,
         background: "linear-gradient(135deg, #E8B94A, #9E7C3A)",
         color: "#080C14", fontSize: 14, fontWeight: 800,
