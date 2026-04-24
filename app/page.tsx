@@ -307,6 +307,7 @@ export default async function LandingPage() {
                   <a
                     key={card.href}
                     href={card.href}
+                    className="start-path-card"
                     style={{
                       display: "block",
                       background: card.highlight ? `linear-gradient(135deg, ${ACC}14, ${ACC}08)` : BG,
@@ -315,14 +316,6 @@ export default async function LandingPage() {
                       padding: "24px",
                       textDecoration: "none",
                       transition: "transform 0.2s, box-shadow 0.2s",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
-                      (e.currentTarget as HTMLElement).style.boxShadow = `0 12px 32px ${ACC}22`;
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.transform = "";
-                      (e.currentTarget as HTMLElement).style.boxShadow = "";
                     }}
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
@@ -524,6 +517,7 @@ export default async function LandingPage() {
 
       </div>
       <HomeStickyBar ctaText={content.cta} />
+      <style>{`.start-path-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px ${ACC}22; }`}</style>
     </>
   );
 }
