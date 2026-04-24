@@ -28,53 +28,49 @@ type Product = {
 };
 
 // ── Questions ─────────────────────────────────────────────────────
-// TODO: replace with real questions per client (3–6 questions recommended).
-// Each option id must be "A"|"B"|"C"|"D". subtitle is optional (null = hidden).
 
 const QUESTIONS = [
   {
     id: "q1",
-    title: "שאלה 1 — TODO: כתוב כאן את השאלה הראשונה",
-    subtitle: "הסבר קצר אופציונלי מתחת לשאלה",
+    title: "מה הסיפור שהכי מגביל אותך כרגע?",
+    subtitle: "בחר/י את מה שהכי מדויק עבורך",
     options: [
-      { id: "A", text: "תשובה א׳ — TODO" },
-      { id: "B", text: "תשובה ב׳ — TODO" },
-      { id: "C", text: "תשובה ג׳ — TODO" },
-      { id: "D", text: "תשובה ד׳ — TODO" },
+      { id: "A", text: "אני לא כותב/ת טוב מספיק" },
+      { id: "B", text: "אין לי זמן לשבת ולכתוב" },
+      { id: "C", text: "אני לא יודע/ת מה לכתוב" },
+      { id: "D", text: "כתיבה זה לא בשבילי" },
     ],
   },
   {
     id: "q2",
-    title: "שאלה 2 — TODO",
+    title: "מה הכי מאפיין את הקשר שלך עם הכתיבה?",
     subtitle: null,
     options: [
-      { id: "A", text: "תשובה א׳ — TODO" },
-      { id: "B", text: "תשובה ב׳ — TODO" },
-      { id: "C", text: "תשובה ג׳ — TODO" },
-      { id: "D", text: "תשובה ד׳ — TODO" },
+      { id: "A", text: "מתחיל/ה ולא מסיים/ת" },
+      { id: "B", text: "רוצה לכתוב אבל לא יוצא בפועל" },
+      { id: "C", text: "כתבתי בעבר ועצרתי" },
+      { id: "D", text: "לא כותב/ת בכלל, רוצה להתחיל" },
     ],
   },
   {
     id: "q3",
-    title: "שאלה 3 — TODO",
+    title: "מה הכי חשוב לך להשיג דרך הכתיבה?",
     subtitle: null,
     options: [
-      { id: "A", text: "תשובה א׳ — TODO" },
-      { id: "B", text: "תשובה ב׳ — TODO" },
-      { id: "C", text: "תשובה ג׳ — TODO" },
-      { id: "D", text: "תשובה ד׳ — TODO" },
+      { id: "A", text: "להשתחרר ממשהו שמעיק עליי" },
+      { id: "B", text: "להכיר את עצמי לעומק" },
+      { id: "C", text: "לחזק את הביטחון העצמי שלי" },
+      { id: "D", text: "ליצור ולהביע את עצמי" },
     ],
   },
 ];
 
 // ── Products ──────────────────────────────────────────────────────
-// TODO: list only the products active in CLIENT.modules.
-// id must match keys in PRODUCT_IMAGE / PRODUCT_META / PRODUCT_DESC in quiz-config.ts.
 
 const PRODUCTS: Product[] = [
-  { id: "free_training", href: "/training",  name: "הדרכה חינמית", price: "חינם" },
-  { id: "challenge",     href: "/challenge", name: "אתגר",          price: "TODO ש\"ח" },
-  { id: "hive",          href: "/hive",      name: "קהילה",         price: "TODO ש\"ח/חודש" },
+  { id: "free_training", href: "/training",  name: "שיעור מתנה ממכתוב", price: "חינם" },
+  { id: "challenge",     href: "/challenge", name: "אתגר הכתיבה – 7 ימים", price: "197 ש\"ח" },
+  { id: "hive",          href: "/hive",      name: "קהילת מכתוב",         price: "97 ש\"ח/חודש" },
 ];
 
 // ── Match score scaling ───────────────────────────────────────────
@@ -90,14 +86,15 @@ function scaleSecondary(rawScore: number): number {
 }
 
 // ── Scoring ───────────────────────────────────────────────────────
-// SCORES[questionId][answer] = array of scores, one per PRODUCT (same order as PRODUCTS array).
-// MAX_SCORE = max points a single product can accumulate across all questions.
-// TODO: fill in per client after defining QUESTIONS and PRODUCTS.
+// SCORES[questionId][answer] = [free_training, challenge, hive]
 
 const SCORES: Record<string, Record<Answer, number[]>> = {
-  q1: { A: [3,1,0], B: [2,3,0], C: [1,2,3], D: [0,1,3] },
-  q2: { A: [1,3,1], B: [0,2,3], C: [1,3,2], D: [0,1,3] },
-  q3: { A: [3,1,0], B: [1,3,1], C: [1,3,1], D: [2,2,1] },
+  // q1: מה מגביל אותך — A=לא טוב B=אין זמן C=לא יודע D=לא בשבילי
+  q1: { A: [1,3,1], B: [3,1,2], C: [2,2,3], D: [3,1,0] },
+  // q2: קשר עם כתיבה — A=מתחיל/לא מסיים B=רוצה/לא יוצא C=כתב/עצר D=לא כותב
+  q2: { A: [1,3,2], B: [2,3,1], C: [1,2,3], D: [3,1,1] },
+  // q3: מה רוצה להשיג — A=להשתחרר B=להכיר את עצמי C=ביטחון D=ליצור
+  q3: { A: [1,2,3], B: [2,2,3], C: [1,3,2], D: [2,3,2] },
 };
 
 const MAX_SCORE = 9;
