@@ -15,10 +15,10 @@ export default function ThankYouPage() {
     <main
       dir="rtl"
       className="min-h-screen flex flex-col font-assistant"
-      style={{ background: "#101520" }}
+      style={{ background: "#E4F0EA" }}
     >
       {/* Nav */}
-      <header className="px-6 py-4" style={{ borderBottom: "1px solid #2C323E", background: "rgba(16,21,32,0.9)" }}>
+      <header className="px-6 py-4" style={{ borderBottom: "1px solid #C5DDD2", background: "rgba(16,21,32,0.9)" }}>
         <span className="font-black text-xl" style={{ color: CLIENT.colors.accent }}>{CLIENT.name}</span>
       </header>
 
@@ -28,17 +28,17 @@ export default function ThankYouPage() {
           {/* Success icon */}
           <div
             className="w-24 h-24 rounded-full flex items-center justify-center shadow-lg"
-            style={{ background: "linear-gradient(135deg, #E8B94A 0%, #C9964A 50%, #9E7C3A 100%)" }}
+            style={{ background: "linear-gradient(135deg, #EE7202 0%, #EE7202 50%, #C55E00 100%)" }}
           >
-            <svg className="w-12 h-12" fill="none" stroke="#101520" strokeWidth={2.5} viewBox="0 0 24 24">
+            <svg className="w-12 h-12" fill="none" stroke="#E4F0EA" strokeWidth={2.5} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
             </svg>
           </div>
 
           {/* Headline */}
           <div className="flex flex-col gap-3">
-            <h1 className="text-4xl font-black" style={{ color: "#EDE9E1" }}>נרשמת בהצלחה! 🎉</h1>
-            <p className="text-lg leading-relaxed" style={{ color: "#9E9990" }}>
+            <h1 className="text-4xl font-black" style={{ color: "#1A2E25" }}>נרשמת בהצלחה! 🎉</h1>
+            <p className="text-lg leading-relaxed" style={{ color: "#7A9E8E" }}>
               שלחנו לך אימייל עם הקישור להדרכה.<br />
               <span className="text-sm">בדוק גם את תיקיית הספאם אם לא רואה.</span>
             </p>
@@ -47,7 +47,7 @@ export default function ThankYouPage() {
           {/* Next step card */}
           <div
             className="w-full rounded-2xl p-6 flex flex-col gap-4 text-right"
-            style={{ background: "linear-gradient(135deg, #C9964A, #9E7C3A)", color: "#101520" }}
+            style={{ background: "linear-gradient(135deg, #EE7202, #C55E00)", color: "#E4F0EA" }}
           >
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0" style={{ background: "rgba(16,21,32,0.2)" }}>
@@ -64,10 +64,10 @@ export default function ThankYouPage() {
           {/* Upsell to challenge */}
           <div
             className="w-full rounded-2xl p-5 flex flex-col gap-3 text-right"
-            style={{ background: "#191F2B", border: "1px solid #2C323E" }}
+            style={{ background: "#E4F0EA", border: "1px solid #C5DDD2" }}
           >
-            <p className="font-black" style={{ color: "#EDE9E1" }}>רוצה להאיץ את התוצאות?</p>
-            <p className="text-sm leading-relaxed" style={{ color: "#9E9990" }}>
+            <p className="font-black" style={{ color: "#1A2E25" }}>רוצה להאיץ את התוצאות?</p>
+            <p className="text-sm leading-relaxed" style={{ color: "#7A9E8E" }}>
               הצ׳אלנג׳ של 7 הימים לוקח אותך צעד קדימה - עם פידבק אישי על הסרטונים שלך ולקוחות אמיתיים בסוף השבוע.
             </p>
             <Link
@@ -92,7 +92,7 @@ export default function ThankYouPage() {
             שתף חבר בוואצאפ
           </a>
 
-          <Link href="/" className="text-sm transition hover:opacity-70" style={{ color: "#9E9990" }}>
+          <Link href="/" className="text-sm transition hover:opacity-70" style={{ color: "#7A9E8E" }}>
             חזרה לדף הבית
           </Link>
 

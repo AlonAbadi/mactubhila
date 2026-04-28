@@ -46,7 +46,7 @@ export function SuccessPage({
     <div
       dir="rtl"
       className="min-h-screen font-assistant flex flex-col items-center justify-center px-4 pt-16 pb-12"
-      style={{ background: "#080C14", color: "#EDE9E1" }}
+      style={{ background: "#F5FAF7", color: "#1A2E25" }}
     >
       <div
         className="w-full max-w-lg flex flex-col items-center gap-6 transition-all duration-500"
@@ -56,8 +56,8 @@ export function SuccessPage({
         <div
           className="w-20 h-20 rounded-full flex items-center justify-center text-3xl"
           style={{
-            background: "linear-gradient(135deg, #E8B94A, #C9964A, #9E7C3A)",
-            boxShadow: "0 0 0 8px rgba(201,150,74,0.12), 0 0 32px rgba(201,150,74,0.3)",
+            background: "linear-gradient(135deg, #EE7202, #EE7202, #C55E00)",
+            boxShadow: "0 0 0 8px rgba(238,114,2,0.12), 0 0 32px rgba(238,114,2,0.3)",
             animation: "pulse 2s infinite",
           }}
         >
@@ -67,36 +67,36 @@ export function SuccessPage({
         {/* Label pill */}
         <div
           className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold"
-          style={{ background: "rgba(201,150,74,0.08)", border: "1px solid rgba(201,150,74,0.30)", color: "#C9964A" }}
+          style={{ background: "rgba(238,114,2,0.08)", border: "1px solid rgba(45,122,95,0.30)", color: "#EE7202" }}
         >
           הרכישה אושרה בהצלחה ✓
         </div>
 
         {/* Title */}
         <div className="text-center flex flex-col gap-2">
-          <h1 className="text-4xl font-black" style={{ color: "#EDE9E1" }}>{confirmationTitle}</h1>
-          <p className="text-lg leading-relaxed" style={{ color: "#9E9990" }}>{confirmationDesc}</p>
+          <h1 className="text-4xl font-black" style={{ color: "#1A2E25" }}>{confirmationTitle}</h1>
+          <p className="text-lg leading-relaxed" style={{ color: "#7A9E8E" }}>{confirmationDesc}</p>
         </div>
 
         {/* Card */}
         <div
           className="w-full rounded-2xl p-6 flex flex-col gap-5"
-          style={{ background: "linear-gradient(145deg, #141820, #0D1018)", border: "1px solid rgba(201,150,74,0.20)" }}
+          style={{ background: "linear-gradient(145deg, #FFFFFF, #E4F0EA)", border: "1px solid rgba(238,114,2,0.20)" }}
         >
           {/* Product name */}
-          <div className="flex items-center gap-3 pb-4" style={{ borderBottom: "1px solid #2C323E" }}>
+          <div className="flex items-center gap-3 pb-4" style={{ borderBottom: "1px solid #C5DDD2" }}>
             <span className="text-2xl">{emoji}</span>
-            <span className="font-bold text-lg" style={{ color: "#EDE9E1" }}>{productName}</span>
+            <span className="font-bold text-lg" style={{ color: "#1A2E25" }}>{productName}</span>
           </div>
 
           {/* Steps */}
-          <p className="text-sm font-bold" style={{ color: "#C9964A" }}>מה קורה עכשיו?</p>
+          <p className="text-sm font-bold" style={{ color: "#EE7202" }}>מה קורה עכשיו?</p>
           <div className="flex flex-col gap-3">
             {STEPS.map((step) => (
               <div key={step.num} className="flex items-start gap-3">
                 <div
                   className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-black"
-                  style={{ background: "rgba(201,150,74,0.12)", border: "1px solid rgba(201,150,74,0.25)", color: "#C9964A" }}
+                  style={{ background: "rgba(238,114,2,0.12)", border: "1px solid rgba(238,114,2,0.25)", color: "#EE7202" }}
                 >
                   {step.num}
                 </div>
@@ -108,19 +108,19 @@ export function SuccessPage({
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-semibold underline"
-                        style={{ color: "#E8B94A" }}
+                        style={{ color: "#EE7202" }}
                       >
                         {step.title} ←
                       </a>
                     ) : (
-                      <Link href={step.href} className="font-semibold underline" style={{ color: "#E8B94A" }}>
+                      <Link href={step.href} className="font-semibold underline" style={{ color: "#EE7202" }}>
                         {step.title} ←
                       </Link>
                     )
                   ) : (
-                    <p className="font-semibold" style={{ color: "#EDE9E1" }}>{step.title}</p>
+                    <p className="font-semibold" style={{ color: "#1A2E25" }}>{step.title}</p>
                   )}
-                  {step.desc && <p className="text-sm" style={{ color: "#9E9990" }}>{step.desc}</p>}
+                  {step.desc && <p className="text-sm" style={{ color: "#7A9E8E" }}>{step.desc}</p>}
                 </div>
               </div>
             ))}
@@ -164,7 +164,7 @@ export function SuccessPage({
         <Link
           href="/"
           className="w-full rounded-full py-3 text-center text-base font-semibold transition hover:opacity-80"
-          style={{ border: "1px solid #2C323E", color: "#9E9990" }}
+          style={{ border: "1px solid #C5DDD2", color: "#7A9E8E" }}
         >
           לדף הבית
         </Link>

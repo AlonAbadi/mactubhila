@@ -78,7 +78,7 @@ export function PremiumBookingFlow({ bookedSlots, price, credit, whatsappPhone }
   if (phase === "booking") {
     return (
       <div className="flex flex-col gap-4">
-        <p className="text-sm font-semibold" style={{ color: "#2D7A5F" }}>
+        <p className="text-sm font-semibold" style={{ color: "#EE7202" }}>
           שלב 1 מתוך 2 — בחירת תאריך ליום הצילום
         </p>
         <BookingForm bookedSlots={bookedSlots} onSuccess={handleBooked} />
@@ -93,13 +93,13 @@ export function PremiumBookingFlow({ bookedSlots, price, credit, whatsappPhone }
       {/* Day confirmation */}
       <div
         className="rounded-2xl p-5 flex items-start gap-4"
-        style={{ background: "rgba(45,122,95,0.06)", border: "1px solid rgba(45,122,95,0.2)" }}
+        style={{ background: "rgba(45,122,95,0.06)", border: "1px solid rgba(238,114,2,0.2)" }}
       >
         <div
           className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-          style={{ background: "rgba(45,122,95,0.12)", border: "1px solid rgba(45,122,95,0.3)" }}
+          style={{ background: "rgba(238,114,2,0.12)", border: "1px solid rgba(238,114,2,0.3)" }}
         >
-          <svg className="w-5 h-5" fill="none" stroke="#2D7A5F" strokeWidth={2.5} viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="none" stroke="#EE7202" strokeWidth={2.5} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
@@ -141,7 +141,7 @@ export function PremiumBookingFlow({ bookedSlots, price, credit, whatsappPhone }
             "3 חודשי ליווי לאחר הצילום",
           ].map((item) => (
             <li key={item} className="flex items-center gap-2">
-              <span style={{ color: "#2D7A5F" }}>✓</span> {item}
+              <span style={{ color: "#EE7202" }}>✓</span> {item}
             </li>
           ))}
         </ul>

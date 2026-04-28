@@ -212,7 +212,6 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
 
   // Result state
   const [resultReady, setResultReady] = useState(false);
-  const [displayPct, setDisplayPct] = useState(0);
 
   // Computed on result screen
   const scores = step === 7 ? computeScores(answers) : null;
@@ -239,24 +238,10 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
     if (step !== 7) return;
     window.scrollTo(0, 0);
     setResultReady(false);
-    setDisplayPct(0);
 
     const t1 = setTimeout(() => setResultReady(true), 50);
-    const t2 = setTimeout(() => {
-      const duration = 1200;
-      const target = matchPct;
-      const startTime = performance.now();
-      function tick(now: number) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        setDisplayPct(Math.round(eased * target));
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    }, 400);
 
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+    return () => { clearTimeout(t1); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step]);
 
@@ -453,7 +438,6 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
       setConsentDone(false);
       completedRef.current = false;
       setResultReady(false);
-      setDisplayPct(0);
     });
   }
 
@@ -552,13 +536,13 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
                         fontSize: "15px",
                         minHeight: "52px",
                         ...(selectedId === opt.id
-                          ? { background: "linear-gradient(135deg,#2D7A5F,#2D7A5F,#1E5642)", color: "#FFFFFF", border: `1px solid ${C.gold}`, transform: "scale(0.99)" }
+                          ? { background: "linear-gradient(135deg,#EE7202,#EE7202,#C55E00)", color: "#FFFFFF", border: `1px solid ${C.gold}`, transform: "scale(0.99)" }
                           : { background: C.quizCard, border: `1px solid ${C.quizBorder}`, color: C.quizText }),
                       }}
                       onMouseEnter={(e) => {
                         if (selectedId !== opt.id) {
-                          (e.currentTarget as HTMLButtonElement).style.background = "rgba(45,122,95,0.12)";
-                          (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(45,122,95,0.4)";
+                          (e.currentTarget as HTMLButtonElement).style.background = "rgba(238,114,2,0.12)";
+                          (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(238,114,2,0.4)";
                         }
                       }}
                       onMouseLeave={(e) => {
@@ -573,7 +557,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
                         style={
                           selectedId === opt.id
                             ? { background: "rgba(16,21,32,0.25)", color: "#E4F0EA" }
-                            : { background: "rgba(45,122,95,0.08)", border: "1px solid rgba(45,122,95,0.20)", color: C.gold }
+                            : { background: "rgba(238,114,2,0.08)", border: "1px solid rgba(238,114,2,0.20)", color: C.gold }
                         }
                       >
                         {opt.id}
@@ -628,7 +612,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
                         onChange={(e) => setLeadForm((f) => ({ ...f, [id]: e.target.value }))}
                         dir={dir}
                         style={{ background: C.quizCard, border: `1px solid ${C.quizBorder}`, color: C.quizText, borderRadius: "12px", padding: "14px 16px", fontSize: "15px", minHeight: "52px", width: "100%", outline: "none" }}
-                        onFocus={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(45,122,95,0.6)"; }}
+                        onFocus={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(238,114,2,0.6)"; }}
                         onBlur={(e) => { (e.target as HTMLInputElement).style.borderColor = C.quizBorder; }}
                       />
                     </div>
@@ -698,7 +682,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: `linear-gradient(135deg, ${C.gold}, #1E5642)`,
+              background: `linear-gradient(135deg, ${C.gold}, #C55E00)`,
               color: "#0a0a0a",
               padding: "8px 16px",
               borderRadius: 100,
@@ -720,7 +704,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
             {narrative.headline.main}{" "}
             <span
               style={{
-                background: `linear-gradient(135deg, ${C.gold}, #1E5642)`,
+                background: `linear-gradient(135deg, ${C.gold}, #C55E00)`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
@@ -740,7 +724,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
             background: C.card,
             borderRadius: 16,
             padding: "20px",
-            border: "1px solid rgba(255,255,255,0.06)",
+            border: `1px solid ${C.border}`,
             ...fadeUp(0.4, resultReady),
           }}
         >
@@ -761,7 +745,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
               style={{
                 width: 8,
                 height: 8,
-                background: `linear-gradient(135deg, ${C.gold}, #1E5642)`,
+                background: `linear-gradient(135deg, ${C.gold}, #C55E00)`,
                 borderRadius: "50%",
               }}
             />
@@ -782,7 +766,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
               color: C.textSec,
               marginTop: 14,
               paddingTop: 14,
-              borderTop: "1px solid rgba(255,255,255,0.06)",
+              borderTop: `1px solid ${C.border}`,
               fontStyle: "italic",
             }}
           >
@@ -790,65 +774,19 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
           </p>
         </div>
 
-        {/* 4. Confidence bar */}
-        <div
-          style={{
-            margin: "16px 16px 0",
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            padding: "12px 16px",
-            background: narrative.confidence.level >= 4 ? "rgba(74, 222, 128, 0.08)" : "rgba(232, 185, 74, 0.08)",
-            borderRadius: 12,
-            ...fadeIn(0.5, resultReady),
-          }}
-        >
-          <div style={{ display: "flex", gap: 4 }}>
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div
-                key={i}
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  background: i <= narrative.confidence.level
-                    ? (narrative.confidence.level >= 4 ? "#4ade80" : C.gold)
-                    : "rgba(255,255,255,0.15)",
-                }}
-              />
-            ))}
-          </div>
-          <span
-            style={{
-              fontSize: 13,
-              fontWeight: 600,
-              color: narrative.confidence.level >= 4 ? "#4ade80" : C.gold,
-            }}
-          >
-            {narrative.confidence.text} ({displayPct}%)
-          </span>
-        </div>
-
-        {/* 5. Incoherence warning */}
+        {/* 5. Incoherence note — only shown when answers were contradictory */}
         {narrative.incoherenceWarning && (
           <div
             style={{
               margin: "12px 16px 0",
-              display: "flex",
-              alignItems: "flex-start",
-              gap: 12,
-              padding: 16,
-              background: "rgba(251, 191, 36, 0.08)",
-              border: "1px solid rgba(251, 191, 36, 0.2)",
+              padding: "12px 16px",
+              background: `${C.gold}0d`,
+              border: `1px solid ${C.border}`,
               borderRadius: 12,
               ...fadeIn(0.55, resultReady),
             }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" strokeWidth="2" style={{ flexShrink: 0, marginTop: 2 }}>
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 8v4M12 16h.01" />
-            </svg>
-            <p style={{ fontSize: 14, color: C.textPrim, lineHeight: 1.5, margin: 0 }}>
+            <p style={{ fontSize: 13, color: C.textSec, lineHeight: 1.6, margin: 0 }}>
               {narrative.incoherenceWarning}
             </p>
           </div>
@@ -875,32 +813,13 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
             position: "relative",
             height: 280,
             border: "1px solid rgba(201,168,76,0.3)",
-            boxShadow: "0 0 40px rgba(45,122,95,0.08)",
+            boxShadow: "0 0 40px rgba(238,114,2,0.08)",
             ...fadeUp(0.7, resultReady),
           }}
         >
           <img src={heroImage} alt={winner.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 40%, transparent 100%)" }} />
           <div style={{ position: "absolute", bottom: 0, right: 0, left: 0, padding: 16 }}>
-            <span
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 6,
-                background: "rgba(45,122,95,0.15)",
-                color: C.gold,
-                padding: "4px 10px",
-                borderRadius: 100,
-                fontSize: 11,
-                fontWeight: 700,
-                marginBottom: 10,
-              }}
-            >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              הכי מתאים לכם
-            </span>
             <div style={{ fontSize: 26, fontWeight: 800, lineHeight: 1.2, color: "#fff", marginBottom: 8 }}>{winner.name}</div>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14 }}>
               <span style={{ color: C.gold, fontWeight: 700 }}>{winner.price}</span>
@@ -910,32 +829,20 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
           </div>
         </div>
 
-        {/* 9. Action buttons */}
-        <div style={{ display: "flex", gap: 8, padding: "12px 16px 0", ...fadeUp(0.85, resultReady) }}>
+        {/* 9. CTA */}
+        <div style={{ padding: "16px 16px 0", ...fadeUp(0.85, resultReady) }}>
           <button
             onClick={() => handleCTAClick(winner.id, winner.href)}
             style={{
-              flex: 1,
+              width: "100%",
               display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
-              background: C.gold, color: "#0a0a0a", fontWeight: 700, fontSize: 15,
-              border: "none", borderRadius: 8, padding: "14px 16px", minHeight: 52, cursor: "pointer",
+              background: `linear-gradient(135deg, ${C.gold}, #C55E00)`,
+              color: "#fff", fontWeight: 700, fontSize: 15,
+              border: "none", borderRadius: 10, padding: "15px 16px", minHeight: 52, cursor: "pointer",
+              fontFamily: "Assistant, sans-serif",
             }}
           >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 2.5l10 5.5-10 5.5V2.5z"/></svg>
             {ctaText}
-          </button>
-          <button
-            onClick={() => handleCTAClick(winner.id, winner.href)}
-            style={{
-              display: "flex", alignItems: "center", justifyContent: "center", gap: 6,
-              background: "transparent", color: C.textPrim, fontWeight: 600, fontSize: 14,
-              border: "1px solid rgba(255,255,255,0.2)", borderRadius: 8, padding: "14px 18px", minHeight: 52, cursor: "pointer",
-            }}
-          >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/>
-            </svg>
-            פרטים
           </button>
         </div>
 
@@ -948,7 +855,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
 
         {/* Soft consent ask */}
         {isLoggedIn && !hasConsent && !consentDismissed && (
-          <div style={{ margin: "12px 16px 0", background: "rgba(45,122,95,0.06)", border: "1px solid rgba(45,122,95,0.2)", borderRadius: 8, padding: 14, ...fadeIn(0.95, resultReady) }}>
+          <div style={{ margin: "12px 16px 0", background: "rgba(238,114,2,0.06)", border: "1px solid rgba(238,114,2,0.2)", borderRadius: 8, padding: 14, ...fadeIn(0.95, resultReady) }}>
             {consentDone ? (
               <p style={{ fontSize: 13, color: C.gold, textAlign: "center" }}>תודה! ניצור איתך קשר בקרוב</p>
             ) : (
@@ -994,15 +901,12 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, overflow: "hidden" }}>
               {alsoConsider.map((p) => {
-                const pScore = scores[PRODUCTS.findIndex((pr) => pr.id === p.id)];
-                const pMatch = scaleSecondary(pScore);
                 return (
                   <button key={p.id} onClick={() => handleCTAClick(p.id, p.href)} style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, overflow: "hidden", cursor: "pointer", textAlign: "right" }}>
                     <div style={{ height: 120, overflow: "hidden" }}>
                       <img src={PRODUCT_IMAGE[p.id] ?? "/og-image.jpg"} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }} />
                     </div>
                     <div style={{ padding: "10px 10px 12px" }}>
-                      <div style={{ fontSize: 11, color: C.gold, fontWeight: 700, marginBottom: 4 }}>התאמה {pMatch}%</div>
                       <div style={{ fontSize: 14, fontWeight: 700, color: C.textPrim, marginBottom: 4, lineHeight: 1.3 }}>{p.name}</div>
                       <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.4 }}>{PRODUCT_DESC[p.id]}</div>
                     </div>
@@ -1015,7 +919,7 @@ export function QuizClient({ initialUser = null }: { initialUser?: InitialUser }
 
         {/* 14. Bottom CTA */}
         <div style={{ padding: "32px 16px 0", display: "flex", flexDirection: "column", alignItems: "center", gap: 16, ...fadeIn(1.8, resultReady) }}>
-          <div style={{ width: 32, height: 1, background: "rgba(255,255,255,0.12)" }} />
+          <div style={{ width: 32, height: 1, background: C.border }} />
           <a href={whatsapp} target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: 8, color: C.textSec, fontSize: 14, fontWeight: 500, textDecoration: "none" }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: "#25D366", flexShrink: 0 }}>
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>

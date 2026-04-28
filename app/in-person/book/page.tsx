@@ -27,18 +27,18 @@ export default async function BookingPage({
   const whatsappPhone = process.env.WHATSAPP_PHONE ?? "";
 
   return (
-    <div dir="rtl" className="min-h-screen font-assistant" style={{ background: "#0D1018", color: "#EDE9E1" }}>
+    <div dir="rtl" className="min-h-screen font-assistant" style={{ background: "#E4F0EA", color: "#1A2E25" }}>
 
       {/* Nav */}
       <header
         className="sticky top-0 z-50 border-b px-4"
-        style={{ background: "rgba(13,16,24,0.95)", backdropFilter: "blur(12px)", borderColor: "#2C323E" }}
+        style={{ background: "rgba(228,240,234,0.95)", backdropFilter: "blur(12px)", borderColor: "#C5DDD2" }}
       >
         <div className="max-w-5xl mx-auto flex items-center justify-between h-16">
-          <Link href="/" className="font-black text-xl" style={{ color: "#EDE9E1" }}>
+          <Link href="/" className="font-black text-xl" style={{ color: "#1A2E25" }}>
             {CLIENT.name}
           </Link>
-          <Link href="/in-person" className="text-sm transition" style={{ color: "#9E9990" }}>
+          <Link href="/in-person" className="text-sm transition" style={{ color: "#7A9E8E" }}>
             ← חזור לעמוד הפגישה
           </Link>
         </div>
@@ -50,16 +50,16 @@ export default async function BookingPage({
           {/* Page header */}
           <div className="flex flex-col gap-4">
 
-            <h1 className="text-3xl md:text-4xl font-black" style={{ color: "#EDE9E1" }}>
+            <h1 className="text-3xl md:text-4xl font-black" style={{ color: "#1A2E25" }}>
               קבע/י פגישת אסטרטגיה
             </h1>
-            <p className="text-lg leading-relaxed max-w-lg" style={{ color: "#9E9990" }}>
+            <p className="text-lg leading-relaxed max-w-lg" style={{ color: "#7A9E8E" }}>
               שיחה אחד-על-אחד של 90 דקות שבונה את מפת הדרכים השיווקית של העסק שלך.
               מה שבונים ביחד — מוכן ליישום מיד למחרת.
             </p>
 
             {/* Guarantee */}
-            <p className="text-sm font-semibold" style={{ color: "#C9964A" }}>
+            <p className="text-sm font-semibold" style={{ color: "#EE7202" }}>
               ✓ לא פיצחנו בפגישה הראשונה? פגישה נוספת עלינו — ללא עלות
             </p>
           </div>
@@ -77,15 +77,15 @@ export default async function BookingPage({
 
       <footer
         className="border-t px-4 py-6 text-center text-xs"
-        style={{ borderColor: "#2C323E", background: "#0D1018", color: "#9E9990" }}
+        style={{ borderColor: "#C5DDD2", background: "#E4F0EA", color: "#7A9E8E" }}
       >
         <p>
           © {new Date().getFullYear()} {CLIENT.legal_name} ·{" "}
-          <Link href="/privacy" className="transition hover:text-[#EDE9E1]">מדיניות פרטיות</Link>
+          <Link href="/privacy" className="transition hover:text-[#1A2E25]">מדיניות פרטיות</Link>
           {" · "}
-          <Link href="/accessibility" className="transition hover:text-[#EDE9E1]">הצהרת נגישות</Link>
+          <Link href="/accessibility" className="transition hover:text-[#1A2E25]">הצהרת נגישות</Link>
           {" · "}
-          <Link href="/hive/terms" className="transition hover:text-[#EDE9E1]">תנאי מנוי הכוורת</Link>
+          <Link href="/hive/terms" className="transition hover:text-[#1A2E25]">תנאי מנוי הכוורת</Link>
         </p>
       </footer>
 

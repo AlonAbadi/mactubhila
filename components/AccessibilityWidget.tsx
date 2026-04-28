@@ -219,7 +219,7 @@ export function AccessibilityWidget() {
             onClick={reset}
             disabled={!anyActive}
             className="w-full rounded-xl py-2 text-sm font-semibold transition hover:bg-gray-50 disabled:opacity-40"
-            style={{ border: "1px solid #2C323E", color: "#6b7280" }}
+            style={{ border: "1px solid #C5DDD2", color: "#6b7280" }}
           >
             איפוס הגדרות
           </button>

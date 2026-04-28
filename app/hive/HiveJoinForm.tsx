@@ -136,13 +136,13 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
     >
       <div
         className="relative w-full max-w-md rounded-3xl p-8 font-assistant"
-        style={{ background: "#191F2B", border: "1px solid #2C323E", color: "#EDE9E1" }}
+        style={{ background: "#E4F0EA", border: "1px solid #C5DDD2", color: "#1A2E25" }}
       >
         {/* Close button */}
         <button
           onClick={handleClose}
           className="absolute top-4 left-4 w-8 h-8 flex items-center justify-center rounded-full transition hover:opacity-70"
-          style={{ background: "#1D2430", color: "#9E9990" }}
+          style={{ background: "#FFFFFF", color: "#7A9E8E" }}
           aria-label="סגור"
         >
           ✕
@@ -152,10 +152,10 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
         {(step === "form" || step === "checking") && (
           <form onSubmit={handleFormSubmit} className="flex flex-col gap-5" dir="rtl">
             <div>
-              <h2 className="text-2xl font-black mb-1" style={{ color: "#EDE9E1" }}>
+              <h2 className="text-2xl font-black mb-1" style={{ color: "#1A2E25" }}>
                 הצטרף לכוורת 🐝
               </h2>
-              <p className="text-sm" style={{ color: "#9E9990" }}>
+              <p className="text-sm" style={{ color: "#7A9E8E" }}>
                 {tier === "discounted_29"
                   ? `מסלול לקוחות ${CLIENT.name} - ₪${CLIENT.products.hive.price_discounted}/חודש`
                   : "מסלול פתוח - ₪97/חודש"}
@@ -163,7 +163,7 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
             </div>
 
             <div className="flex flex-col gap-1">
-              <label className="text-sm font-semibold" style={{ color: "#9E9990" }}>
+              <label className="text-sm font-semibold" style={{ color: "#7A9E8E" }}>
                 שם מלא
               </label>
               <input
@@ -175,17 +175,17 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
                 disabled={step === "checking"}
                 className="rounded-xl px-4 py-3 text-base outline-none transition"
                 style={{
-                  background: "#1D2430",
-                  border: "1px solid #2C323E",
-                  color: "#EDE9E1",
+                  background: "#FFFFFF",
+                  border: "1px solid #C5DDD2",
+                  color: "#1A2E25",
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#C9964A")}
-                onBlur={(e) => (e.currentTarget.style.borderColor = "#2C323E")}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#EE7202")}
+                onBlur={(e) => (e.currentTarget.style.borderColor = "#C5DDD2")}
               />
             </div>
 
             <div className="flex flex-col gap-1">
-              <label className="text-sm font-semibold" style={{ color: "#9E9990" }}>
+              <label className="text-sm font-semibold" style={{ color: "#7A9E8E" }}>
                 אימייל
               </label>
               <input
@@ -197,12 +197,12 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
                 disabled={step === "checking"}
                 className="rounded-xl px-4 py-3 text-base outline-none transition"
                 style={{
-                  background: "#1D2430",
-                  border: "1px solid #2C323E",
-                  color: "#EDE9E1",
+                  background: "#FFFFFF",
+                  border: "1px solid #C5DDD2",
+                  color: "#1A2E25",
                 }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#C9964A")}
-                onBlur={(e) => (e.currentTarget.style.borderColor = "#2C323E")}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#EE7202")}
+                onBlur={(e) => (e.currentTarget.style.borderColor = "#C5DDD2")}
               />
             </div>
 
@@ -227,15 +227,15 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
           <div className="flex flex-col gap-6 text-center" dir="rtl">
             <div
               className="w-16 h-16 mx-auto rounded-full flex items-center justify-center text-3xl"
-              style={{ background: "rgba(201,150,74,0.1)" }}
+              style={{ background: "rgba(45,122,95,0.1)" }}
             >
               🐝
             </div>
             <div>
-              <h2 className="text-xl font-black mb-2" style={{ color: "#EDE9E1" }}>
+              <h2 className="text-xl font-black mb-2" style={{ color: "#1A2E25" }}>
                 המחיר המיוחד הזה שמור ללקוחות הילה
               </h2>
-              <p className="text-sm leading-relaxed" style={{ color: "#9E9990" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "#7A9E8E" }}>
                 רוצה להתחיל את המסע ולקבל את ההטבה? בוא נכיר.
               </p>
             </div>
@@ -243,8 +243,8 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
               href="/quiz"
               className="w-full py-4 rounded-full font-bold text-lg text-center transition hover:opacity-90 active:scale-[0.98]"
               style={{
-                background: "linear-gradient(135deg, #E8B94A 0%, #C9964A 50%, #9E7C3A 100%)",
-                color: "#1A1206",
+                background: "linear-gradient(135deg, #EE7202 0%, #EE7202 50%, #C55E00 100%)",
+                color: "#FFFFFF",
                 display: "block",
               }}
             >
@@ -253,7 +253,7 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
             <button
               onClick={handleClose}
               className="text-sm transition hover:opacity-70"
-              style={{ color: "#9E9990" }}
+              style={{ color: "#7A9E8E" }}
             >
               חזור
             </button>
@@ -264,10 +264,10 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
         {(step === "legal" || step === "submitting") && (
           <form onSubmit={handleConsentSubmit} className="flex flex-col gap-5" dir="rtl">
             <div>
-              <h2 className="text-xl font-black mb-1" style={{ color: "#EDE9E1" }}>
+              <h2 className="text-xl font-black mb-1" style={{ color: "#1A2E25" }}>
                 פרטי המנוי
               </h2>
-              <p className="text-sm" style={{ color: "#9E9990" }}>
+              <p className="text-sm" style={{ color: "#7A9E8E" }}>
                 אנא קרא בעיון לפני האישור
               </p>
             </div>
@@ -275,12 +275,12 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
             <div
               className="rounded-2xl p-5 flex flex-col gap-2 text-sm leading-relaxed"
               style={{
-                background: "#101520",
-                border: "1px solid rgba(201,150,74,0.08)",
-                color: "#9E9990",
+                background: "#E4F0EA",
+                border: "1px solid rgba(238,114,2,0.08)",
+                color: "#7A9E8E",
               }}
             >
-              <p className="font-bold mb-1" style={{ color: "#EDE9E1" }}>
+              <p className="font-bold mb-1" style={{ color: "#1A2E25" }}>
                 פרטי המנוי:
               </p>
               <p>• חיוב חודשי אוטומטי של {tierPrice} כולל מע״מ</p>
@@ -292,7 +292,7 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
                 <a
                   href={`mailto:${CLIENT.email.from_email}`}
                   className="underline hover:opacity-80"
-                  style={{ color: "#C9964A" }}
+                  style={{ color: "#EE7202" }}
                 >
                   {CLIENT.email.from_email}
                 </a>{" "}
@@ -308,16 +308,16 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
                 onChange={(e) => setConsent(e.target.checked)}
                 disabled={step === "submitting"}
                 className="mt-0.5 flex-shrink-0 w-5 h-5 rounded cursor-pointer"
-                style={{ accentColor: "#C9964A" }}
+                style={{ accentColor: "#EE7202" }}
               />
-              <span className="text-sm leading-relaxed" style={{ color: "#9E9990" }}>
+              <span className="text-sm leading-relaxed" style={{ color: "#7A9E8E" }}>
                 קראתי והבנתי את תנאי המנוי החודשי ואת מדיניות הביטול{" "}
                 <Link
                   href="/hive/terms"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:opacity-80"
-                  style={{ color: "#C9964A" }}
+                  style={{ color: "#EE7202" }}
                 >
                   ← תנאי מנוי
                 </Link>
@@ -345,21 +345,21 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
           <div className="flex flex-col gap-5 text-center" dir="rtl">
             <div
               className="w-16 h-16 mx-auto rounded-full flex items-center justify-center text-3xl"
-              style={{ background: "rgba(201,150,74,0.1)" }}
+              style={{ background: "rgba(45,122,95,0.1)" }}
             >
               📧
             </div>
             <div>
-              <h2 className="text-xl font-black mb-2" style={{ color: "#EDE9E1" }}>
+              <h2 className="text-xl font-black mb-2" style={{ color: "#1A2E25" }}>
                 הבקשה שלך התקבלה!
               </h2>
-              <p className="text-sm leading-relaxed" style={{ color: "#9E9990" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "#7A9E8E" }}>
                 נחזור אליך עם פרטי תשלום בקרוב.
               </p>
               {email && (
-                <p className="text-sm mt-2" style={{ color: "#9E9990" }}>
+                <p className="text-sm mt-2" style={{ color: "#7A9E8E" }}>
                   אימייל:{" "}
-                  <span className="font-semibold" style={{ color: "#EDE9E1" }}>
+                  <span className="font-semibold" style={{ color: "#1A2E25" }}>
                     {email}
                   </span>
                 </p>
@@ -368,7 +368,7 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
             <button
               onClick={handleClose}
               className="w-full py-3 rounded-2xl font-bold text-sm transition hover:opacity-70"
-              style={{ background: "#1D2430", border: "1px solid #2C323E", color: "#9E9990" }}
+              style={{ background: "#FFFFFF", border: "1px solid #C5DDD2", color: "#7A9E8E" }}
             >
               סגור
             </button>
@@ -380,18 +380,18 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
           <div className="flex flex-col gap-5 text-center" dir="rtl">
             <div
               className="w-16 h-16 mx-auto rounded-full flex items-center justify-center text-3xl"
-              style={{ background: "rgba(201,150,74,0.08)", border: "1px solid rgba(201,150,74,0.20)" }}
+              style={{ background: "rgba(238,114,2,0.08)", border: "1px solid rgba(238,114,2,0.20)" }}
             >
               ✓
             </div>
             <div>
-              <h2 className="text-2xl font-black mb-2" style={{ color: "#EDE9E1" }}>
+              <h2 className="text-2xl font-black mb-2" style={{ color: "#1A2E25" }}>
                 ברוך הבא לכוורת 🐝
               </h2>
               {email && (
-                <p className="text-sm" style={{ color: "#9E9990" }}>
+                <p className="text-sm" style={{ color: "#7A9E8E" }}>
                   פרטים נשלחו לאימייל:{" "}
-                  <span className="font-semibold" style={{ color: "#EDE9E1" }}>
+                  <span className="font-semibold" style={{ color: "#1A2E25" }}>
                     {email}
                   </span>
                 </p>
@@ -400,7 +400,7 @@ export function HiveJoinForm({ onClose }: HiveJoinFormProps) {
             <button
               onClick={handleClose}
               className="w-full py-3 rounded-2xl font-bold text-sm transition hover:opacity-70"
-              style={{ background: "#1D2430", border: "1px solid #2C323E", color: "#9E9990" }}
+              style={{ background: "#FFFFFF", border: "1px solid #C5DDD2", color: "#7A9E8E" }}
             >
               סגור
             </button>

@@ -323,7 +323,7 @@ function LoginPageInner() {
           <div style={S.bottomLink}>
             <button
               onClick={() => { setPhase("idle"); setErrorType(null); setWrongCount(0); setLeadInfo(null); }}
-              style={{ background: "none", border: "none", color: "#9E9990", cursor: "pointer", fontSize: 13, fontFamily: "Assistant, sans-serif" }}
+              style={{ background: "none", border: "none", color: "#7A9E8E", cursor: "pointer", fontSize: 13, fontFamily: "Assistant, sans-serif" }}
             >
               חזרה
             </button>
@@ -399,8 +399,8 @@ function LoginPageInner() {
               placeholder="israel@example.com"
               dir="ltr"
               style={S.input}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
           </div>
 
@@ -417,8 +417,8 @@ function LoginPageInner() {
               placeholder="••••••••"
               dir="ltr"
               style={{ ...S.input, marginTop: 6 }}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
           </div>
 
@@ -433,7 +433,7 @@ function LoginPageInner() {
 
         <div style={S.bottomLink}>
           אין לך חשבון?{" "}
-          <Link href="/signup" style={{ color: "#E8B94A", textDecoration: "none", fontWeight: 700 }}>
+          <Link href="/signup" style={{ color: "#EE7202", textDecoration: "none", fontWeight: 700 }}>
             הרשמה
           </Link>
         </div>

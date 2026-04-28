@@ -8,7 +8,7 @@ import type { HiveContent } from "./page";
 // ── Tier config ────────────────────────────────────────────
 const TIER_MAP: Record<string, { label: string; color: string; price: number; rank: number }> = {
   discounted_29: { label: "Starter", color: "#378ADD", price: 29,  rank: 0 },
-  basic_97:      { label: "Pro",     color: "#2D7A5F", price: 97,  rank: 1 },
+  basic_97:      { label: "Pro",     color: "#EE7202", price: 97,  rank: 1 },
   elite:         { label: "Elite",   color: "#7F77DD", price: 197, rank: 2 },
 };
 
@@ -132,7 +132,7 @@ export default function HiveMembersClient({
     padding: "11px 20px",
     borderRadius: 8,
     border: "none",
-    background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+    background: "linear-gradient(135deg, #EE7202, #C55E00)",
     color: "#F5FAF7",
     fontSize: 14,
     fontWeight: 800,
@@ -260,7 +260,7 @@ export default function HiveMembersClient({
         alignItems: "center",
         padding: "14px 20px",
       }}>
-        <div style={{ fontSize: 14, fontWeight: 700, color: "#2D7A5F" }}>
+        <div style={{ fontSize: 14, fontWeight: 700, color: "#EE7202" }}>
           {price} &#8362;/חודש
         </div>
         <div style={{ textAlign: "right" }}>
@@ -335,8 +335,8 @@ export default function HiveMembersClient({
                   ) : item.url ? (
                     <a href={item.url} target="_blank" rel="noopener noreferrer" style={{
                       display: "inline-block", padding: "7px 16px", borderRadius: 8,
-                      background: "rgba(45,122,95,0.12)",
-                      color: "#2D7A5F", fontSize: 13, fontWeight: 700,
+                      background: "rgba(238,114,2,0.12)",
+                      color: "#EE7202", fontSize: 13, fontWeight: 700,
                       textDecoration: "none", marginTop: 8,
                     }}>
                       קרא עוד
@@ -389,7 +389,7 @@ export default function HiveMembersClient({
         </div>
         {zoomNextDate ? (
           <>
-            <div style={{ fontSize: 14, color: "#2D7A5F", fontWeight: 700, textAlign: "right", marginBottom: 12 }}>
+            <div style={{ fontSize: 14, color: "#EE7202", fontWeight: 700, textAlign: "right", marginBottom: 12 }}>
               {zoomNextDate}
             </div>
           </>
@@ -472,13 +472,13 @@ export default function HiveMembersClient({
       <div style={{
         ...card,
         background: "rgba(45,122,95,0.06)",
-        border: "1px solid rgba(45,122,95,0.2)",
+        border: "1px solid rgba(238,114,2,0.2)",
         display: "flex", justifyContent: "space-between", alignItems: "center",
         padding: "16px 20px",
       }}>
         <div style={{
           fontSize: 28, fontWeight: 800,
-          background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+          background: "linear-gradient(135deg, #EE7202, #C55E00)",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
         }}>
           {credit.toLocaleString("he-IL")} &#8362;
@@ -650,7 +650,7 @@ export default function HiveMembersClient({
               onClick={() => setTab(key)}
               style={{
                 flex: 1, padding: "9px 0", borderRadius: 8, border: "none",
-                background: tab === key ? "linear-gradient(135deg, #2D7A5F, #1E5642)" : "transparent",
+                background: tab === key ? "linear-gradient(135deg, #EE7202, #C55E00)" : "transparent",
                 color: tab === key ? "#F5FAF7" : "#7A9E8E",
                 fontSize: 13, fontWeight: tab === key ? 800 : 600,
                 cursor: "pointer", fontFamily: "Assistant, sans-serif",

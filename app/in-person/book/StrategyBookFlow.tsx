@@ -68,13 +68,13 @@ export function StrategyBookFlow({ bookedSlots, price, credit, whatsappPhone }: 
       {/* Booking confirmation */}
       <div
         className="rounded-2xl p-5 flex items-start gap-4"
-        style={{ background: "rgba(45,122,95,0.06)", border: "1px solid rgba(45,122,95,0.2)" }}
+        style={{ background: "rgba(45,122,95,0.06)", border: "1px solid rgba(238,114,2,0.2)" }}
       >
         <div
           className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-          style={{ background: "rgba(45,122,95,0.12)", border: "1px solid rgba(45,122,95,0.3)" }}
+          style={{ background: "rgba(238,114,2,0.12)", border: "1px solid rgba(238,114,2,0.3)" }}
         >
-          <svg className="w-5 h-5" fill="none" stroke="#2D7A5F" strokeWidth={2.5} viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="none" stroke="#EE7202" strokeWidth={2.5} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>

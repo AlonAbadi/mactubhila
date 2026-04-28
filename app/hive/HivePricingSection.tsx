@@ -63,7 +63,7 @@ export function HivePricingSection() {
             <ul className="flex flex-col gap-3">
               {FEATURES_STANDARD.map((f) => (
                 <li key={f} className="flex items-center gap-2 text-sm" style={{ color: "#1A2E25" }}>
-                  <span style={{ color: "#2D7A5F" }}>✓</span>
+                  <span style={{ color: "#EE7202" }}>✓</span>
                   {f}
                 </li>
               ))}
@@ -82,7 +82,7 @@ export function HivePricingSection() {
             className="rounded-3xl p-8 flex flex-col gap-6 relative"
             style={{
               background: "linear-gradient(145deg, #FFFFFF, #D0E8DA)",
-              border: "1px solid rgba(45,122,95,0.08)",
+              border: "1px solid rgba(238,114,2,0.08)",
               boxShadow: "inset 0 1px 0 rgba(255,255,255,0.1), 0 4px 16px rgba(0,0,0,0.2)",
             }}
           >
@@ -90,7 +90,7 @@ export function HivePricingSection() {
             <div
               className="absolute -top-3 right-6 text-xs font-black px-4 py-1.5 rounded-full"
               style={{
-                background: "linear-gradient(135deg, #2D7A5F 0%, #2D7A5F 50%, #1E5642 100%)",
+                background: "linear-gradient(135deg, #EE7202 0%, #EE7202 50%, #C55E00 100%)",
                 color: "#FFFFFF",
               }}
             >
@@ -102,7 +102,7 @@ export function HivePricingSection() {
                 מסלול מיוחד
               </p>
               <div className="flex items-baseline gap-2">
-                <span className="text-5xl font-black" style={{ color: "#2D7A5F" }}>
+                <span className="text-5xl font-black" style={{ color: "#EE7202" }}>
                   ₪29
                 </span>
                 <span className="text-sm" style={{ color: "#7A9E8E" }}>
@@ -120,7 +120,7 @@ export function HivePricingSection() {
             <ul className="flex flex-col gap-3">
               {FEATURES_DISCOUNTED.map((f) => (
                 <li key={f} className="flex items-center gap-2 text-sm" style={{ color: "#1A2E25" }}>
-                  <span style={{ color: "#2D7A5F" }}>✓</span>
+                  <span style={{ color: "#EE7202" }}>✓</span>
                   {f}
                 </li>
               ))}
@@ -277,7 +277,7 @@ function HiveJoinFormModal({ tier, onClose }: { tier: Tier; onClose: () => void 
                 disabled={step === "checking"}
                 className="rounded-xl px-4 py-3 text-base outline-none transition"
                 style={{ background: "#FFFFFF", border: "1px solid #C5DDD2", color: "#1A2E25" }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#2D7A5F")}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#EE7202")}
                 onBlur={(e) => (e.currentTarget.style.borderColor = "#C5DDD2")}
               />
             </div>
@@ -295,7 +295,7 @@ function HiveJoinFormModal({ tier, onClose }: { tier: Tier; onClose: () => void 
                 disabled={step === "checking"}
                 className="rounded-xl px-4 py-3 text-base outline-none transition"
                 style={{ background: "#FFFFFF", border: "1px solid #C5DDD2", color: "#1A2E25" }}
-                onFocus={(e) => (e.currentTarget.style.borderColor = "#2D7A5F")}
+                onFocus={(e) => (e.currentTarget.style.borderColor = "#EE7202")}
                 onBlur={(e) => (e.currentTarget.style.borderColor = "#C5DDD2")}
               />
             </div>
@@ -337,7 +337,7 @@ function HiveJoinFormModal({ tier, onClose }: { tier: Tier; onClose: () => void 
               href="/quiz"
               className="w-full py-4 rounded-full font-bold text-lg text-center transition hover:opacity-90 active:scale-[0.98]"
               style={{
-                background: "linear-gradient(135deg, #2D7A5F 0%, #2D7A5F 50%, #1E5642 100%)",
+                background: "linear-gradient(135deg, #EE7202 0%, #EE7202 50%, #C55E00 100%)",
                 color: "#FFFFFF",
                 display: "block",
               }}
@@ -370,7 +370,7 @@ function HiveJoinFormModal({ tier, onClose }: { tier: Tier; onClose: () => void 
               className="rounded-2xl p-5 flex flex-col gap-2 text-sm leading-relaxed"
               style={{
                 background: "#E4F0EA",
-                border: "1px solid rgba(45,122,95,0.08)",
+                border: "1px solid rgba(238,114,2,0.08)",
                 color: "#7A9E8E",
               }}
             >
@@ -386,7 +386,7 @@ function HiveJoinFormModal({ tier, onClose }: { tier: Tier; onClose: () => void 
                 <a
                   href={`mailto:${CLIENT.email.from_email}`}
                   className="underline hover:opacity-80"
-                  style={{ color: "#2D7A5F" }}
+                  style={{ color: "#EE7202" }}
                 >
                   {CLIENT.email.from_email}
                 </a>{" "}
@@ -402,7 +402,7 @@ function HiveJoinFormModal({ tier, onClose }: { tier: Tier; onClose: () => void 
                 onChange={(e) => setConsent(e.target.checked)}
                 disabled={step === "submitting"}
                 className="mt-0.5 flex-shrink-0 w-5 h-5 rounded cursor-pointer"
-                style={{ accentColor: "#2D7A5F" }}
+                style={{ accentColor: "#EE7202" }}
               />
               <span className="text-sm leading-relaxed" style={{ color: "#7A9E8E" }}>
                 קראתי והבנתי את תנאי המנוי החודשי ואת מדיניות הביטול{" "}
@@ -411,7 +411,7 @@ function HiveJoinFormModal({ tier, onClose }: { tier: Tier; onClose: () => void 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:opacity-80"
-                  style={{ color: "#2D7A5F" }}
+                  style={{ color: "#EE7202" }}
                 >
                   ← תנאי מנוי
                 </a>
@@ -475,7 +475,7 @@ function HiveJoinFormModal({ tier, onClose }: { tier: Tier; onClose: () => void 
             <div
               className="w-16 h-16 mx-auto rounded-full flex items-center justify-center text-3xl"
               style={{
-                background: "rgba(45,122,95,0.08)", border: "1px solid rgba(45,122,95,0.20)",
+                background: "rgba(238,114,2,0.08)", border: "1px solid rgba(238,114,2,0.20)",
               }}
             >
               ✓

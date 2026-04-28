@@ -169,7 +169,7 @@ function getStrength(pw: string): { score: 0 | 1 | 2; label: string; color: stri
   const checks = [/[A-Z]/, /[0-9]/, /[^A-Za-z0-9]/];
   const passed = checks.filter((r) => r.test(pw)).length;
   if (pw.length >= 8 && passed >= 2) return { score: 2, label: "חזקה", color: "#34A853" };
-  return { score: 1, label: "בינונית", color: "#E8B94A" };
+  return { score: 1, label: "בינונית", color: "#EE7202" };
 }
 
 // ── Component ─────────────────────────────────────────────────
@@ -274,7 +274,7 @@ function SignupPageInner() {
           <div style={S.title}>בדוק את האימייל שלך</div>
           <div style={S.subtitle}>
             שלחנו קישור אימות לכתובת<br />
-            <strong style={{ color: "#EDE9E1" }}>{sentEmail}</strong>
+            <strong style={{ color: "#1A2E25" }}>{sentEmail}</strong>
           </div>
           <div style={S.infoBox}>
             לחץ על הקישור באימייל כדי להפעיל את החשבון שלך.
@@ -282,13 +282,13 @@ function SignupPageInner() {
           <div style={{ textAlign: "center", marginTop: 8 }}>
             <button
               onClick={handleResend}
-              style={{ background: "none", border: "none", color: "#E8B94A", cursor: "pointer", fontSize: 13, fontFamily: "Assistant, sans-serif", textDecoration: "underline" }}
+              style={{ background: "none", border: "none", color: "#EE7202", cursor: "pointer", fontSize: 13, fontFamily: "Assistant, sans-serif", textDecoration: "underline" }}
             >
               לא קיבלת? שלח שוב
             </button>
           </div>
           <div style={S.bottomLink}>
-            <Link href="/login" style={{ color: "#9E9990", textDecoration: "none" }}>
+            <Link href="/login" style={{ color: "#7A9E8E", textDecoration: "none" }}>
               חזרה להתחברות
             </Link>
           </div>
@@ -357,8 +357,8 @@ function SignupPageInner() {
               onChange={(e) => setName(e.target.value)}
               placeholder="ישראל ישראלי"
               style={S.input}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
           </div>
 
@@ -372,8 +372,8 @@ function SignupPageInner() {
               placeholder="israel@example.com"
               dir="ltr"
               style={S.input}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
           </div>
 
@@ -387,8 +387,8 @@ function SignupPageInner() {
               placeholder="••••••••"
               dir="ltr"
               style={{ ...S.input, marginTop: 0 }}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
             {password.length > 0 && (
               <div>
@@ -400,7 +400,7 @@ function SignupPageInner() {
                         flex: 1,
                         height: 4,
                         borderRadius: 2,
-                        background: i <= strength.score ? strength.color : "#2C323E",
+                        background: i <= strength.score ? strength.color : "#C5DDD2",
                         transition: "background 0.3s",
                       }}
                     />
@@ -422,7 +422,7 @@ function SignupPageInner() {
 
         <div style={S.bottomLink}>
           כבר יש לך חשבון?{" "}
-          <Link href="/login" style={{ color: "#E8B94A", textDecoration: "none", fontWeight: 700 }}>
+          <Link href="/login" style={{ color: "#EE7202", textDecoration: "none", fontWeight: 700 }}>
             התחבר
           </Link>
         </div>

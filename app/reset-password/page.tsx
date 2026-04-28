@@ -111,7 +111,7 @@ function getStrength(pw: string): { score: 0 | 1 | 2; label: string; color: stri
   const checks = [/[A-Z]/, /[0-9]/, /[^A-Za-z0-9]/];
   const passed = checks.filter((r) => r.test(pw)).length;
   if (pw.length >= 8 && passed >= 2) return { score: 2, label: "חזקה", color: "#34A853" };
-  return { score: 1, label: "בינונית", color: "#E8B94A" };
+  return { score: 1, label: "בינונית", color: "#EE7202" };
 }
 
 type Phase = "idle" | "loading" | "invalid_link";
@@ -188,7 +188,7 @@ export default function ResetPasswordPage() {
             קישור האיפוס כבר שומש או פג תוקפו.
           </div>
           <div style={S.bottomLink}>
-            <Link href="/forgot-password" style={{ color: "#E8B94A", textDecoration: "none", fontWeight: 700 }}>
+            <Link href="/forgot-password" style={{ color: "#EE7202", textDecoration: "none", fontWeight: 700 }}>
               שלח קישור חדש
             </Link>
           </div>
@@ -235,8 +235,8 @@ export default function ResetPasswordPage() {
               placeholder="••••••••"
               dir="ltr"
               style={S.input}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
             {password.length > 0 && (
               <div>
@@ -248,7 +248,7 @@ export default function ResetPasswordPage() {
                         flex: 1,
                         height: 4,
                         borderRadius: 2,
-                        background: i <= strength.score ? strength.color : "#2C323E",
+                        background: i <= strength.score ? strength.color : "#C5DDD2",
                         transition: "background 0.3s",
                       }}
                     />
@@ -269,8 +269,8 @@ export default function ResetPasswordPage() {
               placeholder="••••••••"
               dir="ltr"
               style={S.input}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
           </div>
 
@@ -284,7 +284,7 @@ export default function ResetPasswordPage() {
         </form>
 
         <div style={S.bottomLink}>
-          <Link href="/login" style={{ color: "#9E9990", textDecoration: "none" }}>
+          <Link href="/login" style={{ color: "#7A9E8E", textDecoration: "none" }}>
             חזרה להתחברות
           </Link>
         </div>

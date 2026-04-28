@@ -18,7 +18,7 @@ export default async function UnsubscribePage({ searchParams }: Props) {
     <div
       dir="rtl"
       className="font-assistant min-h-screen"
-      style={{ background: "#0D1018", color: "#EDE9E1", paddingTop: 80, paddingBottom: 80 }}
+      style={{ background: "#E4F0EA", color: "#1A2E25", paddingTop: 80, paddingBottom: 80 }}
     >
       <div style={{ maxWidth: 480, margin: "0 auto", padding: "0 20px" }}>
 
@@ -40,14 +40,14 @@ export default async function UnsubscribePage({ searchParams }: Props) {
           textAlign: "center",
           fontSize: "clamp(1.5rem, 4vw, 2rem)",
           fontWeight: 800,
-          color: "#EDE9E1",
+          color: "#1A2E25",
           marginBottom: 12,
         }}>
           ביטול הסכמה לדיוור
         </h1>
         <p style={{
           textAlign: "center",
-          color: "#9E9990",
+          color: "#7A9E8E",
           fontSize: "0.95rem",
           lineHeight: 1.7,
           marginBottom: 36,
@@ -57,8 +57,8 @@ export default async function UnsubscribePage({ searchParams }: Props) {
 
         {/* Form */}
         <div style={{
-          background: "#141820",
-          border: "1px solid #2C323E",
+          background: "#FFFFFF",
+          border: "1px solid #C5DDD2",
           borderRadius: 16,
           padding: "28px 24px",
         }}>
@@ -80,7 +80,7 @@ export default async function UnsubscribePage({ searchParams }: Props) {
         <div style={{ textAlign: "center", marginTop: 32 }}>
           <a
             href="/"
-            style={{ color: "#C9964A", fontSize: "0.875rem", textDecoration: "none" }}
+            style={{ color: "#EE7202", fontSize: "0.875rem", textDecoration: "none" }}
           >
             ← חזרה לאתר
           </a>

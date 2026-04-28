@@ -241,11 +241,11 @@ export default async function LandingPage() {
               <PhilosophySection />
 
               <div
-                className="rounded-3xl px-8 py-7 text-center"
-                style={{ background: `${ACC}14`, border: `1px solid ${ACC}1f` }}
+                className="rounded-3xl px-8 py-7"
+                style={{ background: CARD, border: `1px solid ${BDR}` }}
               >
-                <p className="text-base md:text-lg leading-relaxed font-medium" style={{ color: FG }}>
-                  &ldquo;{CLIENT.about.body}&rdquo;
+                <p className="text-sm md:text-base leading-relaxed" style={{ color: MUT, direction: "rtl", textAlign: "right" }}>
+                  {CLIENT.about.body}
                 </p>
               </div>
             </div>
@@ -276,12 +276,12 @@ export default async function LandingPage() {
                     highlight: false,
                   },
                   {
-                    tag: "₪149",
+                    tag: "₪197",
                     tagBg: `${ACC}22`,
-                    title: "רוצה כלים בידיים",
-                    desc: "קלפי מכתוב דיגיטליים – 30 קלפים + מדריך מוקלט. גישה מיידית.",
-                    cta: "לקלפי מכתוב ←",
-                    href: "/cards",
+                    title: "רוצה להתחיל לכתוב עכשיו",
+                    desc: "אתגר הכתיבה של מכתוב – 7 ימים של כתיבה יומית מודרכת עם כלים מהשיטה.",
+                    cta: "לאתגר 7 הימים ←",
+                    href: "/challenge",
                     highlight: false,
                   },
                   {
@@ -418,7 +418,7 @@ export default async function LandingPage() {
               }}
             >
               <p style={{ fontSize: "0.78rem", fontWeight: 700, color: ACC, letterSpacing: "0.1em", marginBottom: 8 }}>
-                נפגעי 7.10 · נשות מילואים · גיבורי נובה
+                נפגעי 7.10 · נשות מילואים · גיבורי נובה · לוחמים ולוחמות · נפגעי PTSD
               </p>
               <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: FG, marginBottom: 10 }}>
                 יש מסלול מלגות בשבילך
@@ -446,10 +446,10 @@ export default async function LandingPage() {
                 חברות · עמותות · קיבוצים · מוסדות חינוך
               </p>
               <h3 style={{ fontSize: "1.1rem", fontWeight: 800, color: FG, marginBottom: 10 }}>
-                מכתוב לארגון שלך
+                סדנאות כתיבה לבניית חוסן ותרבות ארגונית
               </h3>
               <p style={{ fontSize: "0.875rem", color: MUT, lineHeight: 1.65, marginBottom: 14 }}>
-                סדנאות מותאמות אישית לבניית חוסן, תרבות ותקשורת. ניסיון עם Microsoft, עמותת עלם, ילדים בסיכוי ועוד.
+                סדנאות מותאמות אישית לפי הצרכים הספציפיים של הארגון שלך. ניסיון עם Microsoft, עמותת עלם, ילדים בסיכוי ועוד.
               </p>
               <span style={{ fontSize: "0.875rem", fontWeight: 700, color: ACC }}>
                 לקבלת הצעה ←
@@ -479,7 +479,7 @@ export default async function LandingPage() {
                 { label: "בית",             href: "/" },
                 { label: "אודות",           href: "/about" },
                 { label: "שיעור מתנה",     href: "/training" },
-                { label: "קלפים",           href: "/cards" },
+                ...(CLIENT.modules.challenge  ? [{ label: "אתגר 7 ימים",   href: "/challenge" }]  : []),
                 ...(CLIENT.modules.course     ? [{ label: "קורס דיגיטלי",  href: "/course" }]      : []),
                 ...(CLIENT.modules.workshop   ? [{ label: "קורס + ליווי",  href: "/course-plus" }]    : []),
                 ...(CLIENT.modules.strategy   ? [{ label: "קורס פרונטלי", href: "/in-person" }]    : []),

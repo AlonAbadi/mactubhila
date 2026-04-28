@@ -59,7 +59,7 @@ export default function HomeStickyBar({
         gap: 12,
         transform: visible ? "translateY(0)" : "translateY(100%)",
         transition: "transform 0.3s ease",
-        boxShadow: "0 -2px 12px rgba(45,122,95,0.15)",
+        boxShadow: "0 -2px 12px rgba(238,114,2,0.15)",
         fontFamily: "var(--font-assistant), Assistant, sans-serif",
         direction: "rtl",
       }}
@@ -74,7 +74,7 @@ export default function HomeStickyBar({
       <a
         href="/training"
         style={{
-          background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+          background: "linear-gradient(135deg, #EE7202, #C55E00)",
           color: "#F5FAF7",
           fontSize: 13,
           fontWeight: 800,

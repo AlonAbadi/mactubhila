@@ -112,10 +112,10 @@ export default function ChallengePlayer({
     const special  = isSessionDay(day); // day 0 or 8
 
     if (isDone)   return { bg: "rgba(52,168,83,0.15)",    color: "#34A853",  border: "rgba(52,168,83,0.4)" };
-    if (isActive) return { bg: "rgba(45,122,95,0.18)",   color: "#2D7A5F",  border: "rgba(45,122,95,0.5)" };
+    if (isActive) return { bg: "rgba(45,122,95,0.18)",   color: "#EE7202",  border: "rgba(238,114,2,0.5)" };
     if (locked)   return { bg: "rgba(255,255,255,0.05)",  color: "#3A404E",  border: "transparent" };
     if (special)  return { bg: "rgba(139,92,246,0.15)",   color: "#A78BFA",  border: "rgba(139,92,246,0.35)" };
-    return         { bg: "rgba(45,122,95,0.08)",         color: "#2D7A5F",  border: "rgba(45,122,95,0.2)" };
+    return         { bg: "rgba(238,114,2,0.08)",         color: "#EE7202",  border: "rgba(238,114,2,0.2)" };
   }
 
   // ── Day list (sidebar + mobile bottom) ──────────────────
@@ -159,7 +159,7 @@ export default function ChallengePlayer({
             <div style={{ flex: 1, textAlign: "right" }}>
               <div style={{
                 fontSize: 13, fontWeight: 700,
-                color: isActive ? "#2D7A5F" : locked ? "#4A5060" : "#1A2E25",
+                color: isActive ? "#EE7202" : locked ? "#4A5060" : "#1A2E25",
                 marginBottom: 2,
               }}>
                 {d.day === 0 ? "פתיחה" : d.day === 8 ? "סיום" : `יום ${d.day}`} — {d.title}
@@ -190,7 +190,7 @@ export default function ChallengePlayer({
               <span style={{
                 flexShrink: 0, fontSize: 11, fontWeight: 700,
                 padding: "3px 8px", borderRadius: 12,
-                background: "rgba(45,122,95,0.12)", color: "#2D7A5F",
+                background: "rgba(238,114,2,0.12)", color: "#EE7202",
               }}>
                 המשך
               </span>
@@ -216,7 +216,7 @@ export default function ChallengePlayer({
           disabled={!canNext}
           style={{
             flex: 1, padding: "12px 16px", borderRadius: 8, border: "none",
-            background: canNext ? "linear-gradient(135deg, #2D7A5F, #1E5642)" : "#FFFFFF",
+            background: canNext ? "linear-gradient(135deg, #EE7202, #C55E00)" : "#FFFFFF",
             color: canNext ? "#F5FAF7" : "#3A404E",
             fontSize: 14, fontWeight: 800,
             cursor: canNext ? "pointer" : "not-allowed",
@@ -275,7 +275,7 @@ export default function ChallengePlayer({
                 <>
                   <div style={{ fontSize: 13, color: "#7A9E8E", fontWeight: 700 }}>נפתח בעוד</div>
                   <div style={{
-                    fontSize: 24, fontWeight: 800, color: "#2D7A5F",
+                    fontSize: 24, fontWeight: 800, color: "#EE7202",
                     fontVariantNumeric: "tabular-nums", direction: "ltr",
                   }}>
                     {countdown}
@@ -330,7 +330,7 @@ export default function ChallengePlayer({
       <div style={{ flex: 1, height: 4, background: "#C5DDD2", borderRadius: 2, position: "relative" }}>
         <div style={{
           position: "absolute", top: 0, right: 0, height: 4, borderRadius: 2,
-          background: "linear-gradient(270deg, #2D7A5F, #2D7A5F)",
+          background: "linear-gradient(270deg, #EE7202, #EE7202)",
           width: dayDone ? "100%" : "0%",
           transition: "width 0.4s",
         }} />
@@ -351,7 +351,7 @@ export default function ChallengePlayer({
             onClick={() => markComplete(activeDay)}
             style={{
               padding: "9px 24px", borderRadius: 8, border: "none",
-              background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+              background: "linear-gradient(135deg, #EE7202, #C55E00)",
               color: "#F5FAF7", fontSize: 13, fontWeight: 800,
               cursor: "pointer", fontFamily: "Assistant, sans-serif",
             }}
@@ -383,12 +383,12 @@ export default function ChallengePlayer({
       {/* Countdown box — show when there are locked future days */}
       {countdown && !isLocked && (
         <div style={{
-          background: "rgba(45,122,95,0.06)", border: "1px solid rgba(45,122,95,0.2)",
+          background: "rgba(45,122,95,0.06)", border: "1px solid rgba(238,114,2,0.2)",
           borderRadius: 10, padding: "12px 16px", marginBottom: 16, textAlign: "center",
         }}>
           <div style={{ fontSize: 12, color: "#7A9E8E", marginBottom: 4 }}>היום הבא נפתח בעוד</div>
           <div style={{
-            fontSize: 22, fontWeight: 800, color: "#2D7A5F",
+            fontSize: 22, fontWeight: 800, color: "#EE7202",
             fontVariantNumeric: "tabular-nums", direction: "ltr",
           }}>
             {countdown}
@@ -401,10 +401,10 @@ export default function ChallengePlayer({
   // ── Completion banner ────────────────────────────────────
   const CompletionBanner = () => (
     <div style={{
-      background: "rgba(45,122,95,0.08)", border: "1px solid rgba(45,122,95,0.25)",
+      background: "rgba(238,114,2,0.08)", border: "1px solid rgba(238,114,2,0.25)",
       borderRadius: 12, padding: "20px 24px", textAlign: "center", marginTop: 16,
     }}>
-      <div style={{ fontSize: 18, fontWeight: 800, color: "#2D7A5F", marginBottom: 6 }}>
+      <div style={{ fontSize: 18, fontWeight: 800, color: "#EE7202", marginBottom: 6 }}>
         סיימת את האתגר!
       </div>
       <div style={{ fontSize: 13, color: "#7A9E8E", marginBottom: 16 }}>
@@ -412,7 +412,7 @@ export default function ChallengePlayer({
       </div>
       <Link href="/course-plus" style={{
         display: "inline-block", padding: "10px 24px", borderRadius: 8,
-        background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+        background: "linear-gradient(135deg, #EE7202, #C55E00)",
         color: "#F5FAF7", fontSize: 14, fontWeight: 800,
         textDecoration: "none", fontFamily: "Assistant, sans-serif",
       }}>
@@ -429,9 +429,9 @@ export default function ChallengePlayer({
       <div className="ch-mob-hdr">
         <span />
         <span style={{
-          fontSize: 12, fontWeight: 700, color: "#2D7A5F",
+          fontSize: 12, fontWeight: 700, color: "#EE7202",
           padding: "3px 10px", borderRadius: 20,
-          background: "rgba(45,122,95,0.12)", border: "1px solid rgba(45,122,95,0.25)",
+          background: "rgba(238,114,2,0.12)", border: "1px solid rgba(238,114,2,0.25)",
         }}>
           {activeDay === 0 ? "פתיחה" : activeDay === 8 ? "סיום" : `יום ${activeDay}/7`}
         </span>
@@ -442,7 +442,7 @@ export default function ChallengePlayer({
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 52 }}>
           <span style={{
             fontSize: 14, fontWeight: 800,
-            background: "linear-gradient(135deg, #2D7A5F, #2D7A5F)",
+            background: "linear-gradient(135deg, #EE7202, #EE7202)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
           }}>
             אתגר 7 הימים
@@ -455,7 +455,7 @@ export default function ChallengePlayer({
           <div style={{ height: 3, background: "#C5DDD2", borderRadius: 2, position: "relative" }}>
             <div style={{
               position: "absolute", top: 0, right: 0, height: 3, borderRadius: 2,
-              background: "linear-gradient(270deg, #2D7A5F, #2D7A5F)",
+              background: "linear-gradient(270deg, #EE7202, #EE7202)",
               width: `${progressPct}%`, transition: "width 0.4s",
             }} />
           </div>

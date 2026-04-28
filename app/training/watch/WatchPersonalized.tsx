@@ -22,7 +22,7 @@ export function WatchGreeting() {
       style={{
         fontSize: "1.1rem",
         fontWeight: 700,
-        color: "#2D7A5F",
+        color: "#EE7202",
         marginBottom: 4,
       }}
     >
@@ -62,7 +62,7 @@ export function WatchNextStep() {
               fontSize: "0.75rem",
               fontWeight: 700,
               letterSpacing: "0.1em",
-              color: "#2D7A5F",
+              color: "#EE7202",
               textTransform: "uppercase",
               marginBottom: 16,
               textAlign: "center",
@@ -80,7 +80,7 @@ export function WatchNextStep() {
               overflow: "hidden",
               position: "relative",
               textDecoration: "none",
-              border: "1px solid rgba(45,122,95,0.25)",
+              border: "1px solid rgba(238,114,2,0.25)",
               boxShadow: "0 4px 32px rgba(0,0,0,0.5)",
             }}
           >
@@ -111,7 +111,7 @@ export function WatchNextStep() {
                   position: "absolute",
                   top: 12,
                   right: 12,
-                  background: "linear-gradient(135deg,#2D7A5F,#2D7A5F)",
+                  background: "linear-gradient(135deg,#EE7202,#EE7202)",
                   color: "#E4F0EA",
                   fontSize: "0.7rem",
                   fontWeight: 800,
@@ -133,7 +133,7 @@ export function WatchNextStep() {
                   fontWeight: 700,
                   padding: "4px 10px",
                   borderRadius: 9999,
-                  border: "1px solid rgba(45,122,95,0.2)",
+                  border: "1px solid rgba(238,114,2,0.2)",
                 }}
               >
                 ₪197
@@ -198,7 +198,7 @@ export function WatchNextStep() {
                         width: 6,
                         height: 6,
                         borderRadius: "50%",
-                        background: "#2D7A5F",
+                        background: "#EE7202",
                         marginTop: 6,
                         flexShrink: 0,
                       }}
@@ -214,7 +214,7 @@ export function WatchNextStep() {
                   width: "100%",
                   borderRadius: 9999,
                   padding: "14px 0",
-                  background: "linear-gradient(135deg,#2D7A5F,#2D7A5F,#1E5642)",
+                  background: "linear-gradient(135deg,#EE7202,#EE7202,#C55E00)",
                   color: "#E4F0EA",
                   fontWeight: 800,
                   fontSize: "1rem",
@@ -251,7 +251,7 @@ export function WatchNextStep() {
         href="/quiz"
         style={{
           display: "inline-block",
-          background: "linear-gradient(135deg,#2D7A5F,#2D7A5F,#1E5642)",
+          background: "linear-gradient(135deg,#EE7202,#EE7202,#C55E00)",
           color: "#FFFFFF",
           fontWeight: 800,
           fontSize: "1rem",

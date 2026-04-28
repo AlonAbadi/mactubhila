@@ -134,14 +134,14 @@ export default function ForgotPasswordPage() {
           <div style={S.logo}><div style={S.logoText}>{CLIENT.name}</div></div>
           <div style={S.title}>בדוק את האימייל שלך</div>
           <div style={S.subtitle}>
-            אם הכתובת <strong style={{ color: "#EDE9E1" }}>{email}</strong> רשומה אצלנו,
+            אם הכתובת <strong style={{ color: "#1A2E25" }}>{email}</strong> רשומה אצלנו,
             תקבל קישור לאיפוס סיסמה בקרוב.
           </div>
           <div style={S.infoBox}>
             הקישור תקף ל-60 דקות. אם לא מצאת — בדוק תיקיית ספאם.
           </div>
           <div style={S.bottomLink}>
-            <Link href="/login" style={{ color: "#E8B94A", textDecoration: "none", fontWeight: 700 }}>
+            <Link href="/login" style={{ color: "#EE7202", textDecoration: "none", fontWeight: 700 }}>
               חזרה להתחברות
             </Link>
           </div>
@@ -168,8 +168,8 @@ export default function ForgotPasswordPage() {
               placeholder="israel@example.com"
               dir="ltr"
               style={S.input}
-              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-              onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
             />
           </div>
 
@@ -183,7 +183,7 @@ export default function ForgotPasswordPage() {
         </form>
 
         <div style={S.bottomLink}>
-          <Link href="/login" style={{ color: "#9E9990", textDecoration: "none" }}>
+          <Link href="/login" style={{ color: "#7A9E8E", textDecoration: "none" }}>
             חזרה להתחברות
           </Link>
         </div>

@@ -42,12 +42,12 @@ export function UnsubscribeForm({ initialEmail = "" }: { initialEmail?: string }
           borderRadius: 14,
           padding: "24px 28px",
           textAlign: "center",
-          color: "#EDE9E1",
+          color: "#1A2E25",
         }}
       >
         <div style={{ fontSize: 40, marginBottom: 12 }}>✓</div>
         <p style={{ fontWeight: 700, fontSize: "1rem", marginBottom: 8 }}>ההסכמה לדיוור בוטלה</p>
-        <p style={{ color: "#9E9990", fontSize: "0.9rem", lineHeight: 1.6 }}>
+        <p style={{ color: "#7A9E8E", fontSize: "0.9rem", lineHeight: 1.6 }}>
           {email} הוסר מרשימת הדיוור שלנו. לא תקבל יותר עדכונים שיווקיים.
         </p>
       </div>
@@ -59,7 +59,7 @@ export function UnsubscribeForm({ initialEmail = "" }: { initialEmail?: string }
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
         <label
           htmlFor="unsub-email"
-          style={{ fontSize: "0.875rem", fontWeight: 600, color: "#EDE9E1" }}
+          style={{ fontSize: "0.875rem", fontWeight: 600, color: "#1A2E25" }}
         >
           כתובת אימייל
         </label>
@@ -72,11 +72,11 @@ export function UnsubscribeForm({ initialEmail = "" }: { initialEmail?: string }
           placeholder="your@email.com"
           dir="ltr"
           style={{
-            background: "#1D2430",
-            border: "1px solid #2C323E",
+            background: "#FFFFFF",
+            border: "1px solid #C5DDD2",
             borderRadius: 10,
             padding: "12px 16px",
-            color: "#EDE9E1",
+            color: "#1A2E25",
             fontSize: "1rem",
             fontFamily: "inherit",
             outline: "none",
@@ -86,11 +86,11 @@ export function UnsubscribeForm({ initialEmail = "" }: { initialEmail?: string }
 
       {status === "not_found" && (
         <p style={{
-          background: "rgba(201,150,74,0.1)",
-          border: "1px solid rgba(201,150,74,0.3)",
+          background: "rgba(45,122,95,0.1)",
+          border: "1px solid rgba(238,114,2,0.3)",
           borderRadius: 8,
           padding: "10px 14px",
-          color: "#C9964A",
+          color: "#EE7202",
           fontSize: "0.875rem",
         }}>
           האימייל הזה לא נמצא במערכת שלנו.
@@ -114,8 +114,8 @@ export function UnsubscribeForm({ initialEmail = "" }: { initialEmail?: string }
         type="submit"
         disabled={status === "loading"}
         style={{
-          background: status === "loading" ? "rgba(201,150,74,0.4)" : "#C9964A",
-          color: "#0D1018",
+          background: status === "loading" ? "rgba(238,114,2,0.4)" : "#EE7202",
+          color: "#E4F0EA",
           fontWeight: 700,
           fontSize: "0.95rem",
           fontFamily: "inherit",
@@ -133,8 +133,8 @@ export function UnsubscribeForm({ initialEmail = "" }: { initialEmail?: string }
         {status === "loading" && (
           <span style={{
             width: 14, height: 14,
-            border: "2px solid rgba(13,16,24,0.3)",
-            borderTopColor: "#0D1018",
+            border: "2px solid rgba(228,240,234,0.3)",
+            borderTopColor: "#E4F0EA",
             borderRadius: "50%",
             animation: "spin 0.7s linear infinite",
             display: "inline-block",

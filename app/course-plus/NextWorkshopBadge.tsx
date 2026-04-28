@@ -28,9 +28,9 @@ export function NextWorkshopBadge() {
   return (
     <div
       className="self-start inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold"
-      style={{ background: "rgba(201,150,74,0.08)", border: "1px solid rgba(201,150,74,0.20)", color: "#C9964A" }}
+      style={{ background: "rgba(238,114,2,0.08)", border: "1px solid rgba(238,114,2,0.20)", color: "#EE7202" }}
     >
-      <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#C9964A" }} />
+      <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#EE7202" }} />
       {days === 0
         ? "הסדנה היום!"
         : days === 1

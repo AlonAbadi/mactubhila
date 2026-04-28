@@ -58,24 +58,24 @@ export function PremiumLeadForm() {
       <div className="flex flex-col items-center gap-6 py-8 text-center">
         <div
           className="w-20 h-20 rounded-full flex items-center justify-center"
-          style={{ background: "rgba(201,150,74,0.08)", border: "2px solid rgba(201,150,74,0.5)" }}
+          style={{ background: "rgba(238,114,2,0.08)", border: "2px solid rgba(238,114,2,0.5)" }}
         >
-          <svg className="w-10 h-10" fill="none" stroke="#C9964A" strokeWidth={2.5} viewBox="0 0 24 24">
+          <svg className="w-10 h-10" fill="none" stroke="#EE7202" strokeWidth={2.5} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
         <div className="flex flex-col gap-2">
-          <h3 className="text-2xl font-black" style={{ color: "#EDE9E1" }}>הבקשה התקבלה!</h3>
-          <p style={{ color: "#9E9990" }}>ניצור קשר תוך 24 שעות לתיאום שיחת היכרות</p>
+          <h3 className="text-2xl font-black" style={{ color: "#1A2E25" }}>הבקשה התקבלה!</h3>
+          <p style={{ color: "#7A9E8E" }}>ניצור קשר תוך 24 שעות לתיאום שיחת היכרות</p>
         </div>
         <div
           className="w-full rounded-2xl p-5 text-right"
-          style={{ background: "rgba(201,150,74,0.08)", border: "1px solid rgba(201,150,74,0.12)" }}
+          style={{ background: "rgba(238,114,2,0.08)", border: "1px solid rgba(238,114,2,0.12)" }}
         >
-          <p className="text-sm" style={{ color: "#9E9990" }}>מה הצפוי:</p>
-          <p className="font-medium mt-2" style={{ color: "#EDE9E1" }}>📞 שיחת היכרות - 15 דקות</p>
-          <p className="font-medium mt-1" style={{ color: "#EDE9E1" }}>📋 בניית אסטרטגיית תוכן</p>
-          <p className="font-medium mt-1" style={{ color: "#EDE9E1" }}>🎬 תיאום יום הצילום</p>
+          <p className="text-sm" style={{ color: "#7A9E8E" }}>מה הצפוי:</p>
+          <p className="font-medium mt-2" style={{ color: "#1A2E25" }}>📞 שיחת היכרות - 15 דקות</p>
+          <p className="font-medium mt-1" style={{ color: "#1A2E25" }}>📋 בניית אסטרטגיית תוכן</p>
+          <p className="font-medium mt-1" style={{ color: "#1A2E25" }}>🎬 תיאום יום הצילום</p>
         </div>
       </div>
     );
@@ -90,7 +90,7 @@ export function PremiumLeadForm() {
         { id: "email",    label: "אימייל",       type: "email", placeholder: "israel@example.com" },
       ].map(({ id, label, type, placeholder }) => (
         <div key={id} className="flex flex-col gap-1">
-          <label htmlFor={id} className="text-sm font-medium" style={{ color: "#9E9990" }}>{label}</label>
+          <label htmlFor={id} className="text-sm font-medium" style={{ color: "#7A9E8E" }}>{label}</label>
           <input
             id={id}
             type={type}
@@ -101,12 +101,12 @@ export function PremiumLeadForm() {
             dir={type === "email" || type === "tel" ? "ltr" : "rtl"}
             className="w-full rounded-xl border px-4 py-3 text-base outline-none transition"
             style={{
-              background:   "#1D2430",
-              borderColor:  "#2C323E",
-              color:        "#EDE9E1",
+              background:   "#FFFFFF",
+              borderColor:  "#C5DDD2",
+              color:        "#1A2E25",
             }}
-            onFocus={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(201,150,74,0.6)"; }}
-            onBlur={(e) => { (e.target as HTMLInputElement).style.borderColor = "#2C323E"; }}
+            onFocus={(e) => { (e.target as HTMLInputElement).style.borderColor = "rgba(238,114,2,0.6)"; }}
+            onBlur={(e) => { (e.target as HTMLInputElement).style.borderColor = "#C5DDD2"; }}
           />
         </div>
       ))}

@@ -40,7 +40,7 @@ export function CarouselWithDots({
             style={{
               height: 6,
               width: active === i ? 20 : 8,
-              background: active === i ? "#C9964A" : "#ddd",
+              background: active === i ? "#EE7202" : "#ddd",
               borderRadius: 9999,
               transition: "all 0.3s ease",
             }}

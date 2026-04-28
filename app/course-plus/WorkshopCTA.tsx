@@ -208,7 +208,7 @@ export function WorkshopCTA({ price, whatsappPhone, credit = 0 }: { price: strin
     return (
       <form onSubmit={handlePhoneSubmit} className="flex flex-col gap-4" dir="rtl">
         <div className="flex flex-col gap-1">
-          <label className="text-sm font-medium" style={{ color: "#9E9990" }}>מספר טלפון לחשבונית</label>
+          <label className="text-sm font-medium" style={{ color: "#7A9E8E" }}>מספר טלפון לחשבונית</label>
           <input
             type="tel"
             placeholder="0501234567"
@@ -217,15 +217,15 @@ export function WorkshopCTA({ price, whatsappPhone, credit = 0 }: { price: strin
             onChange={(e) => setPhoneInput(e.target.value)}
             dir="ltr"
             className="w-full rounded-xl border px-4 py-3 text-base outline-none transition"
-            style={{ background: "#1D2430", borderColor: "#2C323E", color: "#EDE9E1" }}
-            onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-            onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+            style={{ background: "#FFFFFF", borderColor: "#C5DDD2", color: "#1A2E25" }}
+            onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+            onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
           />
         </div>
         <button type="submit" className="btn-cta-gold active:scale-[0.98]" style={BTN_STYLE}>
           המשך לתשלום ←
         </button>
-        <button type="button" onClick={() => setPhase("idle")} className="text-sm text-center transition" style={{ color: "#9E9990" }}>
+        <button type="button" onClick={() => setPhase("idle")} className="text-sm text-center transition" style={{ color: "#7A9E8E" }}>
           ביטול
         </button>
       </form>
@@ -254,7 +254,7 @@ export function WorkshopCTA({ price, whatsappPhone, credit = 0 }: { price: strin
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 text-sm transition hover:opacity-80"
-              style={{ color: "#9E9990" }}
+              style={{ color: "#7A9E8E" }}
             >
               {WA_ICON}
               שאלות? דבר איתנו בוואטסאפ
@@ -283,7 +283,7 @@ export function WorkshopCTA({ price, whatsappPhone, credit = 0 }: { price: strin
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 text-sm transition hover:opacity-80"
-            style={{ color: "#9E9990" }}
+            style={{ color: "#7A9E8E" }}
           >
             {WA_ICON}
             שאלות? דבר איתנו בוואטסאפ
@@ -318,7 +318,7 @@ export function WorkshopCTA({ price, whatsappPhone, credit = 0 }: { price: strin
         { id: "phone", label: "טלפון",    type: "tel",   placeholder: "0501234567" },
       ].map(({ id, label, type, placeholder }) => (
         <div key={id} className="flex flex-col gap-1">
-          <label htmlFor={`ws-${id}`} className="text-sm font-medium" style={{ color: "#9E9990" }}>{label}</label>
+          <label htmlFor={`ws-${id}`} className="text-sm font-medium" style={{ color: "#7A9E8E" }}>{label}</label>
           <input
             id={`ws-${id}`}
             type={type}
@@ -328,9 +328,9 @@ export function WorkshopCTA({ price, whatsappPhone, credit = 0 }: { price: strin
             onChange={(e) => setForm((f) => ({ ...f, [id]: e.target.value }))}
             dir={type === "email" || type === "tel" ? "ltr" : "rtl"}
             className="w-full rounded-xl border px-4 py-3 text-base outline-none transition"
-            style={{ background: "#1D2430", borderColor: "#2C323E", color: "#EDE9E1" }}
-            onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(201,150,74,0.6)"; }}
-            onBlur={(e) => { e.currentTarget.style.borderColor = "#2C323E"; }}
+            style={{ background: "#FFFFFF", borderColor: "#C5DDD2", color: "#1A2E25" }}
+            onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(238,114,2,0.6)"; }}
+            onBlur={(e) => { e.currentTarget.style.borderColor = "#C5DDD2"; }}
           />
         </div>
       ))}
@@ -363,9 +363,9 @@ export function WorkshopCTA({ price, whatsappPhone, credit = 0 }: { price: strin
         type="button"
         onClick={() => { setPhase("idle"); setErrorMsg(null); }}
         className="text-sm transition text-center"
-        style={{ color: "#9E9990" }}
-        onMouseEnter={(e) => { e.currentTarget.style.color = "#EDE9E1"; }}
-        onMouseLeave={(e) => { e.currentTarget.style.color = "#9E9990"; }}
+        style={{ color: "#7A9E8E" }}
+        onMouseEnter={(e) => { e.currentTarget.style.color = "#1A2E25"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.color = "#7A9E8E"; }}
       >
         ביטול
       </button>

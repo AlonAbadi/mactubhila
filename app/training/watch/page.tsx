@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function TrainingWatchPage() {
   return (
-    <main dir="rtl" className="min-h-screen font-assistant" style={{ background: "#0D1018" }}>
+    <main dir="rtl" className="min-h-screen font-assistant" style={{ background: "#E4F0EA" }}>
       <PageViewTracker />
       {/* Records +1 view on every page load — count displayed on /training */}
       <ViewTracker />
@@ -23,24 +23,24 @@ export default function TrainingWatchPage() {
       {/* ══════════════════════════════════════════════════════
           1. VIDEO HERO
       ══════════════════════════════════════════════════════ */}
-      <section style={{ background: "#0D1018", padding: "48px 24px 32px", textAlign: "center" }} className="pt-16">
+      <section style={{ background: "#E4F0EA", padding: "48px 24px 32px", textAlign: "center" }} className="pt-16">
 
         {/* Label pill */}
-        <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(201,150,74,0.1)", border: "1px solid rgba(201,150,74,0.28)", borderRadius: 9999, padding: "5px 16px", marginBottom: 16 }}>
-          <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#C9964A" }} />
-          <span style={{ color: "#C9964A", fontSize: 11, letterSpacing: "0.12em", fontWeight: 700 }}>הדרכה חינמית · 20 דקות</span>
+        <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(45,122,95,0.1)", border: "1px solid rgba(45,122,95,0.28)", borderRadius: 9999, padding: "5px 16px", marginBottom: 16 }}>
+          <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#EE7202" }} />
+          <span style={{ color: "#EE7202", fontSize: 11, letterSpacing: "0.12em", fontWeight: 700 }}>הדרכה חינמית · 20 דקות</span>
         </div>
 
         {/* Personalized greeting — renders only for quiz users */}
         <WatchGreeting />
 
         {/* Headline */}
-        <h1 style={{ fontSize: "clamp(1.6rem,4vw,2.6rem)", fontWeight: 800, color: "#EDE9E1", lineHeight: 1.2, marginBottom: 12 }}>
+        <h1 style={{ fontSize: "clamp(1.6rem,4vw,2.6rem)", fontWeight: 800, color: "#1A2E25", lineHeight: 1.2, marginBottom: 12 }}>
           למה השיווק שלך לא עובד -<br />ומה לעשות עם זה
         </h1>
 
         {/* Subheadline */}
-        <p style={{ color: "#9E9990", fontSize: "1rem", marginBottom: 32 }}>
+        <p style={{ color: "#7A9E8E", fontSize: "1rem", marginBottom: 32 }}>
           הדרכה של כ־20 דקות. למה השיווק שלך לא עובד - ומה עושים עם זה.
         </p>
 

@@ -96,8 +96,8 @@ export default async function RedeemPage() {
 
         {/* Credit badge */}
         <div style={{
-          background: "rgba(45,122,95,0.08)",
-          border: "1px solid rgba(45,122,95,0.25)",
+          background: "rgba(238,114,2,0.08)",
+          border: "1px solid rgba(238,114,2,0.25)",
           borderRadius: 12,
           padding: "18px 20px",
           display: "flex",
@@ -109,7 +109,7 @@ export default async function RedeemPage() {
           <div style={{
             fontSize: 26,
             fontWeight: 800,
-            background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+            background: "linear-gradient(135deg, #EE7202, #C55E00)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -162,7 +162,7 @@ export default async function RedeemPage() {
                         padding: "9px 20px",
                         borderRadius: 8,
                         border: "none",
-                        background: "linear-gradient(135deg, #2D7A5F, #1E5642)",
+                        background: "linear-gradient(135deg, #EE7202, #C55E00)",
                         color: "#F5FAF7",
                         fontSize: 14,
                         fontWeight: 800,
@@ -201,7 +201,7 @@ export default async function RedeemPage() {
                       </span>
                       {/* Credit line */}
                       {credit > 0 && (
-                        <span style={{ fontSize: 12, color: "#2D7A5F", direction: "ltr" }}>
+                        <span style={{ fontSize: 12, color: "#EE7202", direction: "ltr" }}>
                           קרדיט: ₪{Math.min(credit, product.price).toLocaleString("he-IL")}
                         </span>
                       )}

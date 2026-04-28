@@ -40,8 +40,8 @@ export function PartnershipBookingFlow({ bookedSlots }: Props) {
     }
   }, []);
 
-  const inputStyle = { background: "#1D2430", borderColor: "#2C323E", color: "#EDE9E1" };
-  const focusBorder = "rgba(201,150,74,0.6)";
+  const inputStyle = { background: "#FFFFFF", borderColor: "#C5DDD2", color: "#1A2E25" };
+  const focusBorder = "rgba(238,114,2,0.6)";
 
   async function handleFormSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -92,7 +92,7 @@ export function PartnershipBookingFlow({ bookedSlots }: Props) {
           { id: "email",    label: "אימייל",  type: "email", placeholder: "israel@example.com" },
         ].map(({ id, label, type, placeholder }) => (
           <div key={id} className="flex flex-col gap-1.5">
-            <label htmlFor={`partner-${id}`} className="text-sm font-semibold" style={{ color: "#9E9990" }}>
+            <label htmlFor={`partner-${id}`} className="text-sm font-semibold" style={{ color: "#7A9E8E" }}>
               {label}
             </label>
             <input
@@ -106,13 +106,13 @@ export function PartnershipBookingFlow({ bookedSlots }: Props) {
               className="w-full rounded-xl border px-4 py-3 text-base outline-none transition"
               style={inputStyle}
               onFocus={(e) => { (e.target as HTMLInputElement).style.borderColor = focusBorder; }}
-              onBlur={(e)  => { (e.target as HTMLInputElement).style.borderColor = "#2C323E"; }}
+              onBlur={(e)  => { (e.target as HTMLInputElement).style.borderColor = "#C5DDD2"; }}
             />
           </div>
         ))}
 
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="partner-challenge" className="text-sm font-semibold" style={{ color: "#9E9990" }}>
+          <label htmlFor="partner-challenge" className="text-sm font-semibold" style={{ color: "#7A9E8E" }}>
             מה האתגר העסקי שלך כרגע?
           </label>
           <textarea
@@ -126,7 +126,7 @@ export function PartnershipBookingFlow({ bookedSlots }: Props) {
             className="w-full rounded-xl border px-4 py-3 text-base outline-none transition resize-none"
             style={{ ...inputStyle, lineHeight: "1.6" }}
             onFocus={(e) => { (e.target as HTMLTextAreaElement).style.borderColor = focusBorder; }}
-            onBlur={(e)  => { (e.target as HTMLTextAreaElement).style.borderColor = "#2C323E"; }}
+            onBlur={(e)  => { (e.target as HTMLTextAreaElement).style.borderColor = "#C5DDD2"; }}
           />
         </div>
 
@@ -158,7 +158,7 @@ export function PartnershipBookingFlow({ bookedSlots }: Props) {
   if (step === "booking") {
     return (
       <div className="flex flex-col gap-4">
-        <p className="text-sm font-semibold" style={{ color: "#C9964A" }}>
+        <p className="text-sm font-semibold" style={{ color: "#EE7202" }}>
           שלב 2 — בחר/י מועד לשיחת היכרות (20 דקות, ללא עלות)
         </p>
         <BookingForm
@@ -175,32 +175,32 @@ export function PartnershipBookingFlow({ bookedSlots }: Props) {
     <div className="flex flex-col items-center gap-6 py-8 text-center">
       <div
         className="w-20 h-20 rounded-full flex items-center justify-center"
-        style={{ background: "rgba(201,150,74,0.08)", border: "2px solid rgba(201,150,74,0.5)" }}
+        style={{ background: "rgba(238,114,2,0.08)", border: "2px solid rgba(238,114,2,0.5)" }}
       >
-        <svg className="w-10 h-10" fill="none" stroke="#C9964A" strokeWidth={2.5} viewBox="0 0 24 24">
+        <svg className="w-10 h-10" fill="none" stroke="#EE7202" strokeWidth={2.5} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
         </svg>
       </div>
 
       <div className="flex flex-col gap-2">
-        <h3 className="text-2xl font-black" style={{ color: "#EDE9E1" }}>השיחה נקבעה!</h3>
-        <p style={{ color: "#9E9990" }}>
+        <h3 className="text-2xl font-black" style={{ color: "#1A2E25" }}>השיחה נקבעה!</h3>
+        <p style={{ color: "#7A9E8E" }}>
           {booked?.date} · {booked?.time}
         </p>
-        <p className="text-sm mt-1" style={{ color: "#9E9990" }}>
+        <p className="text-sm mt-1" style={{ color: "#7A9E8E" }}>
           אישור ישלח לאימייל. {CLIENT.name} תקרא את הפרטים שלך לפני השיחה.
         </p>
       </div>
 
       <div
         className="w-full rounded-2xl p-5 text-right"
-        style={{ background: "rgba(201,150,74,0.06)", border: "1px solid rgba(201,150,74,0.1)" }}
+        style={{ background: "rgba(45,122,95,0.06)", border: "1px solid rgba(45,122,95,0.1)" }}
       >
-        <p className="text-sm mb-3" style={{ color: "#9E9990" }}>מה הצפוי בשיחה:</p>
-        <p className="font-medium" style={{ color: "#EDE9E1" }}>🔍 הבנת העסק והאתגר שלך</p>
-        <p className="text-sm mt-1" style={{ color: "#9E9990" }}>בלי שאלות סטנדרטיות - שיחה אמיתית.</p>
-        <p className="font-medium mt-3" style={{ color: "#EDE9E1" }}>✍️ גם אם לא נעבוד יחד</p>
-        <p className="text-sm mt-1" style={{ color: "#9E9990" }}>תצא מהשיחה עם בהירות - זה הבטחה.</p>
+        <p className="text-sm mb-3" style={{ color: "#7A9E8E" }}>מה הצפוי בשיחה:</p>
+        <p className="font-medium" style={{ color: "#1A2E25" }}>🔍 הבנת העסק והאתגר שלך</p>
+        <p className="text-sm mt-1" style={{ color: "#7A9E8E" }}>בלי שאלות סטנדרטיות - שיחה אמיתית.</p>
+        <p className="font-medium mt-3" style={{ color: "#1A2E25" }}>✍️ גם אם לא נעבוד יחד</p>
+        <p className="text-sm mt-1" style={{ color: "#7A9E8E" }}>תצא מהשיחה עם בהירות - זה הבטחה.</p>
       </div>
     </div>
   );
