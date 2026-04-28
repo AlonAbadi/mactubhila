@@ -116,7 +116,7 @@ export function MobileNav({ userInitial = null }: MobileNavProps) {
           <span style={{ fontSize: 13, fontWeight: 700, color: FG, fontFamily: "var(--font-assistant), Assistant, sans-serif", whiteSpace: "nowrap" }}>
             הילה יגאל איזון
           </span>
-          <Image src="/logo.png" alt="מכתוב" width={56} height={28} style={{ objectFit: "contain", display: "block" }} priority />
+          <Image src="/logo.png" alt="מכתוב" width={90} height={39} style={{ objectFit: "contain", display: "block" }} priority />
         </Link>
       </nav>
 

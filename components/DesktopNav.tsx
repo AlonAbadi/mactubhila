@@ -61,7 +61,7 @@ export function DesktopNav({ userInitial = null }: DesktopNavProps) {
     >
       {/* Logo + name */}
       <Link href="/" style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0, textDecoration: "none" }}>
-        <Image src="/logo.png" alt="מכתוב" width={72} height={36} style={{ objectFit: "contain", display: "block" }} priority />
+        <Image src="/logo.png" alt="מכתוב" width={120} height={52} style={{ objectFit: "contain", display: "block" }} priority />
         <span style={{ color: FG, fontWeight: 700, fontSize: 15, fontFamily: "var(--font-assistant), Assistant, sans-serif" }}>
           הילה יגאל איזון
         </span>
