@@ -335,6 +335,37 @@ export default async function LandingPage() {
                   </a>
                 ))}
               </div>
+
+              {/* Professionals flagship card */}
+              {CLIENT.modules.professionals && (
+                <a
+                  href="/professionals"
+                  style={{
+                    display: "block",
+                    background: `linear-gradient(135deg, ${ACC}18 0%, ${ACC}08 100%)`,
+                    border: `1.5px solid ${ACC}55`,
+                    borderRadius: 20,
+                    padding: "28px 32px",
+                    textDecoration: "none",
+                    position: "relative",
+                    overflow: "hidden",
+                  }}
+                >
+                  <div style={{ position: "absolute", top: 16, left: 24, fontSize: "0.72rem", fontWeight: 700, color: ACC, background: `${ACC}22`, borderRadius: 999, padding: "3px 12px", border: `1px solid ${ACC}44` }}>
+                    מוצר הדגל של מכתוב · B2B
+                  </div>
+                  <div style={{ marginTop: 32 }}>
+                    <h3 style={{ fontSize: "1.2rem", fontWeight: 900, color: FG, marginBottom: 10 }}>
+                      מורה, מטפל/ת, עו&quot;ס, פסיכולוג/ית?
+                    </h3>
+                    <p style={{ fontSize: "0.9rem", color: MUT, lineHeight: 1.65, marginBottom: 14 }}>
+                      קורס הכשרה ל-10 מפגשים שיאפשר לך לשלב כלי כתיבה טיפולית בעבודה עם תלמידים ומטופלים. 100% שביעות רצון, 93% יישמו בשטח.
+                    </p>
+                    <span style={{ fontSize: "0.9rem", fontWeight: 800, color: ACC }}>להכשרת אנשי מקצוע ←</span>
+                  </div>
+                </a>
+              )}
+
             </div>
           </section>
 
@@ -483,7 +514,8 @@ export default async function LandingPage() {
                 ...(CLIENT.modules.course     ? [{ label: "קורס דיגיטלי",  href: "/course" }]      : []),
                 ...(CLIENT.modules.workshop   ? [{ label: "קורס + ליווי",  href: "/course-plus" }]    : []),
                 ...(CLIENT.modules.strategy   ? [{ label: "קורס פרונטלי", href: "/in-person" }]    : []),
-                ...(CLIENT.modules.partnership? [{ label: "ליווי 1:1",     href: "/one-on-one" }] : []),
+                ...(CLIENT.modules.partnership   ? [{ label: "ליווי 1:1",        href: "/one-on-one" }]    : []),
+                ...(CLIENT.modules.professionals? [{ label: "אנשי מקצוע",    href: "/professionals" }] : []),
                 { label: "מלגות",           href: "/scholarships" },
                 { label: "לארגונים",        href: "/for-organizations" },
                 { label: "אזור אישי",       href: "/my" },

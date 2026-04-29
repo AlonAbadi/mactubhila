@@ -80,6 +80,7 @@ export const CLIENT = {
     premium:     { title: "מכתוב – חבילה מלאה", slug: "/premium",     price: 1100,  description: "הקורס הדיגיטלי המלא בשילוב 2 מפגשי ליווי נרטיבי + קריאת טקסטים, תגובות והכוונה לאורך 6 שבועות. קלפי מכתוב ומחברת במתנה.", image: "/premium.jpg" },
     partnership: { title: "ליווי נרטיבי אישי", slug: "/one-on-one", price: 1900,  description: "סדרה של 6 מפגשים אישיים בני שעה. נברר את הסיפורים שמלווים אותך ונכתוב יחד נרטיבים חדשים. כולל קורס דיגיטלי, קלפים ומחברת במתנה.", image: "/partnership.jpg" },
     hive:        { title: "קהילת מכתוב – כותבים יחד", slug: "/hive",        price_basic: 97,  price_discounted: 29, description: "קהילה חודשית של כותבים ומתפתחים: תרגולים שבועיים, שיתוף, תמיכה הדדית וגישה לחומרי מכתוב בלעדיים.", image: "/hive.jpg" },
+    professionals: { title: "הכשרת אנשי מקצוע בשיטת מכתוב", slug: "/professionals", price: 2200, description: "קורס הכשרה מקיף ל-10 מפגשים המאפשר למורים, עובדים סוציאלים, פסיכולוגים ומטפלים לשלב כלי כתיבה טיפולית בעבודתם עם תלמידים ומטופלים.", image: "/professionals.jpg" },
   },
 
   // ─── About ───────────────────────────────────────────────
@@ -239,6 +240,7 @@ export const CLIENT = {
     deals:           false,
     ab_testing:      false,
     video_analytics: false,
+    professionals:   true,
   },
 
   // ─── Pages ───────────────────────────────────────────────
